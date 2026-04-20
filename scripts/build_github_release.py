@@ -40,7 +40,11 @@ DIRECTORY_SPECS = [
     {"src": "data/atlasv2_lopo_family"},
     {"src": "data/atlasv2_workbook"},
     {"src": "data/atlas_raw_public"},
-    {"src": "data/ait_ads_public", "exclude_files": {"ait_ads_canonical_events.csv"}},
+    {
+        "src": "data/ait_ads_public",
+        "exclude_files": {"ait_ads_canonical_events.csv", "ait_ads_canonical_events.zip"},
+    },
+    {"src": "data/reference_labels"},
     {"src": "data/cross_dataset_transfer"},
     {"src": "data/examples"},
     {"src": "data/splunk_attack_data_public_probe"},

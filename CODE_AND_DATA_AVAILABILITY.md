@@ -20,6 +20,7 @@ limits.
 - `data/atlasv2_workbook/`
 - `data/atlas_raw_public/`
 - `data/ait_ads_public/` except the oversized canonical-events CSV
+- `data/reference_labels/`
 - `data/cross_dataset_transfer/`
 - `data/examples/`
 - `data/splunk_attack_data_public_probe/`
@@ -47,6 +48,19 @@ Reason:
 The release builder packages this file separately as a compressed GitHub Release
 asset so that the main repository remains standard and uploadable.
 
+## Small external reference files included directly
+
+The repository ships two small label tables under `data/reference_labels/`:
+
+- `ait_ads_labels.csv`
+- `atlasv2_labels.csv`
+
+These files are lightweight but operationally important because the released
+preparation configs reference them through `external_sources/`. The helper
+script `scripts/fetch_external_data.py` can copy them back into those expected
+paths and can also fetch the larger public upstream materials that are omitted
+from git.
+
 ## Materials intentionally excluded from the Git-tracked package
 
 - `external_sources/`: raw upstream mirrors and third-party repository clones
@@ -64,6 +78,8 @@ reproducibility rather than local workspace state.
    corresponding GitHub Release.
 3. Cite both the repository URL and the release asset in the final paper's data
    availability statement.
+
+For a scriptable recovery path, see `docs/EXTERNAL_DATA_SETUP.md`.
 
 ## Provenance boundary
 

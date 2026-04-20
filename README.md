@@ -22,6 +22,11 @@ The Git-tracked package includes the processed benchmark splits used in the
 paper, together with stored result summaries that regenerate the reported tables
 and figures.
 
+The repository also includes small upstream label tables under
+`data/reference_labels/` and a helper script `scripts/fetch_external_data.py`
+that can recover the remaining public upstream inputs into `external_sources/`
+when you want to rebuild the bridges from source materials.
+
 One oversized file, `data/ait_ads_public/ait_ads_canonical_events.csv`, is not
 placed in the Git-tracked package because it exceeds the standard GitHub file
 size limit. The release builder packages it separately as a GitHub Release asset
@@ -37,7 +42,8 @@ compiled PDFs. The repository is limited to experiment code, processed data,
 stored results, and release-facing documentation.
 
 See [CODE_AND_DATA_AVAILABILITY.md](CODE_AND_DATA_AVAILABILITY.md) and
-[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for details.
+[THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for details. For upstream
+fetch instructions, see [docs/EXTERNAL_DATA_SETUP.md](docs/EXTERNAL_DATA_SETUP.md).
 
 ## Environment
 
@@ -72,6 +78,20 @@ latexmk -pdf -interaction=nonstopmode -halt-on-error main_kbs.tex
 
 The stored summaries under `outputs/results/` are the authoritative inputs for
 the released result tables and figures in this archival snapshot.
+
+## Recovering omitted upstream inputs
+
+To fetch the public upstream materials that are intentionally not fully embedded
+in git, run:
+
+```bash
+python scripts/fetch_external_data.py --targets all
+```
+
+This command restores the small reference labels into `external_sources/`,
+downloads the large AIT-ADS canonical-events release asset, clones the public
+AIT-ADS and ATLAS upstream repositories, and downloads the curated Splunk probe
+raw logs used by the released bridge.
 
 ## Building the GitHub release package
 

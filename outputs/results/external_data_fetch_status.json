@@ -1,0 +1,225 @@
+{
+  "targets": [
+    "reference-labels",
+    "ait-ads-source",
+    "ait-ads-canonical",
+    "atlas-source",
+    "splunk-probe-raw"
+  ],
+  "results": [
+    {
+      "target": "reference-labels",
+      "files": [
+        {
+          "source": "data\\reference_labels\\ait_ads_labels.csv",
+          "destination": "external_sources\\AIT-ADS\\labels.csv",
+          "action": "kept",
+          "bytes": 3703
+        },
+        {
+          "source": "data\\reference_labels\\atlasv2_labels.csv",
+          "destination": "external_sources\\reapr-ground-truth\\atlasv2\\atlasv2_labels.csv",
+          "action": "kept",
+          "bytes": 457630
+        }
+      ]
+    },
+    {
+      "target": "ait-ads-source",
+      "download": {
+        "path": "external_sources\\AIT-ADS\\ait_ads.zip",
+        "url": "https://zenodo.org/record/8263181/files/ait_ads.zip",
+        "action": "kept",
+        "bytes": 96202946
+      },
+      "unzip": {
+        "zip_path": "external_sources\\AIT-ADS\\ait_ads.zip",
+        "output_dir": "external_sources\\AIT-ADS\\unzipped",
+        "json_files_extracted": 0,
+        "json_files_kept": 16
+      },
+      "repo": {
+        "path": "external_sources\\AIT-ADS\\source_repo",
+        "url": "https://github.com/ait-aecid/alert-data-set.git",
+        "action": "kept"
+      }
+    },
+    {
+      "target": "ait-ads-canonical",
+      "download": {
+        "path": "data\\ait_ads_public\\ait_ads_canonical_events.zip",
+        "url": "https://github.com/zhyzhangyuezy/TRACER/releases/download/v1.0.0/ait_ads_canonical_events.zip",
+        "action": "kept",
+        "bytes": 22854346
+      },
+      "extract": {
+        "path": "data\\ait_ads_public\\ait_ads_canonical_events.csv",
+        "action": "kept"
+      }
+    },
+    {
+      "target": "atlas-source",
+      "repo": {
+        "path": "external_sources\\ATLAS",
+        "url": "https://github.com/purseclab/ATLAS.git",
+        "action": "kept"
+      }
+    },
+    {
+      "target": "splunk-probe-raw",
+      "downloaded_files": 25,
+      "files": [
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1046\\nmap\\horizontal.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1046/nmap/horizontal.log",
+          "action": "kept",
+          "bytes": 26924
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1046\\nmap\\vertical.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1046/nmap/vertical.log",
+          "action": "kept",
+          "bytes": 6509584
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1046\\advanced_ip_port_scanner\\advanced_ip_port_scanner.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1046/advanced_ip_port_scanner/advanced_ip_port_scanner.log",
+          "action": "kept",
+          "bytes": 59641
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1087\\enumerate_users_local_group_using_telegram\\windows-xml.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1087/enumerate_users_local_group_using_telegram/windows-xml.log",
+          "action": "kept",
+          "bytes": 74284
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1059.001\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 38928903
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1059.001\\encoded_powershell\\explorer_spawns_windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.001/encoded_powershell/explorer_spawns_windows-sysmon.log",
+          "action": "kept",
+          "bytes": 13142
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1059.003\\cmd_spawns_cscript\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1059.003/cmd_spawns_cscript/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 1645203
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1547.001\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1547.001/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 11357100
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1562.001\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1562.001/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 14504430
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1003.001\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 14235927
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1003.001\\atomic_red_team\\windows-sysmon_creddump.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.001/atomic_red_team/windows-sysmon_creddump.log",
+          "action": "kept",
+          "bytes": 65428
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1003.003\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1003.003/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 12883992
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1021.002\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 21361
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1021.002\\atomic_red_team\\smbexec_windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/smbexec_windows-sysmon.log",
+          "action": "kept",
+          "bytes": 5577
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1021.002\\atomic_red_team\\wmiexec_windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.002/atomic_red_team/wmiexec_windows-sysmon.log",
+          "action": "kept",
+          "bytes": 19764
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1021.006\\lateral_movement\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 5835542
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1021.006\\lateral_movement_psh\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1021.006/lateral_movement_psh/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 6143107
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1105\\atomic_red_team\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 3625178
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1105\\atomic_red_team\\windows-sysmon_curl.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon_curl.log",
+          "action": "kept",
+          "bytes": 254432
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1105\\atomic_red_team\\windows-sysmon_curl_upload.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1105/atomic_red_team/windows-sysmon_curl_upload.log",
+          "action": "kept",
+          "bytes": 475947
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1567\\gdrive\\gdrive_windows.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1567/gdrive/gdrive_windows.log",
+          "action": "kept",
+          "bytes": 6602
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1486\\dcrypt\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/dcrypt/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 439561
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1486\\sam_sam_note\\windows-sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1486/sam_sam_note/windows-sysmon.log",
+          "action": "kept",
+          "bytes": 15592223
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1068\\windows_escalation_behavior\\windows_escalation_behavior_sysmon.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/windows_escalation_behavior/windows_escalation_behavior_sysmon.log",
+          "action": "kept",
+          "bytes": 533345
+        },
+        {
+          "path": "external_sources\\splunk_attack_data_probe\\raw\\datasets\\attack_techniques\\T1068\\drivers\\sysmon_sys_filemod.log",
+          "url": "https://media.githubusercontent.com/media/splunk/attack_data/master/datasets/attack_techniques/T1068/drivers/sysmon_sys_filemod.log",
+          "action": "kept",
+          "bytes": 634981
+        }
+      ]
+    }
+  ]
+}

@@ -12,6 +12,8 @@ subject to their own licenses, notices, and usage terms.
 - AIT-ADS public benchmark materials
 - Splunk Attack Data public replay logs
 - AttackBED / Suricata example data and schema bridges
+- Included convenience copies of small AIT-ADS and REAPr label tables under
+  `data/reference_labels/`
 
 ## Release policy used in this repository
 
