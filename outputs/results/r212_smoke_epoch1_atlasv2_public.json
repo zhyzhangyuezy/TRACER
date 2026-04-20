@@ -1,0 +1,98 @@
+{
+  "experiment_name": "r212_smoke_epoch1_atlasv2_public",
+  "dataset_dir": "data/atlasv2_public",
+  "model": {
+    "type": "campaign_mem_regime_router",
+    "retrieval_encoder": "itransformer",
+    "shock_encoder": "patchtst",
+    "hidden_dim": 128,
+    "embedding_dim": 128,
+    "top_k": 5,
+    "similarity_temperature": 0.15,
+    "delta_scale": 0.12,
+    "trend_kernel": 5,
+    "use_auxiliary": true,
+    "use_contrastive": true,
+    "use_hard_negatives": true,
+    "use_utility": false,
+    "use_abstention": true,
+    "use_shift_gate": true,
+    "use_aggressive_gate": true,
+    "selector_agreement_floor": 0.2,
+    "shift_floor": 0.35,
+    "shock_gate_floor": 0.1,
+    "shock_prior_scale": 0.6
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.7395371802865642,
+      "dev_metrics": {
+        "AUPRC": 0.15912809724170174,
+        "Brier": 0.02221330627799034,
+        "LeadTime@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 80.64516129032258,
+        "TTE-Err@1": 36.25
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.14537955977288636,
+        "Brier": 0.12041107565164566,
+        "LeadTime@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 54.347826086956516,
+        "TTE-Err@1": 27.5
+      }
+    }
+  ],
+  "best_dev_score": 0.3590652955603263,
+  "dev": {
+    "AUPRC": 0.15912809724170174,
+    "Brier": 0.02221330627799034,
+    "LeadTime@P80": 0.0,
+    "LeadTimeDetail": {
+      "threshold": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "lead_time": 0.0
+    },
+    "Analog-Fidelity@5": 80.64516129032258,
+    "TTE-Err@1": 36.25
+  },
+  "test": {
+    "AUPRC": 0.09336168466603248,
+    "Brier": 0.043471843004226685,
+    "LeadTime@P80": 0.0,
+    "LeadTimeDetail": {
+      "threshold": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "lead_time": 0.0
+    },
+    "Analog-Fidelity@5": 69.05882352941177,
+    "TTE-Err@1": 32.14285659790039
+  },
+  "test_event_disjoint": {
+    "AUPRC": 0.0774643340068977,
+    "Brier": 0.0705474391579628,
+    "LeadTime@P80": 0.0,
+    "LeadTimeDetail": {
+      "threshold": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "lead_time": 0.0
+    },
+    "Analog-Fidelity@5": 66.98795180722892,
+    "TTE-Err@1": 34.16666793823242
+  }
+}

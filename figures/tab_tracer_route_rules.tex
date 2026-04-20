@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Exact deterministic routing rules used by the final reported \texttt{tracer\_adaptive} policy. The policy takes a declared deployment profile, computes train/dev statistics on the current split only, evaluates the predicates from top to bottom for that profile, and then performs full preset replacement rather than partial configuration merging. Here $r_{+}^{\mathrm{train}}$ is the train positive rate, $n_{+}^{\mathrm{dev}}$ is the dev positive count, $F^{\mathrm{train}}$ is the train family count, $F_{+}^{\mathrm{train}}$ is the number of train families containing positives, $\bar{\delta}_{2}^{\mathrm{train}}$ is the mean absolute second difference of the prefix, and $\rho_{\mathrm{peak}}^{\mathrm{train}}$ is the mean peak-to-scale ratio.}
+\label{tab:tracer-route-rules}
+\maxtablewidth[0.985\textwidth]{
+\begin{tabular}{@{}llll@{}}
+\toprule
+Deployment profile & Regime & \shortstack[l]{Deterministic predicate\\(first match wins)} & Resolved mode \\
+\midrule
+Any & \shortstack[l]{\texttt{cold\_start\_}\\\texttt{sparse}} & $n_{+}^{\mathrm{dev}} = 0$ and $r_{+}^{\mathrm{train}} \le 0.02$ & LSTM fallback forecaster \\
+Any & \shortstack[l]{\texttt{extreme\_}\\\texttt{sparse}} & $r_{+}^{\mathrm{train}} \le 0.005$ & \shortstack[l]{Conservative retrieval-calibrated TRACER\\(\texttt{campaign\_mem\_v3})} \\
+Any & \shortstack[l]{\texttt{simple\_}\\\texttt{dense}} & \shortstack[l]{$r_{+}^{\mathrm{train}} \ge 0.35$,\\$\rho_{\mathrm{peak}}^{\mathrm{train}} \le 3.2$, and\\$\bar{\delta}_{2}^{\mathrm{train}} \le 0.26$} & Linear tail-risk forecaster \\
+Event-disjoint & \shortstack[l]{\texttt{dense\_low\_}\\\texttt{diversity\_event}} & \shortstack[l]{$r_{+}^{\mathrm{train}} \ge 0.05$ and\\$F^{\mathrm{train}} \le 6$} & DLinear forecaster \\
+Chronology & \shortstack[l]{\texttt{sparse\_diverse\_}\\\texttt{chrono\_spiky}} & \shortstack[l]{$F_{+}^{\mathrm{train}} \le 2$,\\$\bar{\delta}_{2}^{\mathrm{train}} \ge 0.28$, and\\$\rho_{\mathrm{peak}}^{\mathrm{train}} \ge 4.0$} & TCN forecaster \\
+\shortstack[l]{Balanced or\\chronology} & \shortstack[l]{\texttt{dense\_low\_}\\\texttt{diversity}} & \shortstack[l]{$r_{+}^{\mathrm{train}} \ge 0.05$ and\\$F^{\mathrm{train}} \le 6$} & \shortstack[l]{Balanced retrieval-calibrated TRACER\\(\texttt{campaign\_mem\_v3})} \\
+Balanced & \shortstack[l]{\texttt{sparse\_}\\\texttt{diverse}} & Otherwise & \shortstack[l]{Decomposition-guided\\TRACER core\\(\texttt{campaign\_mem\_decomp\_}\\\texttt{modular})} \\
+Chronology & \shortstack[l]{\texttt{sparse\_}\\\texttt{diverse}} & Otherwise & \shortstack[l]{Dual-selector\\chronology TRACER\\(\texttt{campaign\_mem\_dual\_}\\\texttt{selector})} \\
+Event-disjoint & \shortstack[l]{\texttt{sparse\_}\\\texttt{diverse}} & Otherwise & \shortstack[l]{Decomposition-guided\\TRACER core\\(\texttt{campaign\_mem\_decomp\_}\\\texttt{modular})} \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

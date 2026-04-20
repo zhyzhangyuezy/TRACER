@@ -1,0 +1,51 @@
+experiment_name: r084_campaign_mem_selector_staged_ait_ads_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/ait_ads_public
+model:
+  type: campaign_mem_selector
+  forecast_encoder: dlinear
+  retrieval_encoder: transformer
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  similarity_temperature: 0.15
+  delta_scale: 0.18
+  use_auxiliary: true
+  use_contrastive: true
+  use_hard_negatives: true
+  use_utility: false
+training:
+  epochs: 18
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+  auxiliary_weight: 0.25
+  contrastive_weight: 0.2
+  calibration_penalty_weight: 0.06
+  selector_weight: 0.15
+  selector_margin: 0.02
+  grad_clip: 0.85
+  retrieval_lr_scale: 0.95
+  retrieval_head_lr_scale: 1.0
+  forecast_lr_scale: 0.85
+  forecast_head_lr_scale: 0.9
+  gate_lr_scale: 0.95
+  calibration_lr_scale: 0.95
+  selector_lr_scale: 0.95
+  warmup_ratio: 0.05
+  warmdown_ratio: 0.35
+  final_lr_frac: 0.2
+  final_weight_decay_frac: 0.2
+  ema_decay: 0.99
+  freeze_forecast_until_epoch: 4
+  forecast_ramp_epochs: 2
+  freeze_calibration_until_epoch: 7
+  calibration_ramp_epochs: 3
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

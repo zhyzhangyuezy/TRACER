@@ -1,0 +1,219 @@
+{
+  "split": "test_event_disjoint",
+  "split_caption": "scenario-held-out",
+  "benchmark_caption": "supplementary AIT-ADS public",
+  "test_caption": "held-out-scenario",
+  "test_windows": 6306,
+  "test_positives": 603,
+  "table_label": "aitads-event-significance-smoke",
+  "tracer_label": "TRACER",
+  "tracer_config": "configs/experiments/r242_tracer_adaptive_event_ait_ads_public.yaml",
+  "seeds": [
+    7
+  ],
+  "bootstrap_samples": 5000,
+  "models": {
+    "TRACER": {
+      "seeds": [
+        7
+      ],
+      "base_experiment_name": "r242_tracer_adaptive_event_ait_ads_public",
+      "mean_auprc": 0.4524903030853522,
+      "std_auprc": 0.0,
+      "seed_metrics": {
+        "7": {
+          "AUPRC": 0.4524903030853522,
+          "LeadTime@P80": 15.472972972972974
+        }
+      }
+    },
+    "TCN-Forecaster": {
+      "seeds": [
+        7
+      ],
+      "base_experiment_name": "r069_tcn_forecaster_ait_ads_public",
+      "mean_auprc": 0.45493375502233174,
+      "std_auprc": 0.0,
+      "seed_metrics": {
+        "7": {
+          "AUPRC": 0.45493375502233174,
+          "LeadTime@P80": 15.705128205128204
+        }
+      }
+    },
+    "DLinear-Forecaster": {
+      "seeds": [
+        7
+      ],
+      "base_experiment_name": "r068_dlinear_forecaster_ait_ads_public",
+      "mean_auprc": 0.45598073538702466,
+      "std_auprc": 0.0,
+      "seed_metrics": {
+        "7": {
+          "AUPRC": 0.45598073538702466,
+          "LeadTime@P80": 15.425531914893616
+        }
+      }
+    },
+    "Prefix-Only-Retrieval + Fusion": {
+      "seeds": [
+        7
+      ],
+      "base_experiment_name": "r071_prefix_retrieval_ait_ads_public",
+      "mean_auprc": 0.3731200044445424,
+      "std_auprc": 0.0,
+      "seed_metrics": {
+        "7": {
+          "AUPRC": 0.3731200044445424,
+          "LeadTime@P80": 13.0
+        }
+      }
+    }
+  },
+  "pairwise": {
+    "TCN-Forecaster": {
+      "seed_wins": 0,
+      "seed_ties": 0,
+      "seed_losses": 1,
+      "mean_delta_auprc": -0.002443451936979535,
+      "std_delta_auprc": 0.0,
+      "seedwise_delta_auprc": {
+        "7": -0.002443451936979535
+      },
+      "bootstrap": {
+        "mean": -0.0031626143859371683,
+        "std": 0.0015083958690074784,
+        "ci95_low": -0.007880187280132178,
+        "ci95_high": -0.0005865479571956489,
+        "positive_mass": 0.0,
+        "nonnegative_mass": 0.0
+      },
+      "leave_one_incident_out": {
+        "rows": [
+          {
+            "held_out_incident": "aitads/harrison-aminer",
+            "mean_delta_auprc": -0.002891126642508457,
+            "windows_kept": 4870
+          },
+          {
+            "held_out_incident": "aitads/harrison-wazuh",
+            "mean_delta_auprc": -0.002302697764909045,
+            "windows_kept": 4872
+          },
+          {
+            "held_out_incident": "aitads/wilson-aminer",
+            "mean_delta_auprc": -0.0030174156070733593,
+            "windows_kept": 4583
+          },
+          {
+            "held_out_incident": "aitads/wilson-wazuh",
+            "mean_delta_auprc": -0.003015171733690092,
+            "windows_kept": 4593
+          }
+        ],
+        "positive_count": 0,
+        "nonnegative_count": 0,
+        "total": 4,
+        "min_delta_auprc": -0.0030174156070733593,
+        "max_delta_auprc": -0.002302697764909045,
+        "worst_case_incident": "aitads/wilson-aminer"
+      }
+    },
+    "DLinear-Forecaster": {
+      "seed_wins": 0,
+      "seed_ties": 0,
+      "seed_losses": 1,
+      "mean_delta_auprc": -0.0034904323016724526,
+      "std_delta_auprc": 0.0,
+      "seedwise_delta_auprc": {
+        "7": -0.0034904323016724526
+      },
+      "bootstrap": {
+        "mean": -0.004406393394211575,
+        "std": 0.006424722577863193,
+        "ci95_low": -0.019152575699852847,
+        "ci95_high": 0.004579423653263026,
+        "positive_mass": 0.3212,
+        "nonnegative_mass": 0.3212
+      },
+      "leave_one_incident_out": {
+        "rows": [
+          {
+            "held_out_incident": "aitads/harrison-aminer",
+            "mean_delta_auprc": -0.005502467769766151,
+            "windows_kept": 4870
+          },
+          {
+            "held_out_incident": "aitads/harrison-wazuh",
+            "mean_delta_auprc": -0.0006325650079021528,
+            "windows_kept": 4872
+          },
+          {
+            "held_out_incident": "aitads/wilson-aminer",
+            "mean_delta_auprc": -0.011599818836007691,
+            "windows_kept": 4583
+          },
+          {
+            "held_out_incident": "aitads/wilson-wazuh",
+            "mean_delta_auprc": 0.0011859289177245658,
+            "windows_kept": 4593
+          }
+        ],
+        "positive_count": 1,
+        "nonnegative_count": 1,
+        "total": 4,
+        "min_delta_auprc": -0.011599818836007691,
+        "max_delta_auprc": 0.0011859289177245658,
+        "worst_case_incident": "aitads/wilson-aminer"
+      }
+    },
+    "Prefix-Only-Retrieval + Fusion": {
+      "seed_wins": 1,
+      "seed_ties": 0,
+      "seed_losses": 0,
+      "mean_delta_auprc": 0.0793702986408098,
+      "std_delta_auprc": 0.0,
+      "seedwise_delta_auprc": {
+        "7": 0.0793702986408098
+      },
+      "bootstrap": {
+        "mean": 0.09268111976346709,
+        "std": 0.049345471741696935,
+        "ci95_low": 0.02740530288580756,
+        "ci95_high": 0.23326657705023926,
+        "positive_mass": 0.9958,
+        "nonnegative_mass": 0.9958
+      },
+      "leave_one_incident_out": {
+        "rows": [
+          {
+            "held_out_incident": "aitads/harrison-aminer",
+            "mean_delta_auprc": 0.047247904282969266,
+            "windows_kept": 4870
+          },
+          {
+            "held_out_incident": "aitads/harrison-wazuh",
+            "mean_delta_auprc": 0.0671051052214815,
+            "windows_kept": 4872
+          },
+          {
+            "held_out_incident": "aitads/wilson-aminer",
+            "mean_delta_auprc": 0.12015662869805321,
+            "windows_kept": 4583
+          },
+          {
+            "held_out_incident": "aitads/wilson-wazuh",
+            "mean_delta_auprc": 0.11544128366938622,
+            "windows_kept": 4593
+          }
+        ],
+        "positive_count": 4,
+        "nonnegative_count": 4,
+        "total": 4,
+        "min_delta_auprc": 0.047247904282969266,
+        "max_delta_auprc": 0.12015662869805321,
+        "worst_case_incident": "aitads/harrison-aminer"
+      }
+    }
+  }
+}

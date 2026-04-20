@@ -1,0 +1,32 @@
+experiment_name: r039_campaign_mem_plus_transformer_atlasv2_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlasv2_public
+model:
+  type: campaign_mem
+  encoder: transformer
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  similarity_weighted: true
+  retrieval_aware_gate: true
+  use_residual_fusion: true
+  similarity_temperature: 0.15
+  residual_scale: 0.20
+  use_auxiliary: true
+  use_contrastive: true
+  use_hard_negatives: true
+  use_utility: false
+training:
+  epochs: 12
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+  contrastive_weight: 0.2
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

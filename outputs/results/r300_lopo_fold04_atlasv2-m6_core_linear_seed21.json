@@ -1,0 +1,931 @@
+{
+  "experiment_name": "r300_lopo_fold04_atlasv2-m6_core_linear_seed21",
+  "dataset_dir": "data/atlasv2_lopo_family/fold04_atlasv2-m6",
+  "model": {
+    "type": "campaign_mem_decomp_modular",
+    "retrieval_encoder": "transformer",
+    "stable_encoder": "dlinear",
+    "shock_encoder": "patchtst",
+    "hidden_dim": 128,
+    "embedding_dim": 128,
+    "top_k": 5,
+    "similarity_temperature": 0.15,
+    "delta_scale": 0.18,
+    "calibration_transform": "linear",
+    "trend_kernel": 5,
+    "use_auxiliary": true,
+    "use_contrastive": true,
+    "use_hard_negatives": true,
+    "use_utility": false,
+    "use_abstention": true,
+    "use_uncertainty_gate": false,
+    "use_shift_gate": true,
+    "use_aggressive_gate": true,
+    "aggressive_route_on_delta": true,
+    "selector_agreement_floor": 0.2,
+    "shift_floor": 0.35,
+    "aggressive_gate_floor": 0.15
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.3756433219240423,
+      "dev_metrics": {
+        "AUPRC": 0.4057014231344499,
+        "AUROC": 0.6645658263305322,
+        "Brier": 0.03479711390424125,
+        "LogLoss": 0.14074027848490075,
+        "ECE@10": 0.02486864992231131,
+        "BestF1": 0.5333333333333333,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.5492780208587646,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 71.84,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.1453275754746343,
+        "AUROC": 0.3333333333333333,
+        "Brier": 0.13399996795117314,
+        "LogLoss": 0.6214880475656775,
+        "ECE@10": 0.1359437003063605,
+        "BestF1": 0.25,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 60.86956521739131,
+        "TTE-Err@1": 26.66666603088379
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.1942577399705585,
+      "dev_metrics": {
+        "AUPRC": 0.46136665192392745,
+        "AUROC": 0.9334733893557423,
+        "Brier": 0.03497888480374869,
+        "LogLoss": 0.12466376250998129,
+        "ECE@10": 0.02035544794425368,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.5379679799079895,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 72.32,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.3058358909752098,
+        "AUROC": 0.7916666666666666,
+        "Brier": 0.1293405629506336,
+        "LogLoss": 0.37255536382456994,
+        "ECE@10": 0.1592995774218529,
+        "BestF1": 0.4799999999999999,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 59.130434782608695,
+        "TTE-Err@1": 25.83333396911621
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.718565132952573,
+      "dev_metrics": {
+        "AUPRC": 0.3647977470558116,
+        "AUROC": 0.9432773109243697,
+        "Brier": 0.03478312088645413,
+        "LogLoss": 0.12386267381638201,
+        "ECE@10": 0.02942108308337629,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 72.8,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.2949346405228758,
+        "AUROC": 0.8166666666666667,
+        "Brier": 0.10933756188962088,
+        "LogLoss": 0.3003432163864054,
+        "ECE@10": 0.10182150997412542,
+        "BestF1": 0.5217391304347826,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 60.86956521739131,
+        "TTE-Err@1": 26.66666603088379
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.9897934698221976,
+      "dev_metrics": {
+        "AUPRC": 0.3462148962148962,
+        "AUROC": 0.946078431372549,
+        "Brier": 0.03883484576106482,
+        "LogLoss": 0.13674084135331763,
+        "ECE@10": 0.04401516371779143,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 73.11999999999999,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.23056722689075632,
+        "AUROC": 0.7375,
+        "Brier": 0.1507899957507359,
+        "LogLoss": 0.4306479392496113,
+        "ECE@10": 0.1704080684876712,
+        "BestF1": 0.5,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 60.86956521739131,
+        "TTE-Err@1": 26.66666603088379
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.6573013644469412,
+      "dev_metrics": {
+        "AUPRC": 0.3462148962148962,
+        "AUROC": 0.946078431372549,
+        "Brier": 0.0398935463281937,
+        "LogLoss": 0.13845397324985398,
+        "ECE@10": 0.06776837770547717,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 72.64,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.23354341736694678,
+        "AUROC": 0.74375,
+        "Brier": 0.17854752309760338,
+        "LogLoss": 0.5367955154767795,
+        "ECE@10": 0.19400588996770396,
+        "BestF1": 0.5,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 59.130434782608695,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6704392897455316,
+      "dev_metrics": {
+        "AUPRC": 0.4158730158730159,
+        "AUROC": 0.9558823529411765,
+        "Brier": 0.04055512617015467,
+        "LogLoss": 0.13475129644196024,
+        "ECE@10": 0.044122828042134646,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 75.03999999999999,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.3406746031746032,
+        "AUROC": 0.8541666666666666,
+        "Brier": 0.11651533767555688,
+        "LogLoss": 0.3487036781081016,
+        "ECE@10": 0.12019985975854543,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 62.17391304347826,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.6260353296472315,
+      "dev_metrics": {
+        "AUPRC": 0.4351851851851851,
+        "AUROC": 0.9572829131652661,
+        "Brier": 0.04157390340648635,
+        "LogLoss": 0.13249546802319456,
+        "ECE@10": 0.047884127539116896,
+        "BestF1": 0.5555555555555556,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 73.11999999999999,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.2613036881419234,
+        "AUROC": 0.7791666666666667,
+        "Brier": 0.1116922944788072,
+        "LogLoss": 0.3151827943488399,
+        "ECE@10": 0.10260898577610572,
+        "BestF1": 0.5217391304347826,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 61.30434782608696,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.7055993548610754,
+      "dev_metrics": {
+        "AUPRC": 0.47962962962962963,
+        "AUROC": 0.9600840336134453,
+        "Brier": 0.04081694932469465,
+        "LogLoss": 0.12591298298150386,
+        "ECE@10": 0.036578104447340595,
+        "BestF1": 0.5555555555555556,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 71.2,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.32693602693602697,
+        "AUROC": 0.8270833333333334,
+        "Brier": 0.11777930692150837,
+        "LogLoss": 0.3395592000814965,
+        "ECE@10": 0.11764223817527122,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 61.30434782608696,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.6872334752689329,
+      "dev_metrics": {
+        "AUPRC": 0.47962962962962963,
+        "AUROC": 0.9600840336134453,
+        "Brier": 0.04084516610100284,
+        "LogLoss": 0.1226773281254111,
+        "ECE@10": 0.033153156953863804,
+        "BestF1": 0.5555555555555556,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 71.2,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.5455026455026455,
+        "AUROC": 0.9125,
+        "Brier": 0.1047114225350371,
+        "LogLoss": 0.3102028047254868,
+        "ECE@10": 0.09415449282792193,
+        "BestF1": 0.6666666666666666,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.16137799620628357,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 60.86956521739131,
+        "TTE-Err@1": 26.66666603088379
+      }
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.7213642449755417,
+      "dev_metrics": {
+        "AUPRC": 0.5674681598594642,
+        "AUROC": 0.9516806722689075,
+        "Brier": 0.03902235616566797,
+        "LogLoss": 0.11843697562422457,
+        "ECE@10": 0.03291549049154856,
+        "BestF1": 0.6,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 71.2,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.5832362082362083,
+        "AUROC": 0.9208333333333334,
+        "Brier": 0.12697303631184154,
+        "LogLoss": 0.44887038980915267,
+        "ECE@10": 0.13187328865719988,
+        "BestF1": 0.631578947368421,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 59.130434782608695,
+        "TTE-Err@1": 25.83333396911621
+      }
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.6918052798823306,
+      "dev_metrics": {
+        "AUPRC": 0.6230237154150197,
+        "AUROC": 0.9530812324929973,
+        "Brier": 0.03519512821013314,
+        "LogLoss": 0.10836331967236998,
+        "ECE@10": 0.027419381119310852,
+        "BestF1": 0.6,
+        "LeadTime@P80": 20.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.3333333333333333,
+        "LeadTimeDetail": {
+          "threshold": 0.8336899876594543,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "lead_time": 20.0
+        },
+        "Analog-Fidelity@5": 72.64,
+        "TTE-Err@1": 26.66666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.4690359477124183,
+        "AUROC": 0.8541666666666667,
+        "Brier": 0.11409304891599378,
+        "LogLoss": 0.36844728844877744,
+        "ECE@10": 0.10500647746021455,
+        "BestF1": 0.5217391304347826,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.09691599756479263,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 60.43478260869565,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.5107394268115362,
+      "dev_metrics": {
+        "AUPRC": 0.6684704184704184,
+        "AUROC": 0.9572829131652661,
+        "Brier": 0.03422123274972532,
+        "LogLoss": 0.10438473548531597,
+        "ECE@10": 0.027411139183677734,
+        "BestF1": 0.6666666666666666,
+        "LeadTime@P80": 20.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.3333333333333333,
+        "LeadTimeDetail": {
+          "threshold": 0.8404600024223328,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "lead_time": 20.0
+        },
+        "Analog-Fidelity@5": 72.16,
+        "TTE-Err@1": 29.16666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.6279461279461279,
+        "AUROC": 0.9479166666666666,
+        "Brier": 0.10413482787649186,
+        "LogLoss": 0.2945137833005197,
+        "ECE@10": 0.11657148485328828,
+        "BestF1": 0.7058823529411764,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 61.73913043478261,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.5284171980724001,
+      "dev_metrics": {
+        "AUPRC": 0.6684704184704184,
+        "AUROC": 0.9572829131652661,
+        "Brier": 0.03322469030491625,
+        "LogLoss": 0.10255194640124399,
+        "ECE@10": 0.025734386344207456,
+        "BestF1": 0.6666666666666666,
+        "LeadTime@P80": 20.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.5,
+        "LeadTimeDetail": {
+          "threshold": 0.8516600131988525,
+          "precision": 1.0,
+          "recall": 0.5,
+          "lead_time": 20.0
+        },
+        "Analog-Fidelity@5": 72.0,
+        "TTE-Err@1": 29.16666603088379
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.4271464646464646,
+        "AUROC": 0.8916666666666667,
+        "Brier": 0.10174841852978972,
+        "LogLoss": 0.29234292639272813,
+        "ECE@10": 0.09708664149018106,
+        "BestF1": 0.6666666666666666,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 62.60869565217392,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.7744068363256622,
+      "dev_metrics": {
+        "AUPRC": 0.6268037518037517,
+        "AUROC": 0.9558823529411764,
+        "Brier": 0.03317598682704547,
+        "LogLoss": 0.10266650260932744,
+        "ECE@10": 0.027561688978224995,
+        "BestF1": 0.6,
+        "LeadTime@P80": 20.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.3333333333333333,
+        "LeadTimeDetail": {
+          "threshold": 0.8814679980278015,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "lead_time": 20.0
+        },
+        "Analog-Fidelity@5": 70.56,
+        "TTE-Err@1": 28.33333396911621
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.4180555555555555,
+        "AUROC": 0.8854166666666666,
+        "Brier": 0.12311677022639018,
+        "LogLoss": 0.4682883497635258,
+        "ECE@10": 0.11841297962382669,
+        "BestF1": 0.6666666666666666,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 62.60869565217392,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.5598626601068597,
+      "dev_metrics": {
+        "AUPRC": 0.5753968253968254,
+        "AUROC": 0.9572829131652661,
+        "Brier": 0.03344078092770392,
+        "LogLoss": 0.10442411589705708,
+        "ECE@10": 0.029544343387591654,
+        "BestF1": 0.6,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.9150509834289551,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 70.39999999999999,
+        "TTE-Err@1": 28.33333396911621
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.40668498168498174,
+        "AUROC": 0.8875000000000001,
+        "Brier": 0.11436121896926048,
+        "LogLoss": 0.3628583814531604,
+        "ECE@10": 0.11521970269614425,
+        "BestF1": 0.631578947368421,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 61.30434782608696,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.4753433177345677,
+      "dev_metrics": {
+        "AUPRC": 0.5226190476190476,
+        "AUROC": 0.9544817927170868,
+        "Brier": 0.03439595686103896,
+        "LogLoss": 0.10869101955582255,
+        "ECE@10": 0.03344719084003009,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.9278519749641418,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 68.8,
+        "TTE-Err@1": 28.33333396911621
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.6634920634920635,
+        "AUROC": 0.9562499999999999,
+        "Brier": 0.10112567178717831,
+        "LogLoss": 0.28786437711460194,
+        "ECE@10": 0.11453243193144494,
+        "BestF1": 0.7692307692307692,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 60.86956521739131,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.46739488583907746,
+      "dev_metrics": {
+        "AUPRC": 0.4392857142857142,
+        "AUROC": 0.9530812324929971,
+        "Brier": 0.0360104933374127,
+        "LogLoss": 0.11506556403027647,
+        "ECE@10": 0.03558751947467681,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 68.47999999999999,
+        "TTE-Err@1": 28.33333396911621
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.5797979797979798,
+        "AUROC": 0.9375,
+        "Brier": 0.10870226769935268,
+        "LogLoss": 0.33352023803150277,
+        "ECE@10": 0.10293145890460911,
+        "BestF1": 0.7058823529411764,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 61.73913043478261,
+        "TTE-Err@1": 26.66666603088379
+      }
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.4783444412967615,
+      "dev_metrics": {
+        "AUPRC": 0.4392857142857143,
+        "AUROC": 0.9530812324929973,
+        "Brier": 0.03693993536468573,
+        "LogLoss": 0.1192103290364901,
+        "ECE@10": 0.03614739467995241,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 72.8,
+        "TTE-Err@1": 28.33333396911621
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.6231481481481481,
+        "AUROC": 0.9520833333333334,
+        "Brier": 0.11018128710047241,
+        "LogLoss": 0.3343564746219151,
+        "ECE@10": 0.11112932010323477,
+        "BestF1": 0.7499999999999999,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 61.73913043478261,
+        "TTE-Err@1": 27.5
+      }
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.4317742901935912,
+      "dev_metrics": {
+        "AUPRC": 0.5226190476190476,
+        "AUROC": 0.9544817927170869,
+        "Brier": 0.03817685392524096,
+        "LogLoss": 0.12340743286905438,
+        "ECE@10": 0.03788829526712653,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.9598069787025452,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 72.64,
+        "TTE-Err@1": 25.0
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.5797979797979798,
+        "AUROC": 0.9375,
+        "Brier": 0.09195395074410154,
+        "LogLoss": 0.2554704257399054,
+        "ECE@10": 0.09812240495264869,
+        "BestF1": 0.7058823529411764,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 62.60869565217392,
+        "TTE-Err@1": 26.66666603088379
+      }
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.460204303473757,
+      "dev_metrics": {
+        "AUPRC": 0.5226190476190476,
+        "AUROC": 0.9544817927170869,
+        "Brier": 0.03859033533575002,
+        "LogLoss": 0.1253279698216513,
+        "ECE@10": 0.03835899992007762,
+        "BestF1": 0.5714285714285715,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.16666666666666666,
+        "LeadTimeDetail": {
+          "threshold": 0.963083028793335,
+          "precision": 1.0,
+          "recall": 0.16666666666666666,
+          "lead_time": 25.0
+        },
+        "Analog-Fidelity@5": 71.04,
+        "TTE-Err@1": 25.0
+      },
+      "proxy_event_metrics": {
+        "AUPRC": 0.5697450697450698,
+        "AUROC": 0.91875,
+        "Brier": 0.10409260413974895,
+        "LogLoss": 0.30356517444344516,
+        "ECE@10": 0.0972542235716031,
+        "BestF1": 0.7058823529411764,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 62.17391304347826,
+        "TTE-Err@1": 27.5
+      }
+    }
+  ],
+  "best_dev_score": 1.5357652894911848,
+  "checkpoint_average_top_k": 3,
+  "model_selection_start_epoch": 8,
+  "dev": {
+    "AUPRC": 0.6268037518037517,
+    "AUROC": 0.9558823529411765,
+    "Brier": 0.03396504853853461,
+    "LogLoss": 0.1052763372953068,
+    "ECE@10": 0.026831709749531002,
+    "BestF1": 0.6,
+    "LeadTime@P80": 20.0,
+    "Precision@P80": 1.0,
+    "Recall@P80": 0.3333333333333333,
+    "LeadTimeDetail": {
+      "threshold": 0.8744660019874573,
+      "precision": 1.0,
+      "recall": 0.3333333333333333,
+      "lead_time": 20.0
+    },
+    "Analog-Fidelity@5": 69.76,
+    "TTE-Err@1": 29.16666603088379
+  },
+  "test": {
+    "AUPRC": 0.23191214470284238,
+    "AUROC": 0.903448275862069,
+    "Brier": 0.03927252616472844,
+    "LogLoss": 0.13404944631530438,
+    "ECE@10": 0.02196054179753356,
+    "BestF1": 0.4,
+    "LeadTime@P80": 0.0,
+    "Precision@P80": 0.0,
+    "Recall@P80": 0.0,
+    "LeadTimeDetail": {
+      "threshold": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "lead_time": 0.0
+    },
+    "Analog-Fidelity@5": 78.80794701986756,
+    "TTE-Err@1": 23.33333396911621
+  },
+  "test_event_disjoint": {
+    "AUPRC": 0.23191214470284238,
+    "AUROC": 0.903448275862069,
+    "Brier": 0.03927252616472844,
+    "LogLoss": 0.13404944631530438,
+    "ECE@10": 0.02196054179753356,
+    "BestF1": 0.4,
+    "LeadTime@P80": 0.0,
+    "Precision@P80": 0.0,
+    "Recall@P80": 0.0,
+    "LeadTimeDetail": {
+      "threshold": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "lead_time": 0.0
+    },
+    "Analog-Fidelity@5": 78.80794701986756,
+    "TTE-Err@1": 23.33333396911621
+  }
+}

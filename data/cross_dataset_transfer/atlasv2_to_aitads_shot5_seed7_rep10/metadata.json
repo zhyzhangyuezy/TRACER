@@ -1,0 +1,127 @@
+{
+  "dataset_name": "cross_transfer_atlasv2_to_aitads_shot5_seed7",
+  "description": "Common-channel cross-dataset transfer/few-shot audit dataset.",
+  "source_dataset": "atlasv2",
+  "target_dataset": "aitads",
+  "target_test_split": "test",
+  "target_positive_support": 5,
+  "target_support_repeat": 10,
+  "support_sampling_seed": 7,
+  "feature_channels": [
+    "recon",
+    "auth_abuse",
+    "execution",
+    "persistence",
+    "priv_esc",
+    "cred_access",
+    "lateral_move",
+    "c2",
+    "collection_exfil",
+    "impact",
+    "defense_evasion",
+    "other",
+    "event_count",
+    "severity_mean",
+    "severity_max"
+  ],
+  "projection": "shared 15 current-prefix channels; dataset-specific host and count channels removed",
+  "normalization": "z-score using the constructed train split only",
+  "analog_fidelity_distance_threshold": 0.35,
+  "source_train": {
+    "samples": 438,
+    "positives": 12,
+    "positive_rate": 0.0273972602739726,
+    "families": 23,
+    "incidents": 24
+  },
+  "source_dev": {
+    "samples": 155,
+    "positives": 4,
+    "positive_rate": 0.025806451612903226,
+    "families": 8,
+    "incidents": 10
+  },
+  "target_train_support_raw": {
+    "samples": 20,
+    "positives": 5,
+    "positive_rate": 0.25,
+    "families": 4,
+    "incidents": 7
+  },
+  "target_dev_support_raw": {
+    "samples": 8,
+    "positives": 2,
+    "positive_rate": 0.25,
+    "families": 2,
+    "incidents": 2
+  },
+  "target_train_support_after_repeat": {
+    "samples": 200,
+    "positives": 50,
+    "positive_rate": 0.25,
+    "families": 4,
+    "incidents": 7
+  },
+  "target_dev_support_after_repeat": {
+    "samples": 80,
+    "positives": 20,
+    "positive_rate": 0.25,
+    "families": 2,
+    "incidents": 2
+  },
+  "train": {
+    "samples": 638,
+    "positives": 62,
+    "positive_rate": 0.09717868338557993,
+    "families": 27,
+    "incidents": 31
+  },
+  "dev": {
+    "samples": 235,
+    "positives": 24,
+    "positive_rate": 0.10212765957446808,
+    "families": 10,
+    "incidents": 12
+  },
+  "test": {
+    "samples": 4579,
+    "positives": 251,
+    "positive_rate": 0.05481546189124263,
+    "families": 2,
+    "incidents": 3
+  },
+  "zscore_mean": [
+    0.15909090638160706,
+    0.19283339381217957,
+    0.6191102862358093,
+    0.03171295300126076,
+    0.01691805012524128,
+    0.0,
+    0.0003918495203834027,
+    0.0,
+    0.00699958810582757,
+    0.0,
+    0.011363636702299118,
+    0.1577550321817398,
+    1.00885808467865,
+    0.09824129194021225,
+    0.11122004687786102
+  ],
+  "zscore_std": [
+    0.6270507574081421,
+    0.7786544561386108,
+    2.1553337574005127,
+    0.17951487004756927,
+    0.1572999209165573,
+    1.0,
+    0.019791796803474426,
+    1.0,
+    0.07268941402435303,
+    1.0,
+    0.1986149102449417,
+    0.6504862904548645,
+    2.4971323013305664,
+    0.17408528923988342,
+    0.19898393750190735
+  ]
+}

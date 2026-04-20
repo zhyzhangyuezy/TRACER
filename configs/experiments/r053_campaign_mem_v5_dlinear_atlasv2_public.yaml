@@ -1,0 +1,31 @@
+experiment_name: r053_campaign_mem_v5_dlinear_atlasv2_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlasv2_public
+model:
+  type: campaign_mem_v5
+  forecast_encoder: dlinear
+  retrieval_encoder: transformer
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  similarity_temperature: 0.15
+  delta_scale: 0.25
+  use_auxiliary: true
+  use_contrastive: true
+  use_hard_negatives: true
+  use_utility: false
+training:
+  epochs: 12
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+  contrastive_weight: 0.2
+  calibration_penalty_weight: 0.05
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

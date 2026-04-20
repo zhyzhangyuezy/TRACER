@@ -1,0 +1,40 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Public ATLASv2 benchmark results on chronological and family-held-out evaluation. Mean and standard deviation are computed over seeds 7, 13, and 21. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier and TTE-Err@1.}
+\label{tab:atlasv2-public-main}
+\maxtablewidth{
+\begin{tabular}{llccccc}
+\toprule
+Split & Method & AUPRC & LeadTime@P80 & AF@5 & TTE-Err@1 & Brier \\
+\midrule
+Chronological & LR-TailRisk & $0.533 \pm 0.010$ & $\underline{5.00 \pm 0.00}$ & -- & -- & $0.036 \pm 0.000$ \\
+Chronological & DLinear-Forecaster & $0.490 \pm 0.017$ & $\underline{5.00 \pm 0.00}$ & -- & -- & $\underline{0.035 \pm 0.001}$ \\
+Chronological & TimesNet-Forecaster & $0.059 \pm 0.017$ & $0.00 \pm 0.00$ & -- & -- & $0.047 \pm 0.007$ \\
+Chronological & TiDE-Forecaster & $0.092 \pm 0.035$ & $0.00 \pm 0.00$ & -- & -- & $0.040 \pm 0.001$ \\
+Chronological & TSMixer-Forecaster & $0.072 \pm 0.013$ & $0.00 \pm 0.00$ & -- & -- & $0.040 \pm 0.000$ \\
+Chronological & TCN-Forecaster & $\mathbf{0.677 \pm 0.081}$ & $4.72 \pm 3.36$ & -- & -- & $0.037 \pm 0.000$ \\
+Chronological & LSTM-Forecaster & $\underline{0.615 \pm 0.032}$ & $3.33 \pm 2.36$ & -- & -- & $\mathbf{0.034 \pm 0.000}$ \\
+Chronological & PatchTST-Forecaster & $0.064 \pm 0.010$ & $0.00 \pm 0.00$ & -- & -- & $0.040 \pm 0.000$ \\
+Chronological & Small-Transformer-Forecaster & $0.538 \pm 0.049$ & $1.67 \pm 2.36$ & -- & -- & $\mathbf{0.034 \pm 0.002}$ \\
+Chronological & iTransformer-Forecaster & $0.077 \pm 0.017$ & $0.00 \pm 0.00$ & -- & -- & $0.040 \pm 0.001$ \\
+Chronological & Pure-kNN-Retrieval & $0.046 \pm 0.000$ & $0.00 \pm 0.00$ & $\underline{69.88 \pm 0.00}$ & $\mathbf{29.29 \pm 0.00}$ & $0.044 \pm 0.000$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $0.274 \pm 0.055$ & $0.00 \pm 0.00$ & $\mathbf{70.63 \pm 1.25}$ & $\underline{29.76 \pm 2.36}$ & $0.037 \pm 0.001$ \\
+Chronological & TRACER & $\mathbf{0.677 \pm 0.081}$ & $\mathbf{6.39 \pm 1.04}$ & -- & -- & $0.037 \pm 0.000$ \\
+\midrule
+Event-disjoint & DLinear-Forecaster & $0.742 \pm 0.021$ & $\mathbf{11.67 \pm 1.18}$ & -- & -- & $0.059 \pm 0.002$ \\
+Event-disjoint & TimesNet-Forecaster & $0.213 \pm 0.062$ & $6.67 \pm 4.71$ & -- & -- & $0.068 \pm 0.000$ \\
+Event-disjoint & TiDE-Forecaster & $0.372 \pm 0.008$ & $3.33 \pm 4.71$ & -- & -- & $0.068 \pm 0.004$ \\
+Event-disjoint & TSMixer-Forecaster & $0.310 \pm 0.155$ & $3.33 \pm 4.71$ & -- & -- & $0.065 \pm 0.003$ \\
+Event-disjoint & TCN-Forecaster & $0.717 \pm 0.035$ & $\mathbf{11.67 \pm 3.12}$ & -- & -- & $0.063 \pm 0.001$ \\
+Event-disjoint & LSTM-Forecaster & $0.743 \pm 0.034$ & $\mathbf{11.67 \pm 1.18}$ & -- & -- & $0.055 \pm 0.001$ \\
+Event-disjoint & PatchTST-Forecaster & $0.257 \pm 0.065$ & $3.33 \pm 4.71$ & -- & -- & $0.068 \pm 0.001$ \\
+Event-disjoint & Small-Transformer-Forecaster & $\underline{0.767 \pm 0.000}$ & $\underline{10.83 \pm 1.18}$ & -- & -- & $\underline{0.049 \pm 0.014}$ \\
+Event-disjoint & iTransformer-Forecaster & $0.258 \pm 0.069$ & $0.00 \pm 0.00$ & -- & -- & $0.066 \pm 0.003$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $0.701 \pm 0.110$ & $\underline{10.83 \pm 2.36}$ & $\underline{70.20 \pm 3.20}$ & $\underline{26.94 \pm 4.32}$ & $0.055 \pm 0.012$ \\
+Event-disjoint & TRACER & $\mathbf{0.775 \pm 0.012}$ & $\mathbf{11.67 \pm 1.18}$ & $\mathbf{71.89 \pm 3.63}$ & $\mathbf{25.28 \pm 1.57}$ & $\mathbf{0.035 \pm 0.002}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

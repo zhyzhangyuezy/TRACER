@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Boundary-margin audit for the released \texttt{tracer\_adaptive} routes. The nearest-margin column reports the smallest signed slack to the threshold expression that most tightly supports the current route. Positive margins indicate that the observed benchmark sits on the intended side of the active boundary rather than exactly on it.}
+\label{tab:tracer-route-margins}
+\maxtablewidth{
+\begin{tabular}{llllcc}
+\toprule
+Dataset & Objective & Regime & Resolved model & Nearest margin & Tightest expression \\
+\midrule
+ATLASv2 & chronology & sparse\_diverse\_chrono\_spiky & tcn & 0.000 & $2 - F_{+}^{\mathrm{train}}$ \\
+ATLASv2 & event-disjoint & sparse\_diverse & campaign\_mem\_decomp\_modular & 0.022 & $r_{+}^{\mathrm{train}} - 0.005$ \\
+AIT-ADS & balanced & dense\_low\_diversity & campaign\_mem\_v3 & 0.039 & $r_{+}^{\mathrm{train}} - 0.05$ \\
+AIT-ADS & event-disjoint & dense\_low\_diversity\_event & dlinear & 0.039 & $r_{+}^{\mathrm{train}} - 0.05$ \\
+ATLAS-Raw & balanced & extreme\_sparse & campaign\_mem\_v3 & 0.003 & $0.005 - r_{+}^{\mathrm{train}}$ \\
+Synthetic-CAM-LDS & balanced & simple\_dense & tail\_risk\_linear & 0.027 & $0.26 - \bar{\delta}_{2}^{\mathrm{train}}$ \\
+Workbook probe & balanced & cold\_start\_sparse & lstm & 0.014 & $0.02 - r_{+}^{\mathrm{train}}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Cross-dataset transfer and few-shot adaptation audit. Standard uses source train/dev plus optional target support once. Target-replay10 repeats sampled target-domain support windows ten times during training and model selection, while never using target test windows as support. Values are AUPRC mean $\pm$ standard deviation over three seeds.}
+\label{tab:cross-dataset-transfer}
+\maxtablewidth{
+\begin{tabular}{llrllll}
+\toprule
+Setting & Support & Shot & DLinear & Prefix & TRACER & Best / route \\
+\midrule
+AIT-ADS -> ATLASv2 & standard & 0 & 0.045 $\pm$ 0.005 & 0.052 $\pm$ 0.002 & 0.066 $\pm$ 0.006 & TRACER; dense\_low\_diversity \\
+ & standard & 5 & 0.050 $\pm$ 0.008 & 0.058 $\pm$ 0.009 & 0.066 $\pm$ 0.006 & TRACER; sparse\_diverse \\
+ & replay10 & 5 & 0.074 $\pm$ 0.018 & 0.070 $\pm$ 0.012 & 0.071 $\pm$ 0.012 & DLinear; sparse\_diverse \\
+ & standard & 20 & 0.054 $\pm$ 0.011 & 0.053 $\pm$ 0.005 & 0.085 $\pm$ 0.019 & TRACER; sparse\_diverse \\
+ & replay10 & 20 & 0.069 $\pm$ 0.010 & 0.065 $\pm$ 0.018 & 0.100 $\pm$ 0.009 & TRACER; sparse\_diverse \\
+ATLASv2 -> AIT-ADS & standard & 0 & 0.051 $\pm$ 0.007 & 0.086 $\pm$ 0.007 & 0.058 $\pm$ 0.004 & Prefix-Only; sparse\_diverse \\
+ & standard & 5 & 0.214 $\pm$ 0.031 & 0.365 $\pm$ 0.103 & 0.379 $\pm$ 0.047 & TRACER; sparse\_diverse \\
+ & replay10 & 5 & 0.332 $\pm$ 0.083 & 0.334 $\pm$ 0.052 & 0.317 $\pm$ 0.043 & Prefix-Only; sparse\_diverse \\
+ & standard & 20 & 0.255 $\pm$ 0.110 & 0.366 $\pm$ 0.043 & 0.311 $\pm$ 0.051 & Prefix-Only; sparse\_diverse \\
+ & replay10 & 20 & 0.419 $\pm$ 0.061 & 0.294 $\pm$ 0.064 & 0.270 $\pm$ 0.061 & DLinear; sparse\_diverse \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

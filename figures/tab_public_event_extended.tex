@@ -1,0 +1,29 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Extended family-held-out event-disjoint comparison with additional parametric and retrieval controls. Mean and standard deviation are computed over seeds 7, 13, and 21. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier and TTE-Err@1.}
+\label{tab:atlasv2-public-event-extended}
+\maxtablewidth{
+\begin{tabular}{lccccc}
+\toprule
+Method & AUPRC & LeadTime@P80 & AF@5 & TTE-Err@1 & Brier \\
+\midrule
+LR-TailRisk & $0.644 \pm 0.095$ & $10.00 \pm 2.04$ & -- & -- & $0.060 \pm 0.001$ \\
+DLinear-Forecaster & $0.742 \pm 0.021$ & $\mathbf{11.67 \pm 1.18}$ & -- & -- & $0.059 \pm 0.002$ \\
+TimesNet-Forecaster & $0.213 \pm 0.062$ & $6.67 \pm 4.71$ & -- & -- & $0.068 \pm 0.000$ \\
+TiDE-Forecaster & $0.372 \pm 0.008$ & $3.33 \pm 4.71$ & -- & -- & $0.068 \pm 0.004$ \\
+TSMixer-Forecaster & $0.310 \pm 0.155$ & $3.33 \pm 4.71$ & -- & -- & $0.065 \pm 0.003$ \\
+TCN-Forecaster & $0.717 \pm 0.035$ & $\mathbf{11.67 \pm 3.12}$ & -- & -- & $0.063 \pm 0.001$ \\
+LSTM-Forecaster & $0.743 \pm 0.034$ & $\mathbf{11.67 \pm 1.18}$ & -- & -- & $0.055 \pm 0.001$ \\
+PatchTST-Forecaster & $0.257 \pm 0.065$ & $3.33 \pm 4.71$ & -- & -- & $0.068 \pm 0.001$ \\
+Small-Transformer-Forecaster & $\underline{0.767 \pm 0.000}$ & $\underline{10.83 \pm 1.18}$ & -- & -- & $\underline{0.049 \pm 0.014}$ \\
+iTransformer-Forecaster & $0.258 \pm 0.069$ & $0.00 \pm 0.00$ & -- & -- & $0.066 \pm 0.003$ \\
+Pure-kNN-Retrieval & $0.270 \pm 0.000$ & $10.00 \pm 0.00$ & $\mathbf{78.31 \pm 0.00}$ & $30.00 \pm 0.00$ & $0.062 \pm 0.000$ \\
+Random-Retrieval + Fusion & $0.651 \pm 0.135$ & $7.50 \pm 5.40$ & $\underline{74.46 \pm 1.23}$ & $\underline{26.39 \pm 0.79}$ & $0.052 \pm 0.006$ \\
+Prefix-Only-Retrieval + Fusion & $0.701 \pm 0.110$ & $\underline{10.83 \pm 2.36}$ & $70.20 \pm 3.20$ & $26.94 \pm 4.32$ & $0.055 \pm 0.012$ \\
+TRACER & $\mathbf{0.775 \pm 0.012}$ & $\mathbf{11.67 \pm 1.18}$ & $71.89 \pm 3.63$ & $\mathbf{25.28 \pm 1.57}$ & $\mathbf{0.035 \pm 0.002}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

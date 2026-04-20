@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.8pt}
+\caption{Additional discrimination and calibration diagnostics for headline methods on the primary ATLASv2 benchmark. These rows come from a full metric-refresh rerun under the current evaluator because the original public baseline archives predate the expanded metric set. They are supplementary diagnostics and do not replace the archived headline tables. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for ECE@10 and LogLoss.}
+\label{tab:atlasv2-discrimination-calibration}
+\maxtablewidth{
+\begin{tabular}{llcccc}
+\toprule
+Split & Method & AUROC & BestF1 & ECE@10 & LogLoss \\
+\midrule
+Chronological & TRACER & $\mathbf{0.980 \pm 0.004}$ & $\underline{0.712 \pm 0.017}$ & $\mathbf{0.030 \pm 0.003}$ & $\underline{0.126 \pm 0.003}$ \\
+Chronological & TCN-Forecaster & $\mathbf{0.980 \pm 0.004}$ & $\underline{0.712 \pm 0.017}$ & $\mathbf{0.030 \pm 0.003}$ & $\underline{0.126 \pm 0.003}$ \\
+Chronological & Small-Transformer-Forecaster & $\underline{0.976 \pm 0.002}$ & $\mathbf{0.725 \pm 0.017}$ & $\underline{0.031 \pm 0.008}$ & $\mathbf{0.115 \pm 0.022}$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $0.913 \pm 0.009$ & $0.424 \pm 0.027$ & $\underline{0.031 \pm 0.006}$ & $0.143 \pm 0.011$ \\
+\midrule
+Event-disjoint & TRACER & $\mathbf{0.964 \pm 0.007}$ & $\mathbf{0.756 \pm 0.063}$ & $\mathbf{0.036 \pm 0.005}$ & $\mathbf{0.114 \pm 0.004}$ \\
+Event-disjoint & DLinear-Forecaster & $0.952 \pm 0.005$ & $\mathbf{0.756 \pm 0.063}$ & $0.047 \pm 0.006$ & $0.187 \pm 0.010$ \\
+Event-disjoint & LSTM-Forecaster & $\mathbf{0.964 \pm 0.006}$ & $\mathbf{0.756 \pm 0.063}$ & $0.050 \pm 0.003$ & $0.171 \pm 0.004$ \\
+Event-disjoint & Small-Transformer-Forecaster & $\underline{0.958 \pm 0.004}$ & $\mathbf{0.756 \pm 0.063}$ & $\underline{0.046 \pm 0.013}$ & $\underline{0.169 \pm 0.052}$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $0.948 \pm 0.031$ & $\underline{0.676 \pm 0.128}$ & $0.059 \pm 0.009$ & $0.225 \pm 0.026$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

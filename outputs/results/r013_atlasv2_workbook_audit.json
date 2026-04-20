@@ -1,0 +1,295 @@
+{
+  "dataset_dir": "data\\atlasv2_workbook",
+  "metadata": {
+    "dataset_name": "atlasv2_workbook_campaign_mem",
+    "description": "ATLASv2 alert-label workbook projected into Campaign-MEM rolling windows.",
+    "source_workbook": "external_sources\\atlasv2\\docs\\edr_alert_labels.xlsx",
+    "reapr_labels_csv": "external_sources/reapr-ground-truth/atlasv2/atlasv2_labels.csv",
+    "bin_minutes": 5,
+    "lookback_bins": 4,
+    "main_horizon_minutes": 30,
+    "aux_horizon_minutes": 10,
+    "feature_channels": [
+      "recon",
+      "auth_abuse",
+      "execution",
+      "persistence",
+      "priv_esc",
+      "cred_access",
+      "lateral_move",
+      "c2",
+      "collection_exfil",
+      "impact",
+      "defense_evasion",
+      "other",
+      "event_count",
+      "severity_mean",
+      "severity_max",
+      "malicious_count",
+      "artifact_count",
+      "host_h1",
+      "host_h2"
+    ],
+    "analog_fidelity_distance_threshold": 0.35,
+    "incidents": [
+      {
+        "incident_id": "atlasv2/h1-benign",
+        "family_id": "atlasv2/benign",
+        "events": 246,
+        "windows": 1292,
+        "malicious_events": 2,
+        "attack_window": "benign",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-m1",
+        "family_id": "atlasv2/m1",
+        "events": 25,
+        "windows": 18,
+        "malicious_events": 1,
+        "attack_window": "m1",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-m3",
+        "family_id": "atlasv2/m3",
+        "events": 14,
+        "windows": 2,
+        "malicious_events": 1,
+        "attack_window": "m3",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-m4",
+        "family_id": "atlasv2/m4",
+        "events": 19,
+        "windows": 2,
+        "malicious_events": 5,
+        "attack_window": "m4",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-m5",
+        "family_id": "atlasv2/m5",
+        "events": 45,
+        "windows": 2,
+        "malicious_events": 17,
+        "attack_window": "m5",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-s2",
+        "family_id": "atlasv2/s2",
+        "events": 18,
+        "windows": 3,
+        "malicious_events": 1,
+        "attack_window": "s2",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-s3",
+        "family_id": "atlasv2/s3",
+        "events": 31,
+        "windows": 5,
+        "malicious_events": 13,
+        "attack_window": "s3",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h1-s4",
+        "family_id": "atlasv2/s4",
+        "events": 35,
+        "windows": 2,
+        "malicious_events": 13,
+        "attack_window": "s4",
+        "host": "h1"
+      },
+      {
+        "incident_id": "atlasv2/h2-benign",
+        "family_id": "atlasv2/benign",
+        "events": 572,
+        "windows": 1285,
+        "malicious_events": 0,
+        "attack_window": "benign",
+        "host": "h2"
+      },
+      {
+        "incident_id": "atlasv2/h2-m1",
+        "family_id": "atlasv2/m1",
+        "events": 40,
+        "windows": 17,
+        "malicious_events": 0,
+        "attack_window": "m1",
+        "host": "h2"
+      },
+      {
+        "incident_id": "atlasv2/h2-m4",
+        "family_id": "atlasv2/m4",
+        "events": 11,
+        "windows": 2,
+        "malicious_events": 0,
+        "attack_window": "m4",
+        "host": "h2"
+      },
+      {
+        "incident_id": "atlasv2/h2-m6",
+        "family_id": "atlasv2/m6",
+        "events": 13,
+        "windows": 2,
+        "malicious_events": 0,
+        "attack_window": "m6",
+        "host": "h2"
+      }
+    ],
+    "reapr_process_summary": {
+      "atlasv2/h1-m1": {
+        " attack": 26,
+        " benign": 647,
+        " contaminated": 33
+      },
+      "atlasv2/h1-m2": {
+        " attack": 11,
+        " benign": 313,
+        " contaminated": 38
+      },
+      "atlasv2/h1-m3": {
+        " attack": 11,
+        " benign": 303,
+        " contaminated": 22
+      },
+      "atlasv2/h1-m4": {
+        " attack": 17,
+        " benign": 344,
+        " contaminated": 46
+      },
+      "atlasv2/h1-m5": {
+        " attack": 58,
+        " benign": 346,
+        " contaminated": 49
+      },
+      "atlasv2/h1-m6": {
+        " attack": 24,
+        " benign": 301,
+        " contaminated": 37
+      },
+      "atlasv2/h1-s1": {
+        " attack": 33,
+        " benign": 274,
+        " contaminated": 15
+      },
+      "atlasv2/h1-s2": {
+        " attack": 11,
+        " benign": 317,
+        " contaminated": 18
+      },
+      "atlasv2/h1-s3": {
+        " attack": 23,
+        " benign": 325,
+        " contaminated": 35
+      },
+      "atlasv2/h1-s4": {
+        " attack": 37,
+        " benign": 313,
+        " contaminated": 23
+      },
+      "atlasv2/h2-m1": {
+        " attack": 8,
+        " benign": 506,
+        " contaminated": 40
+      },
+      "atlasv2/h2-m2": {
+        " attack": 8,
+        " benign": 561,
+        " contaminated": 48
+      },
+      "atlasv2/h2-m3": {
+        " attack": 8,
+        " benign": 317,
+        " contaminated": 33
+      },
+      "atlasv2/h2-m4": {
+        " attack": 7,
+        " benign": 349,
+        " contaminated": 17
+      },
+      "atlasv2/h2-m5": {
+        " attack": 7,
+        " benign": 311,
+        " contaminated": 40
+      },
+      "atlasv2/h2-m6": {
+        " attack": 9,
+        " benign": 307,
+        " contaminated": 36
+      }
+    }
+  },
+  "splits": {
+    "train": {
+      "samples": 1593,
+      "seq_len": 4,
+      "feature_dim": 19,
+      "positive_rate_main": 0.006277463864535093,
+      "positive_rate_aux": 0.0037664782721549273,
+      "incident_count": 8,
+      "family_count": 6,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 13.0,
+        "median": 10.0,
+        "min": 5.0,
+        "max": 30.0
+      }
+    },
+    "dev": {
+      "samples": 520,
+      "seq_len": 4,
+      "feature_dim": 19,
+      "positive_rate_main": 0.0,
+      "positive_rate_aux": 0.0,
+      "incident_count": 4,
+      "family_count": 3,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      }
+    },
+    "test": {
+      "samples": 519,
+      "seq_len": 4,
+      "feature_dim": 19,
+      "positive_rate_main": 0.02504817023873329,
+      "positive_rate_aux": 0.009633911773562431,
+      "incident_count": 4,
+      "family_count": 3,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 16.538461685180664,
+        "median": 15.0,
+        "min": 5.0,
+        "max": 30.0
+      }
+    }
+  },
+  "overlap": {
+    "train__dev": {
+      "incident_overlap": 2,
+      "family_overlap": 2
+    },
+    "train__test": {
+      "incident_overlap": 2,
+      "family_overlap": 1
+    },
+    "dev__test": {
+      "incident_overlap": 2,
+      "family_overlap": 1
+    }
+  },
+  "checks": {
+    "incident_leakage_free": false,
+    "event_disjoint_family_free": true
+  }
+}

@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3pt}
+\caption{Cold-start and deployment-cost audit for the deterministic adaptive policy. Counts and regimes are read from the released seed result JSONs; AUPRC values come from the corresponding seeded or 20-seed audits. The bank footprint is a dense float32 embedding-bank estimate for retrieval-active routes and is zero for fallback routes.}
+\label{tab:cold-start-cost-audit}
+\maxtablewidth{
+\begin{tabular}{lrrrllcc}
+\toprule
+Setting & Train +/N & Dev + & Fam. +/N & Regime & Route & AUPRC & Bank MiB \\
+\midrule
+ATLASv2 chronology & 12/438 & 4 & 2/23 & sparse\_diverse\_chrono\_spiky & tcn (fallback) & $0.677 \pm 0.081$ & $0.00$ \\
+ATLASv2 held-out-family & 12/438 & 4 & 2/23 & sparse\_diverse & campaign\_mem\_decomp\_modular & $0.763 \pm 0.041$ & $0.21$ \\
+AIT-ADS chronology & 813/9119 & 230 & 4/4 & dense\_low\_diversity & campaign\_mem\_v3 & $0.532 \pm 0.021$ & $4.45$ \\
+AIT-ADS held-out-scenario & 813/9119 & 230 & 4/4 & dense\_low\_diversity\_event & dlinear (fallback) & $0.450 \pm 0.013$ & $0.00$ \\
+ATLAS-Raw chronology & 89/46156 & 18 & 7/8 & extreme\_sparse & campaign\_mem\_v3 & $0.461 \pm 0.078$ & $22.54$ \\
+ATLAS-Raw event-disjoint & 89/46156 & 18 & 7/8 & extreme\_sparse & campaign\_mem\_v3 & $0.403 \pm 0.097$ & $22.54$ \\
+Synthetic CAM-LDS & 429/640 & 116 & 18/18 & simple\_dense & tail\_risk\_linear (fallback) & $0.975 \pm 0.001$ & $0.00$ \\
+Workbook probe & 10/1593 & 0 & 4/6 & cold\_start\_sparse & lstm (fallback) & $0.133 \pm 0.141$ & $0.00$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

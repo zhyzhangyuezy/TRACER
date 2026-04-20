@@ -1,0 +1,167 @@
+{
+  "experiment_name": "r006_transformer_forecaster_smoke",
+  "dataset_dir": "data/synthetic_cam_lds",
+  "model": {
+    "type": "transformer",
+    "encoder": "transformer",
+    "hidden_dim": 128,
+    "embedding_dim": 128,
+    "use_auxiliary": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.5184420138597489,
+      "dev_metrics": {
+        "AUPRC": 0.9501690407550848,
+        "Brier": 0.12156350558328488,
+        "LeadTime@P80": 19.359342575073242,
+        "LeadTimeDetail": {
+          "threshold": 0.35426801443099976,
+          "precision": 0.8429752066115702,
+          "recall": 0.8793103448275862,
+          "lead_time": 19.359342575073242
+        }
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.20507007092237473,
+      "dev_metrics": {
+        "AUPRC": 0.949622633634497,
+        "Brier": 0.1718625115053104,
+        "LeadTime@P80": 18.947755813598633,
+        "LeadTimeDetail": {
+          "threshold": 0.6342949867248535,
+          "precision": 0.8,
+          "recall": 0.8620689655172413,
+          "lead_time": 18.947755813598633
+        }
+      }
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.10985325835645199,
+      "dev_metrics": {
+        "AUPRC": 0.9585365844579585,
+        "Brier": 0.14023777407846094,
+        "LeadTime@P80": 19.14202117919922,
+        "LeadTimeDetail": {
+          "threshold": 0.014836999587714672,
+          "precision": 0.8088235294117647,
+          "recall": 0.9482758620689655,
+          "lead_time": 19.14202117919922
+        }
+      }
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.09153731819242239,
+      "dev_metrics": {
+        "AUPRC": 0.9663374422387221,
+        "Brier": 0.11538139681186549,
+        "LeadTime@P80": 19.14202117919922,
+        "LeadTimeDetail": {
+          "threshold": 0.0019490000559017062,
+          "precision": 0.8029197080291971,
+          "recall": 0.9482758620689655,
+          "lead_time": 19.14202117919922
+        }
+      }
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.06512446710839867,
+      "dev_metrics": {
+        "AUPRC": 0.9614196395257176,
+        "Brier": 0.13054407452315175,
+        "LeadTime@P80": 19.14202117919922,
+        "LeadTimeDetail": {
+          "threshold": 0.0007740000146441162,
+          "precision": 0.8029197080291971,
+          "recall": 0.9482758620689655,
+          "lead_time": 19.14202117919922
+        }
+      }
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.05136297829449177,
+      "dev_metrics": {
+        "AUPRC": 0.95550874099722,
+        "Brier": 0.14780171943372702,
+        "LeadTime@P80": 19.075700759887695,
+        "LeadTimeDetail": {
+          "threshold": 0.002643000101670623,
+          "precision": 0.8074074074074075,
+          "recall": 0.9396551724137931,
+          "lead_time": 19.075700759887695
+        }
+      }
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.03536513911094517,
+      "dev_metrics": {
+        "AUPRC": 0.9694984621097953,
+        "Brier": 0.1101969150188676,
+        "LeadTime@P80": 19.14202117919922,
+        "LeadTimeDetail": {
+          "threshold": 0.0014619999565184116,
+          "precision": 0.8088235294117647,
+          "recall": 0.9482758620689655,
+          "lead_time": 19.14202117919922
+        }
+      }
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.028952486300840973,
+      "dev_metrics": {
+        "AUPRC": 0.9674174786630934,
+        "Brier": 0.12521943385777204,
+        "LeadTime@P80": 19.158662796020508,
+        "LeadTimeDetail": {
+          "threshold": 0.0019970000721514225,
+          "precision": 0.8014705882352942,
+          "recall": 0.9396551724137931,
+          "lead_time": 19.158662796020508
+        }
+      }
+    }
+  ],
+  "best_dev_score": 0.9694984621097953,
+  "dev": {
+    "AUPRC": 0.9694984621097953,
+    "Brier": 0.1101969150188676,
+    "LeadTime@P80": 19.14202117919922,
+    "LeadTimeDetail": {
+      "threshold": 0.0014619999565184116,
+      "precision": 0.8088235294117647,
+      "recall": 0.9482758620689655,
+      "lead_time": 19.14202117919922
+    }
+  },
+  "test": {
+    "AUPRC": 0.9248594411083524,
+    "Brier": 0.3740156548984599,
+    "LeadTime@P80": 18.02971839904785,
+    "LeadTimeDetail": {
+      "threshold": 6.500000017695129e-05,
+      "precision": 0.8024691358024691,
+      "recall": 0.9923664122137404,
+      "lead_time": 18.02971839904785
+    }
+  },
+  "test_event_disjoint": {
+    "AUPRC": 0.9228225178327815,
+    "Brier": 0.28140599557076357,
+    "LeadTime@P80": 18.30092430114746,
+    "LeadTimeDetail": {
+      "threshold": 0.00017600000137463212,
+      "precision": 0.8016528925619835,
+      "recall": 0.7950819672131147,
+      "lead_time": 18.30092430114746
+    }
+  }
+}

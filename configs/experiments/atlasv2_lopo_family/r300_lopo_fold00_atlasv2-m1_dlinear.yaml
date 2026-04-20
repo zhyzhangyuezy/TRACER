@@ -1,0 +1,24 @@
+experiment_name: r300_lopo_fold00_atlasv2-m1_dlinear
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlasv2_lopo_family/fold00_atlasv2-m1
+  test_split: test
+  event_disjoint_split: test_event_disjoint
+model:
+  type: dlinear
+  encoder: dlinear
+  hidden_dim: 128
+  embedding_dim: 128
+  use_auxiliary: true
+training:
+  epochs: 12
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

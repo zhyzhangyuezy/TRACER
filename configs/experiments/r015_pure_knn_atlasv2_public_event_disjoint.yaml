@@ -1,0 +1,14 @@
+experiment_name: r015_pure_knn_atlasv2_public_event_disjoint
+seed: 7
+data:
+  dataset_dir: data/atlasv2_public
+  test_split: test_event_disjoint
+  event_disjoint_split: skip_event_copy
+model:
+  type: pure_knn
+  top_k: 5
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

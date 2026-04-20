@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Splunk Attack Data public raw-log probe. Selected public logs are projected into incident-disjoint event-bucket windows using deterministic MITRE-stage/keyword labels. Values are mean$\pm$std over three seeds except Pure kNN, which is deterministic. This is an external stress test rather than analyst-labeled triage evidence.}
+\label{tab:splunk-attack-data-probe}
+\maxtablewidth{\begin{tabular}{lccccc}
+\toprule
+Method & Test AUPRC & Event AUPRC & AUROC & Brier & AF@5 \\
+\midrule
+TRACER adaptive & 0.688 $\pm$ 0.008 & 0.688 $\pm$ 0.008 & 0.902 $\pm$ 0.000 & 0.123 $\pm$ 0.002 & 83.3 $\pm$ 0.2 \\
+TRACER core & \textbf{0.690 $\pm$ 0.008} & 0.690 $\pm$ 0.008 & 0.899 $\pm$ 0.004 & 0.114 $\pm$ 0.002 & 83.5 $\pm$ 0.4 \\
+DLinear & 0.657 $\pm$ 0.012 & 0.657 $\pm$ 0.012 & 0.890 $\pm$ 0.005 & 0.118 $\pm$ 0.002 & 83.3 $\pm$ 0.2 \\
+Prefix-only & 0.687 $\pm$ 0.004 & 0.687 $\pm$ 0.004 & 0.899 $\pm$ 0.001 & 0.123 $\pm$ 0.005 & 83.6 $\pm$ 0.3 \\
+Pure kNN & 0.550 $\pm$ 0.000 & 0.550 $\pm$ 0.000 & 0.763 $\pm$ 0.000 & 0.152 $\pm$ 0.000 & 84.4 $\pm$ 0.0 \\
+\bottomrule
+\end{tabular}}
+\end{table}

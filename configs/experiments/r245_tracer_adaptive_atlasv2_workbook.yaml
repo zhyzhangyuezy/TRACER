@@ -1,0 +1,44 @@
+experiment_name: r245_tracer_adaptive_atlasv2_workbook
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlasv2_workbook
+model:
+  type: campaign_mem_decomp_modular
+  retrieval_encoder: transformer
+  stable_encoder: dlinear
+  shock_encoder: patchtst
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  similarity_temperature: 0.15
+  delta_scale: 0.12
+  trend_kernel: 5
+  use_auxiliary: true
+  use_contrastive: true
+  use_hard_negatives: true
+  use_utility: false
+  use_abstention: true
+  use_uncertainty_gate: false
+  use_shift_gate: true
+  use_aggressive_gate: true
+  aggressive_route_on_delta: true
+  selector_agreement_floor: 0.20
+  shift_floor: 0.35
+  aggressive_gate_floor: 0.15
+auto_component_policy:
+  name: tracer_adaptive
+  objective: balanced
+training:
+  epochs: 12
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+  contrastive_weight: 0.2
+  calibration_penalty_weight: 0.05
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

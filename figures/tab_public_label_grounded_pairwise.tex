@@ -1,0 +1,17 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Paired label-grounded evidence deltas on the ATLASv2 held-out-family split. All deltas favor the final TRACER route when positive. $\Delta$CleanNeg@5 is defined as baseline NegContam@5 minus TRACER NegContam@5, so positive values mean that TRACER retrieves cleaner negatives. Confidence intervals come from paired incident-block bootstrap over the released held-out incidents.}
+\label{tab:atlasv2-label-grounded-pairwise}
+\maxtablewidth{
+\begin{tabular}{lcccccc}
+\toprule
+Baseline & $\Delta$PosHit@5 & 95\% CI & $\Delta$AlertedPosPrec@5 & 95\% CI & $\Delta$CleanNeg@5 & 95\% CI \\
+\midrule
+Prefix-Only-Retrieval + Fusion & $+5.6$ & $[0.0, 5.6]$ & $+6.7$ & $[0.0, 6.7]$ & $-0.5$ & $[-2.4, 0.0]$ \\
+Shared-Encoder TRACER & $-33.3$ & $[-33.3, 0.0]$ & $+20.0$ & $[0.0, 20.0]$ & $+1.6$ & $[-0.1, 5.8]$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.8pt}
+\caption{Additional discrimination and calibration diagnostics for the supplementary ATLAS-Raw benchmark, regenerated from the full metric-refresh public-suite rerun under the current evaluator. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for ECE@10 and LogLoss.}
+\label{tab:atlasraw-discrimination-calibration}
+\maxtablewidth{
+\begin{tabular}{llcccc}
+\toprule
+Split & Method & AUROC & BestF1 & ECE@10 & LogLoss \\
+\midrule
+Chronological & TRACER & $\underline{0.830 \pm 0.231}$ & $0.444 \pm 0.072$ & $0.006 \pm 0.001$ & $0.044 \pm 0.010$ \\
+Chronological & Small-Transformer-Forecaster & $0.584 \pm 0.066$ & $0.379 \pm 0.016$ & $\underline{0.005 \pm 0.001}$ & $0.042 \pm 0.003$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $0.745 \pm 0.002$ & $\underline{0.456 \pm 0.084}$ & $\mathbf{0.004 \pm 0.001}$ & $\underline{0.036 \pm 0.006}$ \\
+Chronological & DLinear-Calibrated TRACER & $\mathbf{0.993 \pm 0.001}$ & $\mathbf{0.501 \pm 0.023}$ & $0.006 \pm 0.002$ & $\mathbf{0.026 \pm 0.012}$ \\
+Chronological & Selector-Conservative TRACER & $0.639 \pm 0.191$ & $0.383 \pm 0.028$ & $\underline{0.005 \pm 0.001}$ & $0.046 \pm 0.002$ \\
+Chronological & ATLASv2-Tuned TRACER Core Transfer & $0.613 \pm 0.104$ & $0.402 \pm 0.088$ & $0.006 \pm 0.001$ & $0.039 \pm 0.002$ \\
+\midrule
+Event-disjoint & TRACER & $0.608 \pm 0.179$ & $0.500 \pm 0.000$ & $\underline{0.001 \pm 0.000}$ & $\underline{0.013 \pm 0.001}$ \\
+Event-disjoint & Small-Transformer-Forecaster & $0.609 \pm 0.090$ & $0.436 \pm 0.056$ & $\mathbf{0.000 \pm 0.000}$ & $\mathbf{0.012 \pm 0.000}$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $0.543 \pm 0.123$ & $0.005 \pm 0.002$ & $0.003 \pm 0.004$ & $0.014 \pm 0.003$ \\
+Event-disjoint & DLinear-Calibrated TRACER & $0.604 \pm 0.270$ & $\mathbf{0.590 \pm 0.127}$ & $0.136 \pm 0.191$ & $0.202 \pm 0.272$ \\
+Event-disjoint & Selector-Conservative TRACER & $\underline{0.711 \pm 0.205}$ & $\underline{0.514 \pm 0.019}$ & $\underline{0.001 \pm 0.000}$ & $\mathbf{0.012 \pm 0.000}$ \\
+Event-disjoint & ATLASv2-Tuned TRACER Core Transfer & $\mathbf{0.888 \pm 0.075}$ & $0.368 \pm 0.251$ & $0.002 \pm 0.001$ & $\mathbf{0.012 \pm 0.002}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

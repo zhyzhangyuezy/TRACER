@@ -1,0 +1,30 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{AIT-ADS public benchmark results over three public seeds. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier. The later TRACER-family rows report promoted benchmark-specific variants retained from the training-strategy sweep; they are informative as supplementary evidence, but they do not replace the primary ATLASv2 evidence base.}
+\label{tab:aitads-public-main}
+\maxtablewidth{
+\begin{tabular}{llcccc}
+\toprule
+Split & Method & AUPRC & LeadTime@P80 & AF@5 & Brier \\
+\midrule
+Chronological & DLinear-Forecaster & $0.520 \pm 0.012$ & $12.81 \pm 0.26$ & -- & $\underline{0.033 \pm 0.000}$ \\
+Chronological & TCN-Forecaster & $0.484 \pm 0.018$ & $4.47 \pm 6.33$ & -- & $0.036 \pm 0.002$ \\
+Chronological & Small-Transformer-Forecaster & $0.512 \pm 0.033$ & $\underline{14.49 \pm 0.86}$ & -- & $0.035 \pm 0.002$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $\underline{0.532 \pm 0.034}$ & $14.14 \pm 0.71$ & $95.01 \pm 0.16$ & $\mathbf{0.032 \pm 0.001}$ \\
+Chronological & TRACER & $\mathbf{0.548 \pm 0.011}$ & $\mathbf{14.66 \pm 0.68}$ & $\underline{95.45 \pm 0.20}$ & $\mathbf{0.032 \pm 0.000}$ \\
+Chronological & Staged TRACER & $0.527 \pm 0.011$ & $\underline{14.49 \pm 0.28}$ & $\mathbf{95.53 \pm 0.12}$ & $\mathbf{0.032 \pm 0.000}$ \\
+Chronological & Abstention-Aware TRACER & $0.529 \pm 0.022$ & $14.41 \pm 0.82$ & $95.24 \pm 0.24$ & $\underline{0.033 \pm 0.000}$ \\
+\midrule
+Event-disjoint & DLinear-Forecaster & $\underline{0.454 \pm 0.004}$ & $15.56 \pm 0.37$ & -- & $\underline{0.066 \pm 0.001}$ \\
+Event-disjoint & TCN-Forecaster & $\mathbf{0.455 \pm 0.018}$ & $\mathbf{17.21 \pm 1.21}$ & -- & $\mathbf{0.065 \pm 0.001}$ \\
+Event-disjoint & Small-Transformer-Forecaster & $0.431 \pm 0.018$ & $\underline{17.00 \pm 0.29}$ & -- & $0.067 \pm 0.000$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $0.418 \pm 0.011$ & $16.35 \pm 0.12$ & $95.03 \pm 0.15$ & $0.067 \pm 0.002$ \\
+Event-disjoint & TRACER & $\underline{0.454 \pm 0.004}$ & $15.56 \pm 0.37$ & -- & $\underline{0.066 \pm 0.001}$ \\
+Event-disjoint & Staged TRACER & $0.447 \pm 0.006$ & $15.37 \pm 1.02$ & $\mathbf{95.26 \pm 0.20}$ & $0.067 \pm 0.001$ \\
+Event-disjoint & Abstention-Aware TRACER & $0.441 \pm 0.006$ & $14.40 \pm 1.80$ & $\underline{95.20 \pm 0.16}$ & $0.067 \pm 0.001$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Label-grounded evidence audit on the ATLASv2 held-out-family split. These metrics are computed only from retrieved train labels, not from the future-signature space used by AF@5 or TTE-Err@1. Higher is better for PosHit@1, PosHit@5, PosPrec@5, and AlertedPosPrec@5; lower is better for NegContam@5. The alert rate column reports the fraction of held-out windows whose score exceeds the dev-derived operating threshold.}
+\label{tab:atlasv2-label-grounded-evidence}
+\maxtablewidth{
+\begin{tabular}{lcccccc}
+\toprule
+Method & PosHit@1 & PosHit@5 & PosPrec@5 & AlertedPosPrec@5 & NegContam@5 & Alert rate \\
+\midrule
+Pure-kNN-Retrieval & $0.0 \pm 0.0$ & $66.7 \pm 0.0$ & $16.7 \pm 0.0$ & $40.0 \pm 0.0$ & $3.9 \pm 0.0$ & $1.2 \pm 0.0$ \\
+Prefix-Only-Retrieval + Fusion & $5.6 \pm 7.9$ & $44.4 \pm 7.9$ & $12.2 \pm 5.7$ & $20.0 \pm 16.3$ & $0.1 \pm 0.1$ & $2.4 \pm 2.0$ \\
+Shared-Encoder TRACER & $33.3 \pm 23.6$ & $83.3 \pm 13.6$ & $18.9 \pm 5.7$ & $6.7 \pm 9.4$ & $2.3 \pm 1.1$ & $0.8 \pm 1.1$ \\
+TRACER & $16.7 \pm 13.6$ & $50.0 \pm 13.6$ & $14.4 \pm 5.7$ & $26.7 \pm 24.9$ & $0.6 \pm 0.4$ & $0.8 \pm 0.6$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

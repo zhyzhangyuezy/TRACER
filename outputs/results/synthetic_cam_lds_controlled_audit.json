@@ -1,0 +1,122 @@
+{
+  "dataset_dir": "C:\\Users\\Administrator\\OneDrive\\跑程序\\auto科研\\Auto-claude-code-research-in-sleep-main\\data\\synthetic_cam_lds_controlled",
+  "metadata": {
+    "dataset_name": "synthetic_cam_lds_controlled",
+    "description": "Controlled synthetic Campaign-MEM benchmark for large-sample route validation.",
+    "seed": 7,
+    "seq_len": 12,
+    "feature_dim": 16,
+    "signature_dim": 8,
+    "analog_fidelity_distance_threshold": 0.45,
+    "main_horizon_minutes": 30,
+    "aux_horizon_minutes": 10,
+    "split_counts": {
+      "train": 2048,
+      "dev": 512,
+      "test": 512,
+      "test_event_disjoint": 512
+    },
+    "family_counts": {
+      "train": 24,
+      "dev": 8,
+      "test": 8,
+      "test_event_disjoint": 10
+    }
+  },
+  "splits": {
+    "train": {
+      "samples": 2048,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.65087890625,
+      "positive_rate_aux": 0.0166015625,
+      "incident_count": 2048,
+      "family_count": 24,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 18.68811798095703,
+        "median": 18.862953186035156,
+        "min": 7.494721412658691,
+        "max": 30.0
+      }
+    },
+    "dev": {
+      "samples": 512,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.650390625,
+      "positive_rate_aux": 0.021484375,
+      "incident_count": 512,
+      "family_count": 8,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 17.94501304626465,
+        "median": 17.591154098510742,
+        "min": 7.619608402252197,
+        "max": 29.880027770996094
+      }
+    },
+    "test": {
+      "samples": 512,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.68359375,
+      "positive_rate_aux": 0.015625,
+      "incident_count": 512,
+      "family_count": 8,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 18.082080841064453,
+        "median": 17.613819122314453,
+        "min": 7.579990863800049,
+        "max": 29.56534194946289
+      }
+    },
+    "test_event_disjoint": {
+      "samples": 512,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.65625,
+      "positive_rate_aux": 0.02734375,
+      "incident_count": 512,
+      "family_count": 10,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 18.08588218688965,
+        "median": 18.10323715209961,
+        "min": 7.30183219909668,
+        "max": 30.0
+      }
+    }
+  },
+  "overlap": {
+    "train__dev": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "train__test": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "train__test_event_disjoint": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "dev__test": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "dev__test_event_disjoint": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "test__test_event_disjoint": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    }
+  },
+  "checks": {
+    "incident_leakage_free": true,
+    "event_disjoint_family_free": true
+  }
+}

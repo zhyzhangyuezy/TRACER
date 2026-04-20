@@ -1,0 +1,24 @@
+experiment_name: r330_transfer_dlinear_aitads_to_atlasv2_shot20_seed13
+seed: 13
+device: cuda
+data:
+  dataset_dir: data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed13
+  test_split: test
+  event_disjoint_split: skip_event_copy
+model:
+  type: dlinear
+  encoder: dlinear
+  hidden_dim: 128
+  embedding_dim: 128
+  use_auxiliary: true
+training:
+  epochs: 8
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results/cross_dataset_transfer

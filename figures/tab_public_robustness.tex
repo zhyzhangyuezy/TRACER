@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Secondary workbook-derived public probe with expanded parametric and retrieval baselines. This table is supplementary because the workbook split is not family-held-out. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier and TTE-Err@1.}
+\label{tab:atlasv2-public-robustness}
+\maxtablewidth{
+\begin{tabular}{lccccc}
+\toprule
+Method & AUPRC & LeadTime@P80 & AF@5 & TTE-Err@1 & Brier \\
+\midrule
+LR-TailRisk & $0.023 \pm 0.003$ & $0.00 \pm 0.00$ & -- & -- & $\underline{0.026 \pm 0.001}$ \\
+TCN-Forecaster & $0.032 \pm 0.001$ & $0.00 \pm 0.00$ & -- & -- & $\mathbf{0.025 \pm 0.000}$ \\
+LSTM-Forecaster & $\mathbf{0.232 \pm 0.143}$ & $0.00 \pm 0.00$ & -- & -- & $\mathbf{0.025 \pm 0.000}$ \\
+Small-Transformer-Forecaster & $0.150 \pm 0.030$ & $\mathbf{3.33 \pm 2.36}$ & -- & -- & $\mathbf{0.025 \pm 0.000}$ \\
+Prefix-Only-Retrieval + Fusion & $\underline{0.162 \pm 0.032}$ & $\underline{1.67 \pm 2.36}$ & $\mathbf{81.70 \pm 0.19}$ & $\mathbf{3578.1 \pm 779.7}$ & $\mathbf{0.025 \pm 0.000}$ \\
+TRACER & $0.133 \pm 0.141$ & $0.00 \pm 0.00$ & -- & -- & $\mathbf{0.025 \pm 0.000}$ \\
+Shared-Encoder TRACER & $0.070 \pm 0.026$ & $\underline{1.67 \pm 2.36}$ & $\underline{81.61 \pm 1.26}$ & $\underline{4403.2 \pm 144.3}$ & $\mathbf{0.025 \pm 0.000}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

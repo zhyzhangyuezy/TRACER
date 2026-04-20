@@ -1,0 +1,22 @@
+experiment_name: r031_tcn_forecaster_atlas_raw_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlas_raw_public
+model:
+  type: tcn
+  encoder: tcn
+  hidden_dim: 96
+  embedding_dim: 96
+  use_auxiliary: true
+training:
+  epochs: 12
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

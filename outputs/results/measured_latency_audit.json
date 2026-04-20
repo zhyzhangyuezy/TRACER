@@ -1,0 +1,45 @@
+{
+  "audit": "Measured exact-top-k versus LSH lookup latency microbenchmark",
+  "rows": [
+    {
+      "setting": "ATLASv2 held-out-family",
+      "query_count": 83,
+      "bank_size": 438,
+      "embedding_dim": 128,
+      "lsh_bits": 6,
+      "exact_ms_per_query": 0.0038751807379635446,
+      "lsh_ms_per_query": 0.024505020081847306,
+      "lsh_recall_at_5": 26.506024096385545,
+      "lsh_mean_candidates": 101.21686746987952,
+      "lsh_fallback_rate": 21.686746987951807,
+      "repeats": 30
+    },
+    {
+      "setting": "AIT-ADS chronology",
+      "query_count": 4579,
+      "bank_size": 9119,
+      "embedding_dim": 128,
+      "lsh_bits": 8,
+      "exact_ms_per_query": 0.04725983620863993,
+      "lsh_ms_per_query": 0.00798540511024514,
+      "lsh_recall_at_5": 1.6815898667831404,
+      "lsh_mean_candidates": 39.21249181043896,
+      "lsh_fallback_rate": 0.0,
+      "repeats": 30
+    },
+    {
+      "setting": "ATLAS-Raw chronology",
+      "query_count": 1880,
+      "bank_size": 46156,
+      "embedding_dim": 128,
+      "lsh_bits": 10,
+      "exact_ms_per_query": 0.2419898563829333,
+      "lsh_ms_per_query": 0.013155718085165953,
+      "lsh_recall_at_5": 0.6063829787234043,
+      "lsh_mean_candidates": 52.19095744680851,
+      "lsh_fallback_rate": 0.0,
+      "repeats": 30
+    }
+  ],
+  "note": "The microbenchmark isolates retrieval lookup cost by using random normalized 128-dimensional float32 embeddings with the same bank sizes as the released retrieval-active routes. It measures CPU wall-clock lookup time on this workstation and reports an LSH-style approximate candidate lookup as a lightweight ANN stress test, not as a production index recommendation."
+}

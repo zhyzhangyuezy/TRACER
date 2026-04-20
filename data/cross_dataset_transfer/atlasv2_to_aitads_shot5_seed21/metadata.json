@@ -1,0 +1,112 @@
+{
+  "dataset_name": "cross_transfer_atlasv2_to_aitads_shot5_seed21",
+  "description": "Common-channel cross-dataset transfer/few-shot audit dataset.",
+  "source_dataset": "atlasv2",
+  "target_dataset": "aitads",
+  "target_test_split": "test",
+  "target_positive_support": 5,
+  "support_sampling_seed": 21,
+  "feature_channels": [
+    "recon",
+    "auth_abuse",
+    "execution",
+    "persistence",
+    "priv_esc",
+    "cred_access",
+    "lateral_move",
+    "c2",
+    "collection_exfil",
+    "impact",
+    "defense_evasion",
+    "other",
+    "event_count",
+    "severity_mean",
+    "severity_max"
+  ],
+  "projection": "shared 15 current-prefix channels; dataset-specific host and count channels removed",
+  "normalization": "z-score using the constructed train split only",
+  "analog_fidelity_distance_threshold": 0.35,
+  "source_train": {
+    "samples": 438,
+    "positives": 12,
+    "positive_rate": 0.0273972602739726,
+    "families": 23,
+    "incidents": 24
+  },
+  "source_dev": {
+    "samples": 155,
+    "positives": 4,
+    "positive_rate": 0.025806451612903226,
+    "families": 8,
+    "incidents": 10
+  },
+  "target_train_support": {
+    "samples": 20,
+    "positives": 5,
+    "positive_rate": 0.25,
+    "families": 4,
+    "incidents": 6
+  },
+  "target_dev_support": {
+    "samples": 8,
+    "positives": 2,
+    "positive_rate": 0.25,
+    "families": 2,
+    "incidents": 2
+  },
+  "train": {
+    "samples": 458,
+    "positives": 17,
+    "positive_rate": 0.03711790393013101,
+    "families": 27,
+    "incidents": 30
+  },
+  "dev": {
+    "samples": 163,
+    "positives": 6,
+    "positive_rate": 0.03680981595092025,
+    "families": 10,
+    "incidents": 12
+  },
+  "test": {
+    "samples": 4579,
+    "positives": 251,
+    "positive_rate": 0.05481546189124263,
+    "families": 2,
+    "incidents": 3
+  },
+  "zscore_mean": [
+    0.2216157168149948,
+    0.05502689257264137,
+    0.679469883441925,
+    0.04077136889100075,
+    0.0012568696402013302,
+    0.0,
+    0.0011455307248979807,
+    0.0,
+    0.0025617615319788456,
+    0.0,
+    0.015829693526029587,
+    0.02127753756940365,
+    1.0222386121749878,
+    0.06175735592842102,
+    0.07239808887243271
+  ],
+  "zscore_std": [
+    0.7306547164916992,
+    0.3638548254966736,
+    2.417013168334961,
+    0.2055922895669937,
+    0.040921762585639954,
+    1.0,
+    0.034689389169216156,
+    1.0,
+    0.04938723146915436,
+    1.0,
+    0.23426546156406403,
+    0.16190782189369202,
+    2.7673213481903076,
+    0.10482693463563919,
+    0.1332942545413971
+  ]
+}

@@ -1,0 +1,21 @@
+experiment_name: r004_tail_risk_linear_smoke
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/synthetic_cam_lds
+model:
+  type: tail_risk_linear
+  hidden_dim: 64
+  embedding_dim: 64
+  use_auxiliary: true
+training:
+  epochs: 6
+  batch_size: 64
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.45
+output:
+  dir: outputs/results

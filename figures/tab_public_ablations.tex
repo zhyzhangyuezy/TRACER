@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Public ATLASv2 chronological operating-point comparison for TRACER and related support variants. Mean and standard deviation are computed over seeds 7, 13, and 21 when available. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier and TTE-Err@1.}
+\label{tab:atlasv2-public-ablations}
+\maxtablewidth{
+\begin{tabular}{lccccc}
+\toprule
+Method & AUPRC & LeadTime@P80 & AF@5 & TTE-Err@1 & Brier \\
+\midrule
+No-Memory Forecaster & $0.538 \pm 0.049$ & $1.67 \pm 2.36$ & -- & -- & $0.034 \pm 0.002$ \\
+Pure-kNN-Retrieval & $0.046 \pm 0.000$ & $0.00 \pm 0.00$ & $69.88 \pm 0.00$ & $29.29 \pm 0.00$ & $0.044 \pm 0.000$ \\
+Prefix-Only-Retrieval + Fusion & $0.274 \pm 0.055$ & $0.00 \pm 0.00$ & $70.63 \pm 1.25$ & $29.76 \pm 2.36$ & $0.037 \pm 0.001$ \\
+Shared-Encoder TRACER & $0.476 \pm 0.068$ & $4.17 \pm 3.12$ & $\mathbf{71.41 \pm 0.35}$ & $29.05 \pm 2.05$ & $0.036 \pm 0.002$ \\
+TRACER Core Mode & $0.575 \pm 0.065$ & $3.33 \pm 2.36$ & $69.06 \pm 1.08$ & $27.38 \pm 1.35$ & $\mathbf{0.029 \pm 0.002}$ \\
+TRACER (adaptive policy) & $\mathbf{0.677 \pm 0.081}$ & $\underline{6.39 \pm 1.04}$ & -- & -- & $0.037 \pm 0.000$ \\
+Event-Focused TRACER Variant & $0.602 \pm 0.053$ & $4.17 \pm 3.12$ & $\underline{70.78 \pm 1.69}$ & $\underline{27.14 \pm 3.25}$ & $\underline{0.033 \pm 0.001}$ \\
+Chronology Support Line & $\underline{0.643 \pm 0.051}$ & $\mathbf{7.50 \pm 2.04}$ & $70.51 \pm 1.53$ & $27.38 \pm 1.35$ & $0.034 \pm 0.001$ \\
+TRACER w/o auxiliary horizon & $0.605 \pm 0.023$ & $4.17 \pm 3.12$ & $70.31 \pm 0.62$ & $28.10 \pm 2.36$ & $0.034 \pm 0.001$ \\
+Held-Out-Family Support Line & $0.596 \pm 0.062$ & $5.83 \pm 1.18$ & $68.47 \pm 1.36$ & $\mathbf{26.43 \pm 0.00}$ & $0.035 \pm 0.000$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

@@ -1,0 +1,18 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Expanded chronological audit on the supplementary AIT-ADS public benchmark. We rerun the strongest contenders over 20 seeds and then evaluate the frozen TRACER route's AUPRC margin with paired incident-block bootstrap on the 4579-window, 251-positive chronological test set. The leave-one-incident-out column reports how often the mean delta remains positive after removing one incident at a time.}
+\label{tab:aitads-chrono-significance}
+\maxtablewidth{
+\begin{tabular}{lccccccc}
+\toprule
+Baseline & TRACER AUPRC & Baseline AUPRC & Seed W/T/L & Mean $\Delta$AUPRC & 95\% bootstrap CI & $\Pr(\Delta > 0)$ & Leave-one-incident-out $+$ / 3 \\
+\midrule
+DLinear-Forecaster & $0.532 \pm 0.021$ & $0.512 \pm 0.014$ & 18 / 0 / 2 & $0.020$ & $[0.009, 0.039]$ & $100.0\%$ & 3 / 3 \\
+Small-Transformer-Forecaster & $0.532 \pm 0.021$ & $0.536 \pm 0.020$ & 9 / 0 / 11 & $-0.004$ & $[-0.010, 0.044]$ & $37.0\%$ & 2 / 3 \\
+Prefix-Only-Retrieval + Fusion & $0.532 \pm 0.021$ & $0.530 \pm 0.022$ & 12 / 0 / 8 & $0.002$ & $[-0.002, 0.017]$ & $89.4\%$ & 2 / 3 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

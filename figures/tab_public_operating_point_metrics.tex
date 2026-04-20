@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.8pt}
+\caption{Target-precision operating-point metrics for headline methods on the primary ATLASv2 benchmark. The main tables already report AUPRC, LeadTime@P80, AF@5, TTE-Err@1, and Brier; this supplementary table adds the precision and recall attained at the same $P80$ operating point, making it clear whether a longer lead time is achieved at comparable alert quality or by covering fewer positives. Best available value in each metric column is bolded and the second-best value is underlined.}
+\label{tab:atlasv2-operating-point-metrics}
+\maxtablewidth{
+\begin{tabular}{llcc}
+\toprule
+Split & Method & Precision@P80 & Recall@P80 \\
+\midrule
+Chronological & TRACER & $\mathbf{1.000 \pm 0.000}$ & $\mathbf{0.286 \pm 0.117}$ \\
+Chronological & TCN-Forecaster & $\underline{0.667 \pm 0.471}$ & $\underline{0.238 \pm 0.178}$ \\
+Chronological & Small-Transformer-Forecaster & $0.333 \pm 0.471$ & $0.048 \pm 0.067$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $0.000 \pm 0.000$ & $0.000 \pm 0.000$ \\
+\midrule
+Event-disjoint & TRACER & $\mathbf{1.000 \pm 0.000}$ & $\mathbf{0.611 \pm 0.079}$ \\
+Event-disjoint & Small-Transformer-Forecaster & $\mathbf{1.000 \pm 0.000}$ & $\underline{0.556 \pm 0.079}$ \\
+Event-disjoint & LSTM-Forecaster & $\mathbf{1.000 \pm 0.000}$ & $\underline{0.556 \pm 0.157}$ \\
+Event-disjoint & DLinear-Forecaster & $\mathbf{1.000 \pm 0.000}$ & $\mathbf{0.611 \pm 0.079}$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $\mathbf{1.000 \pm 0.000}$ & $\underline{0.556 \pm 0.157}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

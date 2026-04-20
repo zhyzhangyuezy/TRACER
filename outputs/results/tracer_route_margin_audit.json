@@ -1,0 +1,241 @@
+{
+  "rows": [
+    {
+      "dataset": "ATLASv2",
+      "objective": "chronology",
+      "regime": "sparse_diverse_chrono_spiky",
+      "resolved_model_type": "tcn",
+      "positive_rate": 0.027397260069847107,
+      "dev_positive_count": 4,
+      "family_count": 23,
+      "positive_family_count": 2,
+      "diff2_abs_mean": 0.3018811345100403,
+      "peak_ratio": 4.5443854331970215
+    },
+    {
+      "dataset": "ATLASv2",
+      "objective": "event-disjoint",
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular",
+      "positive_rate": 0.027397260069847107,
+      "dev_positive_count": 4,
+      "family_count": 23,
+      "positive_family_count": 2,
+      "diff2_abs_mean": 0.3018811345100403,
+      "peak_ratio": 4.5443854331970215
+    },
+    {
+      "dataset": "AIT-ADS",
+      "objective": "balanced",
+      "regime": "dense_low_diversity",
+      "resolved_model_type": "campaign_mem_v3",
+      "positive_rate": 0.08915451169013977,
+      "dev_positive_count": 230,
+      "family_count": 4,
+      "positive_family_count": 4,
+      "diff2_abs_mean": 0.23489594459533691,
+      "peak_ratio": 2.58149790763855
+    },
+    {
+      "dataset": "AIT-ADS",
+      "objective": "event-disjoint",
+      "regime": "dense_low_diversity_event",
+      "resolved_model_type": "dlinear",
+      "positive_rate": 0.08915451169013977,
+      "dev_positive_count": 230,
+      "family_count": 4,
+      "positive_family_count": 4,
+      "diff2_abs_mean": 0.23489594459533691,
+      "peak_ratio": 2.58149790763855
+    },
+    {
+      "dataset": "ATLAS-Raw",
+      "objective": "balanced",
+      "regime": "extreme_sparse",
+      "resolved_model_type": "campaign_mem_v3",
+      "positive_rate": 0.0019282433204352856,
+      "dev_positive_count": 18,
+      "family_count": 8,
+      "positive_family_count": 7,
+      "diff2_abs_mean": 0.004095106851309538,
+      "peak_ratio": 4.475493907928467
+    },
+    {
+      "dataset": "Synthetic-CAM-LDS",
+      "objective": "balanced",
+      "regime": "simple_dense",
+      "resolved_model_type": "tail_risk_linear",
+      "positive_rate": 0.6703125238418579,
+      "dev_positive_count": 116,
+      "family_count": 18,
+      "positive_family_count": 18,
+      "diff2_abs_mean": 0.23347458243370056,
+      "peak_ratio": 2.815626382827759
+    },
+    {
+      "dataset": "Workbook probe",
+      "objective": "balanced",
+      "regime": "cold_start_sparse",
+      "resolved_model_type": "lstm",
+      "positive_rate": 0.006277463864535093,
+      "dev_positive_count": 0,
+      "family_count": 6,
+      "positive_family_count": 4,
+      "diff2_abs_mean": 0.11655750870704651,
+      "peak_ratio": 4.504561424255371
+    }
+  ],
+  "threshold_intervals": [
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\le 0.02$ (cold-start sparse)",
+      "published": "0.020",
+      "interval": "[0.0063, +inf)",
+      "identification": "one-sided"
+    },
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\le 0.005$ (extreme sparse)",
+      "published": "0.005",
+      "interval": "[0.0019, 0.0274)",
+      "identification": "two-sided"
+    },
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\ge 0.05$ (dense activation)",
+      "published": "0.050",
+      "interval": "(0.0274, 0.0892]",
+      "identification": "two-sided"
+    },
+    {
+      "threshold": "$F_{+}^{\\mathrm{train}} \\le 2$ (chronology-spiky)",
+      "published": "2",
+      "interval": "[2.0000, +inf)",
+      "identification": "one-sided"
+    },
+    {
+      "threshold": "$\\bar{\\delta}_{2}^{\\mathrm{train}} \\ge 0.28$ (chronology-spiky)",
+      "published": "0.280",
+      "interval": "(-inf, 0.3019]",
+      "identification": "one-sided"
+    },
+    {
+      "threshold": "$\\rho_{\\mathrm{peak}}^{\\mathrm{train}} \\ge 4.0$ (chronology-spiky)",
+      "published": "4",
+      "interval": "(-inf, 4.5444]",
+      "identification": "one-sided"
+    },
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\ge 0.35$ (simple dense)",
+      "published": "0.350",
+      "interval": "(0.0892, 0.6703]",
+      "identification": "two-sided"
+    }
+  ],
+  "threshold_leave_one_dataset_out": [
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\le 0.02$ (cold-start sparse)",
+      "published": "0.020",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "AIT-ADS: [0.0063, +inf)",
+      "unidentified": "Workbook probe"
+    },
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\le 0.005$ (extreme sparse)",
+      "published": "0.005",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "AIT-ADS: [0.0019, 0.0274)",
+      "unidentified": "ATLAS-Raw"
+    },
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\ge 0.05$ (dense activation)",
+      "published": "0.050",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "ATLAS-Raw: (0.0274, 0.0892]",
+      "unidentified": "AIT-ADS"
+    },
+    {
+      "threshold": "$F_{+}^{\\mathrm{train}} \\le 2$ (chronology-spiky)",
+      "published": "2",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "AIT-ADS: [2.0000, +inf)",
+      "unidentified": "ATLASv2"
+    },
+    {
+      "threshold": "$\\bar{\\delta}_{2}^{\\mathrm{train}} \\ge 0.28$ (chronology-spiky)",
+      "published": "0.280",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "AIT-ADS: (-inf, 0.3019]",
+      "unidentified": "ATLASv2"
+    },
+    {
+      "threshold": "$\\rho_{\\mathrm{peak}}^{\\mathrm{train}} \\ge 4.0$ (chronology-spiky)",
+      "published": "4",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "AIT-ADS: (-inf, 4.5444]",
+      "unidentified": "ATLASv2"
+    },
+    {
+      "threshold": "$r_{+}^{\\mathrm{train}} \\ge 0.35$ (simple dense)",
+      "published": "0.350",
+      "support": "4 / 4 identifiable",
+      "tightest_interval": "ATLAS-Raw: (0.0892, 0.6703]",
+      "unidentified": "Synthetic-CAM-LDS"
+    }
+  ],
+  "route_margins": [
+    {
+      "dataset": "ATLASv2",
+      "objective": "chronology",
+      "regime": "sparse\\_diverse\\_chrono\\_spiky",
+      "resolved_model_type": "tcn",
+      "nearest_margin": "0.000",
+      "reason": "$2 - F_{+}^{\\mathrm{train}}$"
+    },
+    {
+      "dataset": "ATLASv2",
+      "objective": "event-disjoint",
+      "regime": "sparse\\_diverse",
+      "resolved_model_type": "campaign\\_mem\\_decomp\\_modular",
+      "nearest_margin": "0.022",
+      "reason": "$r_{+}^{\\mathrm{train}} - 0.005$"
+    },
+    {
+      "dataset": "AIT-ADS",
+      "objective": "balanced",
+      "regime": "dense\\_low\\_diversity",
+      "resolved_model_type": "campaign\\_mem\\_v3",
+      "nearest_margin": "0.039",
+      "reason": "$r_{+}^{\\mathrm{train}} - 0.05$"
+    },
+    {
+      "dataset": "AIT-ADS",
+      "objective": "event-disjoint",
+      "regime": "dense\\_low\\_diversity\\_event",
+      "resolved_model_type": "dlinear",
+      "nearest_margin": "0.039",
+      "reason": "$r_{+}^{\\mathrm{train}} - 0.05$"
+    },
+    {
+      "dataset": "ATLAS-Raw",
+      "objective": "balanced",
+      "regime": "extreme\\_sparse",
+      "resolved_model_type": "campaign\\_mem\\_v3",
+      "nearest_margin": "0.003",
+      "reason": "$0.005 - r_{+}^{\\mathrm{train}}$"
+    },
+    {
+      "dataset": "Synthetic-CAM-LDS",
+      "objective": "balanced",
+      "regime": "simple\\_dense",
+      "resolved_model_type": "tail\\_risk\\_linear",
+      "nearest_margin": "0.027",
+      "reason": "$0.26 - \\bar{\\delta}_{2}^{\\mathrm{train}}$"
+    },
+    {
+      "dataset": "Workbook probe",
+      "objective": "balanced",
+      "regime": "cold\\_start\\_sparse",
+      "resolved_model_type": "lstm",
+      "nearest_margin": "0.014",
+      "reason": "$0.02 - r_{+}^{\\mathrm{train}}$"
+    }
+  ]
+}

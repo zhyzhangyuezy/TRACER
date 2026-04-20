@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Processed-window leave-one-positive-family-out ATLASv2 audit. Each of the seven folds holds out one positive family for test and another positive family for dev, with disjoint background families. We report macro AUPRC across folds, hierarchical bootstrap confidence intervals over folds and seeds, worst-fold AUPRC, and fixed-family coverage statistics. This supplements the original held-out-family split rather than replacing raw-pipeline benchmark construction.}
+\label{tab:atlasv2-lopo-family-audit}
+\maxtablewidth{
+\begin{tabular}{lcccccc}
+\toprule
+Method & Macro AUPRC & 95\% CI & Worst fold & Best/tie & Top-two & Mean rank \\
+\midrule
+Adaptive policy & $\mathbf{0.423}$ & $[0.245, 0.633]$ & $0.180$ & $3/7$ & $4/7$ & $2.21$ \\
+Small-Transformer & $0.414$ & $[0.253, 0.600]$ & $0.157$ & $1/7$ & $3/7$ & $2.43$ \\
+Prefix-Only retrieval & $0.418$ & $[0.251, 0.602]$ & $0.164$ & $1/7$ & $4/7$ & $2.64$ \\
+DLinear & $0.390$ & $[0.209, 0.623]$ & $0.136$ & $3/7$ & $3/7$ & $2.71$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

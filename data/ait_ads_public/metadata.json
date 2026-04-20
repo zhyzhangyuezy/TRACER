@@ -1,0 +1,453 @@
+{
+  "dataset_name": "ait_ads_public_campaign_mem",
+  "description": "AIT Alert Data Set projected into Campaign-MEM rolling windows with scenario-held-out evaluation.",
+  "count_feature_transform": "log1p on alert-count channels, event_count, high_risk_count, host_count, and future-signature count channels.",
+  "raw_dir": "external_sources\\AIT-ADS\\unzipped",
+  "labels_csv": "external_sources\\AIT-ADS\\labels.csv",
+  "canonical_csv": "data\\ait_ads_public\\ait_ads_canonical_events.csv",
+  "bin_minutes": 5,
+  "lookback_bins": 4,
+  "main_horizon_minutes": 30,
+  "aux_horizon_minutes": 10,
+  "feature_channels": [
+    "recon",
+    "auth_abuse",
+    "execution",
+    "persistence",
+    "priv_esc",
+    "cred_access",
+    "lateral_move",
+    "c2",
+    "collection_exfil",
+    "impact",
+    "defense_evasion",
+    "other",
+    "event_count",
+    "severity_mean",
+    "severity_max",
+    "high_risk_count",
+    "host_count"
+  ],
+  "analog_fidelity_distance_threshold": 0.35,
+  "event_disjoint_attack_families": [
+    "aitads/harrison",
+    "aitads/wilson"
+  ],
+  "high_risk_stages": [
+    "dnsteal",
+    "privilege_escalation",
+    "reverse_shell",
+    "service_stop",
+    "webshell"
+  ],
+  "stage_totals": {
+    "unlabeled": 779127,
+    "service_stop": 21,
+    "dnsteal": 19073,
+    "service_scans": 2354,
+    "wpscan": 54931,
+    "dirb": 1691090,
+    "webshell": 121,
+    "cracking": 5402,
+    "reverse_shell": 82,
+    "privilege_escalation": 102041,
+    "network_scans": 1579
+  },
+  "detector_totals": {
+    "aminer": 55558,
+    "wazuh": 2600263
+  },
+  "raw_event_totals": {
+    "events": 2655821
+  },
+  "family_group_sizes": {
+    "aitads/santos": {
+      "windows": 2279
+    },
+    "aitads/fox": {
+      "windows": 2842
+    },
+    "aitads/wardbeck": {
+      "windows": 2860
+    },
+    "aitads/russellmitchell": {
+      "windows": 2282
+    },
+    "aitads/shaw": {
+      "windows": 3423
+    },
+    "aitads/wheeler": {
+      "windows": 2861
+    },
+    "aitads/wilson": {
+      "windows": 3436
+    },
+    "aitads/harrison": {
+      "windows": 2870
+    }
+  },
+  "incidents": [
+    {
+      "incident_id": "aitads/fox-aminer",
+      "family_id": "aitads/fox",
+      "detector": "aminer",
+      "events": 10581,
+      "windows": 1436,
+      "positive_windows": 308,
+      "high_risk_events": 178,
+      "stage_counts": {
+        "unlabeled": 1009,
+        "cracking": 5,
+        "dirb": 4481,
+        "dnsteal": 7,
+        "privilege_escalation": 166,
+        "reverse_shell": 1,
+        "service_scans": 130,
+        "service_stop": 2,
+        "webshell": 2,
+        "wpscan": 4778
+      },
+      "time_min": "2022-01-15 00:00:01.160000086+00:00",
+      "time_max": "2022-01-19 23:55:16+00:00"
+    },
+    {
+      "incident_id": "aitads/fox-wazuh",
+      "family_id": "aitads/fox",
+      "detector": "wazuh",
+      "events": 462523,
+      "windows": 1406,
+      "positive_windows": 143,
+      "high_risk_events": 15757,
+      "stage_counts": {
+        "unlabeled": 34917,
+        "cracking": 554,
+        "dirb": 406083,
+        "dnsteal": 381,
+        "network_scans": 323,
+        "privilege_escalation": 15376,
+        "service_scans": 140,
+        "wpscan": 4749
+      },
+      "time_min": "2022-01-15 02:32:32+00:00",
+      "time_max": "2022-01-19 23:55:36+00:00"
+    },
+    {
+      "incident_id": "aitads/harrison-aminer",
+      "family_id": "aitads/harrison",
+      "detector": "aminer",
+      "events": 10194,
+      "windows": 1436,
+      "positive_windows": 117,
+      "high_risk_events": 105,
+      "stage_counts": {
+        "unlabeled": 629,
+        "cracking": 5,
+        "dirb": 4534,
+        "dnsteal": 56,
+        "privilege_escalation": 45,
+        "reverse_shell": 1,
+        "service_scans": 60,
+        "service_stop": 2,
+        "webshell": 1,
+        "wpscan": 4861
+      },
+      "time_min": "2022-02-04 00:00:01.880000114+00:00",
+      "time_max": "2022-02-08 23:59:46.130000114+00:00"
+    },
+    {
+      "incident_id": "aitads/harrison-wazuh",
+      "family_id": "aitads/harrison",
+      "detector": "wazuh",
+      "events": 583754,
+      "windows": 1434,
+      "positive_windows": 77,
+      "high_risk_events": 11615,
+      "stage_counts": {
+        "unlabeled": 153498,
+        "cracking": 1251,
+        "dirb": 411477,
+        "dnsteal": 11512,
+        "network_scans": 296,
+        "privilege_escalation": 49,
+        "reverse_shell": 19,
+        "service_scans": 769,
+        "service_stop": 4,
+        "webshell": 31,
+        "wpscan": 4848
+      },
+      "time_min": "2022-02-04 00:00:07.756748+00:00",
+      "time_max": "2022-02-08 23:47:24+00:00"
+    },
+    {
+      "incident_id": "aitads/russellmitchell-aminer",
+      "family_id": "aitads/russellmitchell",
+      "detector": "aminer",
+      "events": 4056,
+      "windows": 1138,
+      "positive_windows": 76,
+      "high_risk_events": 38,
+      "stage_counts": {
+        "unlabeled": 564,
+        "cracking": 4,
+        "dirb": 63,
+        "dnsteal": 14,
+        "privilege_escalation": 18,
+        "reverse_shell": 3,
+        "service_scans": 200,
+        "service_stop": 2,
+        "webshell": 1,
+        "wpscan": 3187
+      },
+      "time_min": "2022-01-21 00:00:01+00:00",
+      "time_max": "2022-01-24 23:05:05+00:00"
+    },
+    {
+      "incident_id": "aitads/russellmitchell-wazuh",
+      "family_id": "aitads/russellmitchell",
+      "detector": "wazuh",
+      "events": 41488,
+      "windows": 1144,
+      "positive_windows": 42,
+      "high_risk_events": 2821,
+      "stage_counts": {
+        "unlabeled": 30851,
+        "cracking": 10,
+        "dirb": 4459,
+        "dnsteal": 2811,
+        "network_scans": 8,
+        "privilege_escalation": 6,
+        "service_scans": 167,
+        "webshell": 4,
+        "wpscan": 3172
+      },
+      "time_min": "2022-01-21 00:02:27+00:00",
+      "time_max": "2022-01-24 23:39:13+00:00"
+    },
+    {
+      "incident_id": "aitads/santos-aminer",
+      "family_id": "aitads/santos",
+      "detector": "aminer",
+      "events": 4266,
+      "windows": 1147,
+      "positive_windows": 97,
+      "high_risk_events": 111,
+      "stage_counts": {
+        "unlabeled": 762,
+        "cracking": 4,
+        "dirb": 63,
+        "dnsteal": 1,
+        "privilege_escalation": 104,
+        "reverse_shell": 1,
+        "service_scans": 33,
+        "service_stop": 3,
+        "webshell": 2,
+        "wpscan": 3293
+      },
+      "time_min": "2022-01-14 00:00:01.750000+00:00",
+      "time_max": "2022-01-17 23:51:42+00:00"
+    },
+    {
+      "incident_id": "aitads/santos-wazuh",
+      "family_id": "aitads/santos",
+      "detector": "wazuh",
+      "events": 126513,
+      "windows": 1132,
+      "positive_windows": 42,
+      "high_risk_events": 10696,
+      "stage_counts": {
+        "unlabeled": 107117,
+        "cracking": 773,
+        "dirb": 4459,
+        "dnsteal": 831,
+        "network_scans": 104,
+        "privilege_escalation": 9849,
+        "reverse_shell": 3,
+        "service_scans": 90,
+        "webshell": 13,
+        "wpscan": 3274
+      },
+      "time_min": "2022-01-14 00:00:09.728242+00:00",
+      "time_max": "2022-01-17 22:38:53+00:00"
+    },
+    {
+      "incident_id": "aitads/shaw-aminer",
+      "family_id": "aitads/shaw",
+      "detector": "aminer",
+      "events": 2243,
+      "windows": 1705,
+      "positive_windows": 188,
+      "high_risk_events": 591,
+      "stage_counts": {
+        "unlabeled": 723,
+        "cracking": 106,
+        "dirb": 63,
+        "network_scans": 9,
+        "privilege_escalation": 586,
+        "reverse_shell": 2,
+        "service_scans": 2,
+        "service_stop": 2,
+        "webshell": 1,
+        "wpscan": 749
+      },
+      "time_min": "2022-01-25 00:00:01+00:00",
+      "time_max": "2022-01-30 22:20:47+00:00"
+    },
+    {
+      "incident_id": "aitads/shaw-wazuh",
+      "family_id": "aitads/shaw",
+      "detector": "wazuh",
+      "events": 68539,
+      "windows": 1718,
+      "positive_windows": 149,
+      "high_risk_events": 18582,
+      "stage_counts": {
+        "unlabeled": 44118,
+        "cracking": 647,
+        "dirb": 4459,
+        "dnsteal": 105,
+        "network_scans": 3,
+        "privilege_escalation": 18474,
+        "reverse_shell": 3,
+        "service_scans": 1,
+        "wpscan": 729
+      },
+      "time_min": "2022-01-25 00:06:19+00:00",
+      "time_max": "2022-01-30 23:31:06+00:00"
+    },
+    {
+      "incident_id": "aitads/wardbeck-aminer",
+      "family_id": "aitads/wardbeck",
+      "detector": "aminer",
+      "events": 3053,
+      "windows": 1436,
+      "positive_windows": 108,
+      "high_risk_events": 97,
+      "stage_counts": {
+        "unlabeled": 2023,
+        "cracking": 4,
+        "dirb": 63,
+        "dnsteal": 6,
+        "privilege_escalation": 87,
+        "service_scans": 107,
+        "service_stop": 2,
+        "webshell": 2,
+        "wpscan": 759
+      },
+      "time_min": "2022-01-19 00:00:01+00:00",
+      "time_max": "2022-01-23 23:59:19.170000076+00:00"
+    },
+    {
+      "incident_id": "aitads/wardbeck-wazuh",
+      "family_id": "aitads/wardbeck",
+      "detector": "wazuh",
+      "events": 88204,
+      "windows": 1424,
+      "positive_windows": 39,
+      "high_risk_events": 7860,
+      "stage_counts": {
+        "unlabeled": 74324,
+        "cracking": 752,
+        "dirb": 4459,
+        "dnsteal": 17,
+        "network_scans": 3,
+        "privilege_escalation": 7824,
+        "reverse_shell": 6,
+        "service_scans": 56,
+        "webshell": 13,
+        "wpscan": 750
+      },
+      "time_min": "2022-01-19 00:38:02+00:00",
+      "time_max": "2022-01-23 23:31:13+00:00"
+    },
+    {
+      "incident_id": "aitads/wheeler-aminer",
+      "family_id": "aitads/wheeler",
+      "detector": "aminer",
+      "events": 12222,
+      "windows": 1435,
+      "positive_windows": 70,
+      "high_risk_events": 62,
+      "stage_counts": {
+        "unlabeled": 845,
+        "dirb": 4533,
+        "dnsteal": 5,
+        "privilege_escalation": 52,
+        "reverse_shell": 1,
+        "service_scans": 129,
+        "service_stop": 2,
+        "webshell": 2,
+        "wpscan": 6653
+      },
+      "time_min": "2022-01-26 00:00:01+00:00",
+      "time_max": "2022-01-30 23:54:15+00:00"
+    },
+    {
+      "incident_id": "aitads/wheeler-wazuh",
+      "family_id": "aitads/wheeler",
+      "detector": "wazuh",
+      "events": 603939,
+      "windows": 1426,
+      "positive_windows": 32,
+      "high_risk_events": 5786,
+      "stage_counts": {
+        "unlabeled": 177690,
+        "dirb": 413009,
+        "dnsteal": 461,
+        "network_scans": 643,
+        "privilege_escalation": 5293,
+        "reverse_shell": 24,
+        "service_scans": 141,
+        "webshell": 8,
+        "wpscan": 6670
+      },
+      "time_min": "2022-01-26 00:25:30+00:00",
+      "time_max": "2022-01-30 23:31:06+00:00"
+    },
+    {
+      "incident_id": "aitads/wilson-aminer",
+      "family_id": "aitads/wilson",
+      "detector": "aminer",
+      "events": 8943,
+      "windows": 1723,
+      "positive_windows": 265,
+      "high_risk_events": 164,
+      "stage_counts": {
+        "unlabeled": 871,
+        "cracking": 3,
+        "dirb": 4535,
+        "dnsteal": 5,
+        "privilege_escalation": 155,
+        "reverse_shell": 1,
+        "service_scans": 158,
+        "service_stop": 2,
+        "webshell": 1,
+        "wpscan": 3212
+      },
+      "time_min": "2022-02-03 00:00:01+00:00",
+      "time_max": "2022-02-08 23:50:14+00:00"
+    },
+    {
+      "incident_id": "aitads/wilson-wazuh",
+      "family_id": "aitads/wilson",
+      "detector": "wazuh",
+      "events": 625303,
+      "windows": 1713,
+      "positive_windows": 144,
+      "high_risk_events": 46875,
+      "stage_counts": {
+        "unlabeled": 149186,
+        "cracking": 1284,
+        "dirb": 424350,
+        "dnsteal": 2861,
+        "network_scans": 190,
+        "privilege_escalation": 43957,
+        "reverse_shell": 17,
+        "service_scans": 171,
+        "webshell": 40,
+        "wpscan": 3247
+      },
+      "time_min": "2022-02-03 00:45:06+00:00",
+      "time_max": "2022-02-08 23:47:22+00:00"
+    }
+  ]
+}

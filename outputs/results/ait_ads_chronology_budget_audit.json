@@ -1,0 +1,163 @@
+{
+  "benchmark_caption": "supplementary AIT-ADS chronology",
+  "budget_fraction": 0.02,
+  "table_label": "aitads-chrono-budget",
+  "pairwise_table_label": "aitads-chrono-budget-pairwise",
+  "methods": [
+    {
+      "display_name": "TRACER",
+      "mean": {
+        "budget_count": 92.0,
+        "PosRecall": 30.0398406374502,
+        "PosPrec": 81.95652173913044,
+        "MeanLead": 14.116486102332635
+      },
+      "std": {
+        "budget_count": 0.0,
+        "PosRecall": 1.1845473105433082,
+        "PosPrec": 3.231754075504024,
+        "MeanLead": 0.6500059201490525
+      }
+    },
+    {
+      "display_name": "Prefix-Only-Retrieval + Fusion",
+      "mean": {
+        "budget_count": 92.0,
+        "PosRecall": 29.243027888446214,
+        "PosPrec": 79.78260869565217,
+        "MeanLead": 14.105505925425522
+      },
+      "std": {
+        "budget_count": 0.0,
+        "PosRecall": 1.6104687594747205,
+        "PosPrec": 4.393778898132116,
+        "MeanLead": 0.9803981508783421
+      }
+    },
+    {
+      "display_name": "DLinear-Forecaster",
+      "mean": {
+        "budget_count": 92.0,
+        "PosRecall": 29.163346613545816,
+        "PosPrec": 79.56521739130434,
+        "MeanLead": 13.05380669515969
+      },
+      "std": {
+        "budget_count": 0.0,
+        "PosRecall": 1.131081240364812,
+        "PosPrec": 3.085884688386605,
+        "MeanLead": 0.2558796345330653
+      }
+    },
+    {
+      "display_name": "Small-Transformer-Forecaster",
+      "mean": {
+        "budget_count": 92.0,
+        "PosRecall": 29.681274900398407,
+        "PosPrec": 80.97826086956522,
+        "MeanLead": 14.68659042246517
+      },
+      "std": {
+        "budget_count": 0.0,
+        "PosRecall": 1.444738196372012,
+        "PosPrec": 3.941622687927988,
+        "MeanLead": 0.7621617728931543
+      }
+    }
+  ],
+  "pairwise": [
+    {
+      "baseline": "Prefix-Only-Retrieval + Fusion",
+      "mean_delta": {
+        "PosRecall": 0.7968127490039845,
+        "PosPrec": 2.173913043478259,
+        "MeanLead": 0.010980176907113393
+      },
+      "bootstrap": {
+        "PosRecall": {
+          "mean": 0.5321960021308002,
+          "std": 0.8189088295314894,
+          "ci95_low": -0.3636363636363633,
+          "ci95_high": 4.0625,
+          "positive_mass": 0.7378
+        },
+        "PosPrec": {
+          "mean": 1.0141580228439542,
+          "std": 1.4921178143714884,
+          "ci95_low": -1.3592233009708736,
+          "ci95_high": 4.5348837209302335,
+          "positive_mass": 0.7378
+        },
+        "MeanLead": {
+          "mean": -0.17329007572687768,
+          "std": 0.27960880498637564,
+          "ci95_low": -0.5441314271220399,
+          "ci95_high": 0.35720150935440087,
+          "positive_mass": 0.254
+        }
+      }
+    },
+    {
+      "baseline": "DLinear-Forecaster",
+      "mean_delta": {
+        "PosRecall": 0.8764940239043832,
+        "PosPrec": 2.391304347826086,
+        "MeanLead": 1.0626794071729457
+      },
+      "bootstrap": {
+        "PosRecall": {
+          "mean": 1.1011051718027682,
+          "std": 0.9986071170347937,
+          "ci95_low": -0.28571428571428614,
+          "ci95_high": 4.322916666666667,
+          "positive_mass": 0.9686
+        },
+        "PosPrec": {
+          "mean": 2.31141199516731,
+          "std": 1.4336131010802904,
+          "ci95_low": -0.6976744186046517,
+          "ci95_high": 4.825581395348839,
+          "positive_mass": 0.9686
+        },
+        "MeanLead": {
+          "mean": 1.0870631569603537,
+          "std": 0.33699477873559697,
+          "ci95_low": 0.6582464683657122,
+          "ci95_high": 1.7350167777421963,
+          "positive_mass": 1.0
+        }
+      }
+    },
+    {
+      "baseline": "Small-Transformer-Forecaster",
+      "mean_delta": {
+        "PosRecall": 0.35856573705179323,
+        "PosPrec": 0.9782608695652165,
+        "MeanLead": -0.5701043201325341
+      },
+      "bootstrap": {
+        "PosRecall": {
+          "mean": 0.5999079788509649,
+          "std": 0.9224026215708033,
+          "ci95_low": -0.12228260869565269,
+          "ci95_high": 3.75,
+          "positive_mass": 0.7856
+        },
+        "PosPrec": {
+          "mean": 1.1095201929191796,
+          "std": 1.3319821778321752,
+          "ci95_low": -0.46391752577319423,
+          "ci95_high": 4.186046511627907,
+          "positive_mass": 0.7856
+        },
+        "MeanLead": {
+          "mean": -0.3911168032521765,
+          "std": 0.39013985066697116,
+          "ci95_low": -1.0377024631616047,
+          "ci95_high": 0.4397226632921024,
+          "positive_mass": 0.1526
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+\begin{table}[t]
+\caption{Knowledge artifacts exposed by TRACER. Each artifact is fixed or rebuilt from train/dev data before held-out evaluation, so the warning workflow is inspectable rather than a test-label-selected model sweep.}
+\label{tab:knowledge-artifacts}
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.16\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.25\linewidth}>{\raggedright\arraybackslash}p{0.23\linewidth}@{}}
+\toprule
+Artifact & Source & Decision role & Update and conflict policy \\
+\midrule
+Regime rule table & Train/dev positive rate, family diversity, dev positives, burst statistics, and declared operating profile & Resolves one operating mode for a split: retrieval-active TRACER, conservative retrieval, TCN, DLinear, LSTM, or linear fallback & Evaluated top-down before testing; thresholds are frozen, audited by interval and leave-one-benchmark checks, and changed only through a new declared release \\
+Train-only case memory & Labeled training windows and their retrieval embeddings & Provides top-$k$ analogs, neighbor base score, and evidence attached to high-warning windows & Rebuilt when the training incident set changes; test incidents are excluded, and neighbor disagreement is exposed through dispersion features \\
+Current-prefix knowledge channels & ATT\&CK-like tactic/stage channels and incident-stage profiles available at query time & Checks whether retrieved cases share observable security context with the current prefix & Used for evidence auditing and high-score case filtering; does not use future signatures or held-out labels for test-time scoring \\
+Rank-consensus score layer & Label-free ranks from already trained fixed-family scorers and the adaptive route & Optional queue-level score layer when multi-model serving cost is acceptable & Uses equal rank averaging, no learned weights, and is reported separately from the single-route policy \\
+\bottomrule
+\end{tabular}
+\end{table}

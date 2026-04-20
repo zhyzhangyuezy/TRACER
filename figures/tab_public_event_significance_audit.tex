@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Expanded held-out-family audit on the primary ATLASv2 split benchmark. We rerun the strongest contenders over 20 seeds and then evaluate the frozen TRACER route's AUPRC margin with paired incident-block bootstrap on the 83-window, 6-positive held-out-family test set. The leave-one-incident-out column reports how often the mean delta remains positive after removing one incident at a time.}
+\label{tab:atlasv2-event-significance}
+\maxtablewidth{
+\begin{tabular}{lccccccc}
+\toprule
+Baseline & TRACER AUPRC & Baseline AUPRC & Seed W/T/L & Mean $\Delta$AUPRC & 95\% bootstrap CI & $\Pr(\Delta > 0)$ & Leave-one-incident-out $+$ / 5 \\
+\midrule
+Small-Transformer-Forecaster & $0.763 \pm 0.041$ & $0.713 \pm 0.075$ & 12 / 6 / 2 & $0.050$ & $[0.027, 0.061]$ & $100.0\%$ & 5 / 5 \\
+LSTM-Forecaster & $0.763 \pm 0.041$ & $0.741 \pm 0.038$ & 10 / 9 / 1 & $0.023$ & $[0.007, 0.033]$ & $100.0\%$ & 5 / 5 \\
+DLinear-Forecaster & $0.763 \pm 0.041$ & $0.723 \pm 0.037$ & 18 / 0 / 2 & $0.040$ & $[0.028, 0.057]$ & $100.0\%$ & 5 / 5 \\
+Prefix-Only-Retrieval + Fusion & $0.763 \pm 0.041$ & $0.669 \pm 0.121$ & 15 / 2 / 3 & $0.094$ & $[0.058, 0.102]$ & $100.0\%$ & 5 / 5 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

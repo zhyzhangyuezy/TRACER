@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Seed-level AUPRC values for headline methods on the primary ATLASv2 benchmark. The table complements \Cref{fig:appendix-seed-stability} by exposing the exact three-seed values behind the main ATLASv2 rows. Mean and standard deviation are reported over seeds 7, 13, and 21.}
+\label{tab:atlasv2-public-uncertainty}
+\maxtablewidth{
+\begin{tabular}{llcccc}
+\toprule
+Split & Method & Seed 7 & Seed 13 & Seed 21 & Mean $\pm$ Std \\
+\midrule
+Chronological & TCN-Forecaster & $0.762$ & $0.701$ & $0.569$ & $\mathbf{0.677 \pm 0.081}$ \\
+Chronological & LSTM-Forecaster & $0.579$ & $0.608$ & $0.657$ & $0.615 \pm 0.032$ \\
+Chronological & Small-Transformer-Forecaster & $0.522$ & $0.487$ & $0.605$ & $0.538 \pm 0.049$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $0.255$ & $0.348$ & $0.218$ & $0.274 \pm 0.055$ \\
+Chronological & TRACER & $0.762$ & $0.701$ & $0.569$ & $\mathbf{0.677 \pm 0.081}$ \\
+\midrule
+Event-disjoint & Small-Transformer-Forecaster & $0.767$ & $0.767$ & $0.767$ & $0.767 \pm 0.000$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $0.767$ & $0.792$ & $0.546$ & $0.701 \pm 0.110$ \\
+Event-disjoint & TRACER & $0.767$ & $0.767$ & $0.792$ & $\mathbf{0.775 \pm 0.012}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

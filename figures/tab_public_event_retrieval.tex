@@ -1,0 +1,24 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Family-held-out event-disjoint operating-point comparison for TRACER and related support variants. Mean and standard deviation are computed over seeds 7, 13, and 21. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier and TTE-Err@1.}
+\label{tab:atlasv2-public-event-retrieval}
+\maxtablewidth{
+\begin{tabular}{lccccc}
+\toprule
+Method & AUPRC & LeadTime@P80 & AF@5 & TTE-Err@1 & Brier \\
+\midrule
+Pure-kNN-Retrieval & $0.270 \pm 0.000$ & $10.00 \pm 0.00$ & $\mathbf{78.31 \pm 0.00}$ & $30.00 \pm 0.00$ & $0.062 \pm 0.000$ \\
+Prefix-Only-Retrieval + Fusion & $0.701 \pm 0.110$ & $10.83 \pm 2.36$ & $70.20 \pm 3.20$ & $26.94 \pm 4.32$ & $0.055 \pm 0.012$ \\
+Shared-Encoder TRACER & $0.749 \pm 0.039$ & $\mathbf{14.17 \pm 1.18}$ & $73.17 \pm 1.14$ & $28.33 \pm 3.12$ & $0.057 \pm 0.004$ \\
+TRACER Core Mode & $0.767 \pm 0.000$ & $11.67 \pm 1.18$ & $69.48 \pm 2.57$ & $25.28 \pm 1.57$ & $\mathbf{0.035 \pm 0.002}$ \\
+TRACER (adaptive policy) & $\underline{0.775 \pm 0.012}$ & $11.67 \pm 1.18$ & $71.89 \pm 3.63$ & $25.28 \pm 1.57$ & $\mathbf{0.035 \pm 0.002}$ \\
+Event-Focused TRACER Variant & $0.773 \pm 0.008$ & $\underline{13.33 \pm 1.18}$ & $73.49 \pm 0.90$ & $25.00 \pm 4.46$ & $\underline{0.051 \pm 0.000}$ \\
+Chronology Support Line & $0.753 \pm 0.030$ & $\underline{13.33 \pm 1.18}$ & $\underline{74.30 \pm 0.30}$ & $\mathbf{24.17 \pm 3.60}$ & $0.052 \pm 0.001$ \\
+TRACER w/o auxiliary horizon & $0.742 \pm 0.045$ & $\underline{13.33 \pm 1.18}$ & $73.25 \pm 1.29$ & $26.11 \pm 2.75$ & $0.053 \pm 0.003$ \\
+Held-Out-Family Support Line & $\mathbf{0.777 \pm 0.011}$ & $\underline{13.33 \pm 1.18}$ & $69.96 \pm 2.98$ & $\underline{24.72 \pm 0.79}$ & $0.054 \pm 0.002$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

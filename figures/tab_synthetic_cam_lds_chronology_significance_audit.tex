@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Expanded chronological controlled synthetic audit on the controlled synthetic CAM-LDS benchmark. We rerun the strongest contenders over 20 seeds and then evaluate the frozen TRACER route's AUPRC margin with paired incident-block bootstrap on the 512-window, 350-positive chronological synthetic test split set. The leave-one-incident-out column reports how often the mean delta remains positive after removing one incident at a time.}
+\label{tab:synthetic-cam-lds-chronology-significance}
+\maxtablewidth{
+\begin{tabular}{lccccccc}
+\toprule
+Baseline & TRACER AUPRC & Baseline AUPRC & Seed W/T/L & Mean $\Delta$AUPRC & 95\% bootstrap CI & $\Pr(\Delta > 0)$ & Leave-one-incident-out $+$ / 512 \\
+\midrule
+TCN-Forecaster & $0.996 \pm 0.002$ & $0.992 \pm 0.005$ & 16 / 0 / 4 & $0.004$ & $[0.002, 0.006]$ & $100.0\%$ & 512 / 512 \\
+Transformer-Forecaster & $0.996 \pm 0.002$ & $0.993 \pm 0.006$ & 14 / 0 / 6 & $0.004$ & $[0.002, 0.006]$ & $100.0\%$ & 512 / 512 \\
+Prefix-Only-Retrieval + Fusion & $0.996 \pm 0.002$ & $0.992 \pm 0.006$ & 16 / 0 / 4 & $0.004$ & $[0.002, 0.007]$ & $100.0\%$ & 512 / 512 \\
+Campaign-MEM & $0.996 \pm 0.002$ & $0.993 \pm 0.004$ & 15 / 0 / 5 & $0.003$ & $[0.002, 0.005]$ & $100.0\%$ & 512 / 512 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

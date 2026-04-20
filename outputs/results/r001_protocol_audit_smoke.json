@@ -1,0 +1,116 @@
+{
+  "dataset_dir": "data\\synthetic_cam_lds",
+  "metadata": {
+    "dataset_name": "synthetic_cam_lds_smoke",
+    "description": "Synthetic Campaign-MEM benchmark for sanity and smoke testing.",
+    "seed": 7,
+    "seq_len": 12,
+    "feature_dim": 16,
+    "signature_dim": 8,
+    "analog_fidelity_distance_threshold": 0.45,
+    "main_horizon_minutes": 30,
+    "aux_horizon_minutes": 10,
+    "split_counts": {
+      "train": 640,
+      "dev": 192,
+      "test": 192,
+      "test_event_disjoint": 192
+    }
+  },
+  "splits": {
+    "train": {
+      "samples": 640,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.6703125238418579,
+      "positive_rate_aux": 0.01875000074505806,
+      "incident_count": 640,
+      "family_count": 18,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 18.64771270751953,
+        "median": 18.783784866333008,
+        "min": 6.825156211853027,
+        "max": 29.33641815185547
+      }
+    },
+    "dev": {
+      "samples": 192,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.6041666865348816,
+      "positive_rate_aux": 0.02604166604578495,
+      "incident_count": 192,
+      "family_count": 6,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 19.37669563293457,
+        "median": 19.306377410888672,
+        "min": 7.556862831115723,
+        "max": 29.418474197387695
+      }
+    },
+    "test": {
+      "samples": 192,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.6822916865348816,
+      "positive_rate_aux": 0.0364583320915699,
+      "incident_count": 192,
+      "family_count": 6,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 18.106618881225586,
+        "median": 18.205318450927734,
+        "min": 7.613134860992432,
+        "max": 29.117029190063477
+      }
+    },
+    "test_event_disjoint": {
+      "samples": 192,
+      "seq_len": 12,
+      "feature_dim": 16,
+      "positive_rate_main": 0.6354166865348816,
+      "positive_rate_aux": 0.02083333395421505,
+      "incident_count": 192,
+      "family_count": 8,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 18.801305770874023,
+        "median": 18.98593521118164,
+        "min": 8.18285846710205,
+        "max": 28.75804328918457
+      }
+    }
+  },
+  "overlap": {
+    "train__dev": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "train__test": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "train__test_event_disjoint": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "dev__test": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "dev__test_event_disjoint": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "test__test_event_disjoint": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    }
+  },
+  "checks": {
+    "incident_leakage_free": true,
+    "event_disjoint_family_free": true
+  }
+}

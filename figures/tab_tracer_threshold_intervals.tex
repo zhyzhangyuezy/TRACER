@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Threshold-interval audit for the frozen \texttt{tracer\_adaptive} rule table. The interval column reports the feasible range that preserves the observed route assignments on the released benchmark suite under the current rule ordering. Two-sided intervals indicate that the suite contains both supporting and opposing examples for that scalar cutoff; one-sided intervals indicate underidentified thresholds that remain conservative heuristics rather than fully pinned-down separators.}
+\label{tab:tracer-threshold-intervals}
+\maxtablewidth{
+\begin{tabular}{lccc}
+\toprule
+Threshold & Published value & Feasible interval & Identification \\
+\midrule
+$r_{+}^{\mathrm{train}} \le 0.02$ (cold-start sparse) & 0.020 & [0.0063, +inf) & one-sided \\
+$r_{+}^{\mathrm{train}} \le 0.005$ (extreme sparse) & 0.005 & [0.0019, 0.0274) & two-sided \\
+$r_{+}^{\mathrm{train}} \ge 0.05$ (dense activation) & 0.050 & (0.0274, 0.0892] & two-sided \\
+$F_{+}^{\mathrm{train}} \le 2$ (chronology-spiky) & 2 & [2.0000, +inf) & one-sided \\
+$\bar{\delta}_{2}^{\mathrm{train}} \ge 0.28$ (chronology-spiky) & 0.280 & (-inf, 0.3019] & one-sided \\
+$\rho_{\mathrm{peak}}^{\mathrm{train}} \ge 4.0$ (chronology-spiky) & 4 & (-inf, 4.5444] & one-sided \\
+$r_{+}^{\mathrm{train}} \ge 0.35$ (simple dense) & 0.350 & (0.0892, 0.6703] & two-sided \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

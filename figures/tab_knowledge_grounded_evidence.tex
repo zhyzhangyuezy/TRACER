@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Knowledge-grounded case-evidence audit. The audit measures whether retrieved train-only analogs share current-prefix ATT\&CK-like knowledge channels with the query, and for AIT-ADS also whether incident-level attack-stage profiles overlap. Unlike AF@5 and TTE-Err@1, these metrics do not use future-signature distances. Values are percentages.}
+\label{tab:knowledge-grounded-evidence}
+\maxtablewidth{
+\begin{tabular}{llrrrrrrr}
+\toprule
+Setting & Method & K-Hit@5 & K-Jacc@5 & HR-Hit@5 & Pos K-Jacc@5 & Top10 K-Jacc@5 & Stage-Hit@5 & HRStage-Hit@5 \\
+\midrule
+ATLASv2 held-out-family & TRACER route & 44.6 & 33.4 & 40.6 & 58.8 & 71.0 & -- & -- \\
+ & Prefix-Only & 44.6 & 33.9 & 41.0 & 57.3 & 61.6 & -- & -- \\
+ & Pure-kNN & 44.6 & 38.4 & 41.0 & 64.4 & 34.8 & -- & -- \\
+ & Shared-Encoder & 44.6 & 35.0 & 41.0 & 59.8 & 81.2 & -- & -- \\
+\addlinespace
+AIT-ADS chronology & TRACER route & 54.9 & 48.3 & 45.8 & 61.1 & 45.9 & 100.0 & 100.0 \\
+ & Prefix-Only & 54.6 & 47.3 & 45.6 & 59.2 & 49.3 & 100.0 & 100.0 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

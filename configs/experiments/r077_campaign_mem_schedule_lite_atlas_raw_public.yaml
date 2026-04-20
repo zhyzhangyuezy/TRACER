@@ -1,0 +1,44 @@
+experiment_name: r077_campaign_mem_schedule_lite_atlas_raw_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlas_raw_public
+model:
+  type: campaign_mem_v3
+  forecast_encoder: dlinear
+  retrieval_encoder: transformer
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  similarity_temperature: 0.15
+  delta_scale: 0.25
+  use_auxiliary: true
+  use_contrastive: true
+  use_hard_negatives: true
+  use_utility: false
+training:
+  epochs: 14
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+  auxiliary_weight: 0.25
+  contrastive_weight: 0.2
+  calibration_penalty_weight: 0.08
+  grad_clip: 0.85
+  retrieval_lr_scale: 0.92
+  retrieval_head_lr_scale: 0.97
+  forecast_lr_scale: 1.03
+  forecast_head_lr_scale: 1.08
+  gate_lr_scale: 0.95
+  calibration_lr_scale: 1.08
+  warmup_ratio: 0.05
+  warmdown_ratio: 0.4
+  final_lr_frac: 0.25
+  final_weight_decay_frac: 0.2
+  ema_decay: 0.99
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

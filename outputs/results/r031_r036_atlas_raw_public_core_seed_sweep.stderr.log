@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "C:\Users\zhyzh\OneDrive\跑程序\auto科研\Auto-claude-code-research-in-sleep-main\scripts\run_seed_sweep.py", line 82, in <module>
+    main()
+  File "C:\Users\zhyzh\OneDrive\跑程序\auto科研\Auto-claude-code-research-in-sleep-main\scripts\run_seed_sweep.py", line 57, in main
+    result = run_experiment(run_config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhyzh\OneDrive\跑程序\auto科研\Auto-claude-code-research-in-sleep-main\campaign_mem\training\engine.py", line 267, in run_experiment
+    dev_metrics = _evaluate_parametric(model, dev_split, device=device, batch_size=batch_size, metric_cfg=metric_cfg)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhyzh\OneDrive\跑程序\auto科研\Auto-claude-code-research-in-sleep-main\campaign_mem\training\engine.py", line 131, in _evaluate_parametric
+    return build_metric_report(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhyzh\OneDrive\跑程序\auto科研\Auto-claude-code-research-in-sleep-main\campaign_mem\metrics.py", line 94, in build_metric_report
+    "AUPRC": auprc(y_true, y_score),
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zhyzh\OneDrive\跑程序\auto科研\Auto-claude-code-research-in-sleep-main\campaign_mem\metrics.py", line 12, in auprc
+    return float(average_precision_score(y_true, y_score))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\metrics\_ranking.py", line 268, in average_precision_score
+    return _average_binary_score(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\metrics\_base.py", line 76, in _average_binary_score
+    return binary_metric(y_true, y_score, sample_weight=sample_weight)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\metrics\_ranking.py", line 230, in _binary_uninterpolated_average_precision
+    precision, recall, _ = precision_recall_curve(
+                           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\utils\_param_validation.py", line 186, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\metrics\_ranking.py", line 1002, in precision_recall_curve
+    fps, tps, thresholds = _binary_clf_curve(
+                           ^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\metrics\_ranking.py", line 823, in _binary_clf_curve
+    assert_all_finite(y_score)
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\utils\validation.py", line 213, in assert_all_finite
+    _assert_all_finite(
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\utils\validation.py", line 123, in _assert_all_finite
+    _assert_all_finite_element_wise(
+  File "D:\ProgramData\anaconda3\Lib\site-packages\sklearn\utils\validation.py", line 172, in _assert_all_finite_element_wise
+    raise ValueError(msg_err)
+ValueError: Input contains NaN.

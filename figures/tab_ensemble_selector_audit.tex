@@ -1,0 +1,28 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Fixed-family ensemble and learned-selector stress tests. Panel A evaluates simple score-level ensembles on the ATLASv2 held-out-family prediction exports; the single-family oracle row is an ex-post upper bound over choosing one fixed family and is not deployable. Panel B evaluates leave-one-fold-out learned split-level selectors on the processed-window ATLASv2 LOPO folds using only train/dev regime statistics from the other folds.}
+\label{tab:ensemble-selector-audit}
+\maxtablewidth{
+\begin{tabular}{llcc}
+\toprule
+Panel & Method & AUPRC & $\Delta$ vs adaptive \\
+\midrule
+A & DLinear & $0.723$ $\pm$ 0.037 & $-0.040$ \\
+A & Small-Transformer & $0.713$ $\pm$ 0.075 & $-0.050$ \\
+A & Prefix-Only & $0.669$ $\pm$ 0.121 & $-0.094$ \\
+A & TRACER & $0.763$ $\pm$ 0.041 & $\mathbf{+0.000}$ \\
+A & Uniform fixed ensemble & $0.738$ $\pm$ 0.055 & $-0.026$ \\
+A & Rank fixed ensemble & $\mathbf{0.847}$ $\pm$ 0.079 & $\mathbf{+0.084}$ \\
+A & Single-family oracle & $0.764$ $\pm$ 0.032 & $\mathbf{+0.001}$ \\
+\midrule
+B & Adaptive policy & $0.423$ & $\mathbf{+0.000}$ \\
+B & LOFO ridge selector & $0.354$ & $-0.069$ \\
+B & Nearest-fold selector & $0.372$ & $-0.051$ \\
+B & Global-mean selector & $0.328$ & $-0.094$ \\
+B & Single-family oracle & $\mathbf{0.492}$ & $\mathbf{+0.069}$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

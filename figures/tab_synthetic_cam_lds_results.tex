@@ -1,0 +1,30 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.8pt}
+\caption{Three-seed controlled synthetic CAM-LDS results. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for ECE@10 and Brier. The direct adaptive-policy rows use the split-specific chronology and event profiles, while the fixed baselines come from the same controlled benchmark reruns.}
+\label{tab:synthetic-cam-lds-results}
+\maxtablewidth{
+\begin{tabular}{llccccc}
+\toprule
+Split & Method & AUPRC & AUROC & BestF1 & ECE@10 & Brier \\
+\midrule
+Chronological & TRACER & $\mathbf{0.996 \pm 0.001}$ & $\mathbf{0.992 \pm 0.003}$ & $\underline{0.972 \pm 0.009}$ & $0.124 \pm 0.126$ & $0.074 \pm 0.055$ \\
+ & Tail-Risk-Linear & $\mathbf{0.996 \pm 0.001}$ & $\mathbf{0.992 \pm 0.003}$ & $\underline{0.972 \pm 0.009}$ & $0.124 \pm 0.126$ & $0.074 \pm 0.055$ \\
+ & TCN-Forecaster & $0.996 \pm 0.001$ & $0.992 \pm 0.003$ & $0.970 \pm 0.005$ & $0.089 \pm 0.052$ & $\underline{0.062 \pm 0.028}$ \\
+ & Transformer-Forecaster & $0.996 \pm 0.001$ & $0.992 \pm 0.002$ & $\mathbf{0.976 \pm 0.004}$ & $\underline{0.076 \pm 0.026}$ & $0.069 \pm 0.025$ \\
+ & Prefix-Only-Retrieval + Fusion & $0.993 \pm 0.002$ & $0.985 \pm 0.004$ & $0.964 \pm 0.006$ & $0.104 \pm 0.046$ & $0.096 \pm 0.045$ \\
+ & Campaign-MEM & $0.994 \pm 0.001$ & $0.985 \pm 0.003$ & $0.957 \pm 0.004$ & $\mathbf{0.056 \pm 0.005}$ & $\mathbf{0.057 \pm 0.004}$ \\
+ & Pure-kNN-Retrieval & $0.859 \pm 0.000$ & $0.823 \pm 0.000$ & $0.923 \pm 0.000$ & $0.198 \pm 0.000$ & $0.166 \pm 0.000$ \\
+\midrule
+Family-held-out & TRACER & $\underline{0.959 \pm 0.020}$ & $0.924 \pm 0.038$ & $0.904 \pm 0.028$ & $\mathbf{0.099 \pm 0.016}$ & $\underline{0.118 \pm 0.035}$ \\
+ & Tail-Risk-Linear & $\underline{0.959 \pm 0.020}$ & $0.924 \pm 0.038$ & $0.904 \pm 0.028$ & $\mathbf{0.099 \pm 0.016}$ & $\underline{0.118 \pm 0.035}$ \\
+ & TCN-Forecaster & $0.886 \pm 0.021$ & $0.826 \pm 0.038$ & $0.883 \pm 0.026$ & $0.193 \pm 0.041$ & $0.202 \pm 0.032$ \\
+ & Transformer-Forecaster & $0.945 \pm 0.006$ & $0.913 \pm 0.011$ & $\underline{0.919 \pm 0.006}$ & $0.123 \pm 0.008$ & $0.126 \pm 0.012$ \\
+ & Prefix-Only-Retrieval + Fusion & $0.958 \pm 0.007$ & $\underline{0.928 \pm 0.008}$ & $0.911 \pm 0.010$ & $0.121 \pm 0.007$ & $0.122 \pm 0.008$ \\
+ & Campaign-MEM & $\mathbf{0.972 \pm 0.015}$ & $\mathbf{0.947 \pm 0.023}$ & $\mathbf{0.920 \pm 0.008}$ & $0.106 \pm 0.020$ & $\mathbf{0.110 \pm 0.018}$ \\
+ & Pure-kNN-Retrieval & $0.806 \pm 0.000$ & $0.763 \pm 0.000$ & $0.858 \pm 0.000$ & $0.174 \pm 0.000$ & $0.188 \pm 0.000$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

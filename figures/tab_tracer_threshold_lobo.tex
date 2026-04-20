@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Leave-one-benchmark-out threshold audit for the frozen \texttt{tracer\_adaptive} rule table. Each row removes one benchmark family at a time, recomputes the admissible interval from the remaining released benchmarks, and checks whether the published threshold still lies inside that interval whenever the threshold remains identifiable. This audit distinguishes actual contradictions from simple lack of coverage when a held-out benchmark is the only positive anchor for a regime.}
+\label{tab:tracer-threshold-lobo}
+\maxtablewidth{
+\begin{tabular}{p{4.4cm}cccc}
+\toprule
+Threshold & Published value & Supported folds & Tightest held-out interval & Unidentified / contradicted hold-out \\
+\midrule
+$r_{+}^{\mathrm{train}} \le 0.02$ (cold-start sparse) & 0.020 & 4 / 4 identifiable & AIT-ADS: [0.0063, +inf) & Workbook probe \\
+$r_{+}^{\mathrm{train}} \le 0.005$ (extreme sparse) & 0.005 & 4 / 4 identifiable & AIT-ADS: [0.0019, 0.0274) & ATLAS-Raw \\
+$r_{+}^{\mathrm{train}} \ge 0.05$ (dense activation) & 0.050 & 4 / 4 identifiable & ATLAS-Raw: (0.0274, 0.0892] & AIT-ADS \\
+$F_{+}^{\mathrm{train}} \le 2$ (chronology-spiky) & 2 & 4 / 4 identifiable & AIT-ADS: [2.0000, +inf) & ATLASv2 \\
+$\bar{\delta}_{2}^{\mathrm{train}} \ge 0.28$ (chronology-spiky) & 0.280 & 4 / 4 identifiable & AIT-ADS: (-inf, 0.3019] & ATLASv2 \\
+$\rho_{\mathrm{peak}}^{\mathrm{train}} \ge 4.0$ (chronology-spiky) & 4 & 4 / 4 identifiable & AIT-ADS: (-inf, 4.5444] & ATLASv2 \\
+$r_{+}^{\mathrm{train}} \ge 0.35$ (simple dense) & 0.350 & 4 / 4 identifiable & ATLAS-Raw: (0.0892, 0.6703] & Synthetic-CAM-LDS \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

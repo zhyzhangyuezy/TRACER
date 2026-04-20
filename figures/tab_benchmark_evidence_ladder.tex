@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Evidence ladder used in this paper. ATLASv2 provides the primary evidence; because its held-out-family split is tiny, that split is interpreted through both the three-seed table and a 20-seed incident-block audit. The remaining benchmarks test how the same explicit rule table behaves outside the primary setting, while the family sweep remains diagnostic only.}
+\label{tab:evidence-ladder}
+\maxtablewidth[\textwidth]{
+\begin{tabular}{l>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{4.8cm}}
+\toprule
+Tier & Benchmark / source & Protocol & Seeds & Role in the paper \\
+\midrule
+Primary & ATLASv2 alerts & Chronological and family-held-out event-disjoint evaluation with train-only memory bank, plus incident-block audit for held-out-family stability & 3 main; 20 held-out-family & Main chronology and held-out-family evidence for the frozen \texttt{tracer\_adaptive} policy \\
+Supp. & AIT-ADS alerts & Chronological and scenario-held-out alert benchmark built from public detector streams & 3 & Tests whether the same frozen policy remains competitive on a second public alert benchmark \\
+Stress test & ATLAS-Raw events & Same-source raw observation layer with chronological and event-disjoint evaluation & 3 & Tests observation-layer shift under the same frozen policy \\
+Stress test & Splunk Attack Data logs & Third-party public replay logs parsed into deterministic MITRE-stage event-bucket windows & 3 & Tests whether the case-based family remains competitive outside the ATLAS/AIT sources without claiming analyst-labeled triage validation \\
+Controlled & Synthetic CAM-LDS & Generated large-sample benchmark with chronological and family-held-out evaluation under leakage-free incident and family splits & 3 main; 20 audits & Tests whether the published policy behaves sensibly on a controlled benchmark outside the real-alert corpora \\
+Diagnostic & TRACER family sweep & Split-specific optimization across the public benchmark constructions & Mixed & Explains where candidate route modes came from, but remains exploratory \\
+Diagnostic & Workbook probe & Chronological-only workbook-derived public construction & Single run & Weak robustness probe and cold-start fallback case \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

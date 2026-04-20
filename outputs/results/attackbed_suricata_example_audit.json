@@ -1,0 +1,123 @@
+{
+  "dataset_dir": "data\\examples\\cam_lds_attackbed_example",
+  "metadata": {
+    "dataset_name": "cam_lds_attackbed_suricata_example",
+    "description": "Canonical alert-event table projected into Campaign-MEM rolling windows.",
+    "input_path": "data\\examples\\attackbed_suricata_example\\sample_canonical_events.csv",
+    "bin_minutes": 5,
+    "lookback_bins": 4,
+    "main_horizon_minutes": 15,
+    "aux_horizon_minutes": 5,
+    "feature_channels": [
+      "recon",
+      "auth_abuse",
+      "execution",
+      "persistence",
+      "priv_esc",
+      "cred_access",
+      "lateral_move",
+      "c2",
+      "collection_exfil",
+      "impact",
+      "defense_evasion",
+      "other",
+      "event_count",
+      "severity_mean",
+      "severity_max",
+      "high_risk_count",
+      "host_count"
+    ],
+    "analog_fidelity_distance_threshold": 0.45,
+    "incidents": [
+      {
+        "incident_id": "suricata/sample_incident_a",
+        "family_id": "suricata_family_a",
+        "events": 3,
+        "windows": 5,
+        "high_risk_events": 1
+      },
+      {
+        "incident_id": "suricata/sample_incident_b",
+        "family_id": "suricata_family_b",
+        "events": 3,
+        "windows": 5,
+        "high_risk_events": 1
+      },
+      {
+        "incident_id": "suricata/sample_incident_c",
+        "family_id": "suricata_family_c",
+        "events": 3,
+        "windows": 5,
+        "high_risk_events": 1
+      }
+    ]
+  },
+  "splits": {
+    "train": {
+      "samples": 5,
+      "seq_len": 4,
+      "feature_dim": 17,
+      "positive_rate_main": 0.6000000238418579,
+      "positive_rate_aux": 0.20000000298023224,
+      "incident_count": 1,
+      "family_count": 1,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 10.0,
+        "median": 10.0,
+        "min": 5.0,
+        "max": 15.0
+      }
+    },
+    "dev": {
+      "samples": 5,
+      "seq_len": 4,
+      "feature_dim": 17,
+      "positive_rate_main": 0.6000000238418579,
+      "positive_rate_aux": 0.20000000298023224,
+      "incident_count": 1,
+      "family_count": 1,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 10.0,
+        "median": 10.0,
+        "min": 5.0,
+        "max": 15.0
+      }
+    },
+    "test": {
+      "samples": 5,
+      "seq_len": 4,
+      "feature_dim": 17,
+      "positive_rate_main": 0.6000000238418579,
+      "positive_rate_aux": 0.20000000298023224,
+      "incident_count": 1,
+      "family_count": 1,
+      "future_signature_dim": 8,
+      "time_to_escalation_positive": {
+        "mean": 10.0,
+        "median": 10.0,
+        "min": 5.0,
+        "max": 15.0
+      }
+    }
+  },
+  "overlap": {
+    "train__dev": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "train__test": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    },
+    "dev__test": {
+      "incident_overlap": 0,
+      "family_overlap": 0
+    }
+  },
+  "checks": {
+    "incident_leakage_free": true,
+    "event_disjoint_family_free": true
+  }
+}

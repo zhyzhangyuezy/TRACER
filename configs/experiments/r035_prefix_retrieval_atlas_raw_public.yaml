@@ -1,0 +1,26 @@
+experiment_name: r035_prefix_retrieval_atlas_raw_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlas_raw_public
+model:
+  type: prefix_retrieval
+  encoder: transformer
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  use_auxiliary: true
+  use_contrastive: false
+  use_hard_negatives: false
+  use_utility: false
+training:
+  epochs: 12
+  batch_size: 32
+  lr: 0.0005
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

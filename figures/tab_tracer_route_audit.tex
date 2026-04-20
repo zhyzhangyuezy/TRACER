@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Route audit for the released \texttt{tracer\_adaptive} deployment policy on the real-alert benchmark settings discussed in the paper. The route is resolved once per train/dev split and declared deployment profile. The standing column summarizes the direct comparison against the strongest fixed-family rows reported for that setting; held-out-family conclusions on ATLASv2 and AIT-ADS still rely primarily on the dedicated 20-seed audits.}
+\label{tab:tracer-route-audit}
+\maxtablewidth{
+\begin{tabular}{lllllll}
+\toprule
+Setting & Requested profile & Resolved regime & Resolved mode & Evidence & Mean AUPRC & Standing \\
+\midrule
+ATLASv2 chronology & chronology & sparse\_diverse\_chrono\_spiky & TCN & 3 seeds & $0.677 \pm 0.081$ & tie-best \\
+ATLASv2 held-out-family & event-disjoint & sparse\_diverse & decomposition-guided retrieval-active & 20-seed audit & $0.763 \pm 0.041$ & best \\
+AIT-ADS chronology & balanced & dense\_low\_diversity & retrieval-calibrated TRACER & 20-seed audit & $0.532 \pm 0.021$ & top-two \\
+AIT-ADS held-out-scenario & event-disjoint & dense\_low\_diversity\_event & DLinear & 20-seed audit & $0.450 \pm 0.013$ & tie-best \\
+ATLAS-Raw chronology & balanced & extreme\_sparse & retrieval-calibrated TRACER & 3 seeds & $0.461 \pm 0.078$ & tie-best \\
+ATLAS-Raw held-out-family & balanced & extreme\_sparse & retrieval-calibrated TRACER & 3 seeds & $0.403 \pm 0.097$ & tie-best \\
+Workbook probe & balanced & cold\_start\_sparse & LSTM & 3 seeds & $0.133 \pm 0.141$ & 4th \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

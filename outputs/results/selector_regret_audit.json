@@ -1,0 +1,71 @@
+{
+  "rows": [
+    {
+      "key": "atlasv2_chrono",
+      "benchmark": "ATLASv2 chronology",
+      "evidence": "seeded_3",
+      "adaptive_policy_auprc": 0.6771236699808129,
+      "oracle_fixed_family_auprc": 0.5380516309087737,
+      "oracle_fixed_family": "Small-Transformer-Forecaster",
+      "gap_to_oracle": 0.13907203907203913,
+      "adaptive_rank": 1.0
+    },
+    {
+      "key": "atlas_raw_chrono",
+      "benchmark": "ATLAS-Raw chronology",
+      "evidence": "seeded_3",
+      "adaptive_policy_auprc": 0.4612469659832803,
+      "oracle_fixed_family_auprc": 0.34999889071515145,
+      "oracle_fixed_family": "Small-Transformer-Forecaster",
+      "gap_to_oracle": 0.11124807526812885,
+      "adaptive_rank": 1.0
+    },
+    {
+      "key": "atlas_raw_event",
+      "benchmark": "ATLAS-Raw event-disjoint",
+      "evidence": "seeded_3",
+      "adaptive_policy_auprc": 0.4027130511943035,
+      "oracle_fixed_family_auprc": 0.25871790683489365,
+      "oracle_fixed_family": "Prefix-Only-Retrieval + Fusion",
+      "gap_to_oracle": 0.14399514435940985,
+      "adaptive_rank": 1.0
+    },
+    {
+      "key": "atlasv2_event_20seed",
+      "benchmark": "ATLASv2 held-out-family",
+      "evidence": "seeded_20",
+      "adaptive_policy_auprc": 0.7631337535014006,
+      "oracle_fixed_family_auprc": 0.7233954451345754,
+      "oracle_fixed_family": "DLinear-Forecaster",
+      "gap_to_oracle": 0.039738308366825126,
+      "adaptive_rank": 1.0
+    },
+    {
+      "key": "ait_ads_chrono_20seed",
+      "benchmark": "AIT-ADS chronology",
+      "evidence": "seeded_20",
+      "adaptive_policy_auprc": 0.5323961984857847,
+      "oracle_fixed_family_auprc": 0.5361587851934377,
+      "oracle_fixed_family": "Small-Transformer-Forecaster",
+      "gap_to_oracle": -0.0037625867076530595,
+      "adaptive_rank": 2.0
+    },
+    {
+      "key": "ait_ads_event_20seed",
+      "benchmark": "AIT-ADS held-out-scenario",
+      "evidence": "seeded_20",
+      "adaptive_policy_auprc": 0.4498491174786052,
+      "oracle_fixed_family_auprc": 0.4498491174786052,
+      "oracle_fixed_family": "DLinear-Forecaster",
+      "gap_to_oracle": 0.0,
+      "adaptive_rank": 1.5
+    }
+  ],
+  "summary": {
+    "mean_gap_to_oracle": 0.07171516339312499,
+    "min_gap_to_oracle": -0.0037625867076530595,
+    "nonnegative_gap_count": 5,
+    "settings": 6
+  },
+  "note": "The oracle single-family baseline is an ex-post upper bound over choosing one fixed DLinear, small-transformer, or prefix-retrieval family in the same released audit."
+}

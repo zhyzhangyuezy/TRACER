@@ -1,0 +1,58 @@
+experiment_name: r118_campaign_mem_dual_selector_no_calibration_atlasv2_public
+seed: 7
+device: cuda
+data:
+  dataset_dir: data/atlasv2_public
+model:
+  type: campaign_mem_dual_selector
+  retrieval_encoder: transformer
+  hidden_dim: 128
+  embedding_dim: 128
+  top_k: 5
+  similarity_temperature: 0.15
+  delta_scale: 0.0
+  use_auxiliary: true
+  use_contrastive: true
+  use_hard_negatives: true
+  use_utility: false
+training:
+  epochs: 20
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  betas: [0.9, 0.999]
+  auxiliary_weight: 0.25
+  contrastive_weight: 0.2
+  calibration_penalty_weight: 0.0
+  selector_weight: 0.0
+  selector_margin: 0.02
+  grad_clip: 0.85
+  retrieval_lr_scale: 0.95
+  retrieval_head_lr_scale: 1.0
+  forecast_lr_scale: 0.9
+  forecast_head_lr_scale: 0.95
+  gate_lr_scale: 0.95
+  calibration_lr_scale: 0.95
+  selector_lr_scale: 0.95
+  remaining_lr_scale: 0.95
+  warmup_ratio: 0.05
+  warmdown_ratio: 0.35
+  final_lr_frac: 0.2
+  final_weight_decay_frac: 0.2
+  ema_decay: 0.99
+  freeze_forecast_until_epoch: 2
+  forecast_ramp_epochs: 2
+  freeze_calibration_until_epoch: 5
+  calibration_ramp_epochs: 3
+  model_selection_mode: balanced
+  selection_af_bonus_weight: 0.03
+  proxy_event_selection_af_bonus_weight: 0.04
+  model_selection_dev_weight: 1.0
+  model_selection_proxy_event_weight: 1.0
+  proxy_event_family_ratio: 0.25
+  checkpoint_average_top_k: 5
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.35
+output:
+  dir: outputs/results

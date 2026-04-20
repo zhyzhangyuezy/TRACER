@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Analytical operational footprint of the released \texttt{tracer\_adaptive} policy on the real-alert benchmark suite. Retrieval-active routes use a train-only embedding bank with 128-dimensional float32 vectors. Retrieval-free fallback routes carry no bank or online lookup overhead beyond the resolved parametric model itself.}
+\label{tab:tracer-operational-footprint}
+\maxtablewidth{
+\begin{tabular}{lccccc}
+\toprule
+Setting & Resolved mode & Retrieval active & Train-bank rows & Embedding bank (MiB) & Online lookup \\
+\midrule
+ATLASv2 chronology & TCN & no & -- & $0.000$ & none \\
+ATLASv2 held-out-family & decomposition-guided retrieval-active & yes & 438 & $0.214$ & exact top-$k$ cosine, $k=5$ \\
+AIT-ADS chronology & balanced retrieval-calibrated & yes & 9119 & $4.453$ & exact top-$k$ cosine, $k=5$ \\
+AIT-ADS held-out-scenario & DLinear & no & -- & $0.000$ & none \\
+ATLAS-Raw chronology & conservative retrieval-calibrated & yes & 46156 & $22.537$ & exact top-$k$ cosine, $k=5$ \\
+ATLAS-Raw held-out-family & conservative retrieval-calibrated & yes & 46156 & $22.537$ & exact top-$k$ cosine, $k=5$ \\
+Workbook probe & LSTM & no & -- & $0.000$ & none \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

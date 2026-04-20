@@ -1,0 +1,36 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{ATLAS-Raw public benchmark results. Mean and standard deviation are computed over seeds 7, 13, and 21. The TRACER row corresponds to the frozen \texttt{tracer\_adaptive} policy on this benchmark, while the ATLASv2-tuned core transfer is shown separately. Best available value in each metric column is bolded and the second-best value is underlined; lower is better for Brier and TTE-Err@1.}
+\label{tab:atlasraw-public-main}
+\maxtablewidth{
+\begin{tabular}{llccccc}
+\toprule
+Split & Method & AUPRC & LeadTime@P80 & AF@5 & TTE-Err@1 & Brier \\
+\midrule
+Chronological & LR-TailRisk & $0.060 \pm 0.039$ & $1.67 \pm 2.36$ & -- & -- & $0.013 \pm 0.002$ \\
+Chronological & DLinear-Forecaster & $0.004 \pm 0.000$ & $0.00 \pm 0.00$ & -- & -- & $0.705 \pm 0.068$ \\
+Chronological & TCN-Forecaster & $0.124 \pm 0.026$ & $5.00 \pm 0.00$ & -- & -- & $\mathbf{0.006 \pm 0.000}$ \\
+Chronological & Small-Transformer-Forecaster & $0.350 \pm 0.032$ & $3.33 \pm 2.36$ & -- & -- & $\mathbf{0.006 \pm 0.000}$ \\
+Chronological & Prefix-Only-Retrieval + Fusion & $0.321 \pm 0.084$ & $3.33 \pm 2.36$ & $\underline{97.77 \pm 0.19}$ & $\underline{182.64 \pm 220.30}$ & $\mathbf{0.006 \pm 0.001}$ \\
+Chronological & Shared-Encoder TRACER & $0.345 \pm 0.154$ & $\underline{9.33 \pm 7.36}$ & $\mathbf{97.79 \pm 0.17}$ & $1814.86 \pm 1831.70$ & $\mathbf{0.006 \pm 0.001}$ \\
+Chronological & DLinear-Calibrated TRACER & $\underline{0.362 \pm 0.080}$ & $\underline{9.33 \pm 7.36}$ & $\underline{97.77 \pm 0.05}$ & $426.53 \pm 1.68$ & $\underline{0.007 \pm 0.001}$ \\
+Chronological & TRACER & $\mathbf{0.461 \pm 0.078}$ & $\mathbf{9.58 \pm 8.80}$ & $78.08 \pm 27.35$ & $\mathbf{24.44 \pm 0.98}$ & $\mathbf{0.006 \pm 0.000}$ \\
+Chronological & Selector-Conservative TRACER & $0.275 \pm 0.109$ & $1.67 \pm 2.36$ & $58.96 \pm 27.56$ & $839.17 \pm 1154.36$ & $0.121 \pm 0.163$ \\
+Chronological & ATLASv2-Tuned TRACER Core Transfer & $0.341 \pm 0.145$ & $6.67 \pm 9.43$ & $58.74 \pm 27.36$ & $2138.75 \pm 458.44$ & $\underline{0.007 \pm 0.002}$ \\
+\midrule
+Event-disjoint & LR-TailRisk & $0.002 \pm 0.000$ & $\underline{0.00 \pm 0.00}$ & -- & -- & $0.003 \pm 0.000$ \\
+Event-disjoint & DLinear-Forecaster & $0.002 \pm 0.000$ & $\underline{0.00 \pm 0.00}$ & -- & -- & $0.168 \pm 0.016$ \\
+Event-disjoint & TCN-Forecaster & $0.002 \pm 0.000$ & $\underline{0.00 \pm 0.00}$ & -- & -- & $\underline{0.002 \pm 0.000}$ \\
+Event-disjoint & Small-Transformer-Forecaster & $0.030 \pm 0.020$ & $\underline{0.00 \pm 0.00}$ & -- & -- & $\underline{0.002 \pm 0.000}$ \\
+Event-disjoint & Prefix-Only-Retrieval + Fusion & $0.259 \pm 0.307$ & $\mathbf{4.17 \pm 5.89}$ & $84.29 \pm 12.42$ & $\underline{291.94 \pm 378.71}$ & $\underline{0.002 \pm 0.000}$ \\
+Event-disjoint & Shared-Encoder TRACER & $0.214 \pm 0.126$ & $\underline{0.00 \pm 0.00}$ & $\mathbf{99.57 \pm 0.03}$ & $557.50 \pm 190.92$ & $\mathbf{0.001 \pm 0.000}$ \\
+Event-disjoint & DLinear-Calibrated TRACER & $0.102 \pm 0.142$ & $\underline{0.00 \pm 0.00}$ & $69.12 \pm 21.51$ & $557.50 \pm 190.92$ & $0.006 \pm 0.005$ \\
+Event-disjoint & TRACER & $\mathbf{0.403 \pm 0.097}$ & $\mathbf{4.17 \pm 5.89}$ & $79.66 \pm 19.08$ & $377.50 \pm 254.56$ & $\underline{0.002 \pm 0.000}$ \\
+Event-disjoint & Selector-Conservative TRACER & $\underline{0.292 \pm 0.197}$ & $\underline{0.00 \pm 0.00}$ & $\underline{90.23 \pm 6.63}$ & $\mathbf{289.44 \pm 185.23}$ & $0.029 \pm 0.039$ \\
+Event-disjoint & ATLASv2-Tuned TRACER Core Transfer & $0.002 \pm 0.001$ & $\underline{0.00 \pm 0.00}$ & $75.00 \pm 25.47$ & $512.50 \pm 229.46$ & $0.003 \pm 0.002$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

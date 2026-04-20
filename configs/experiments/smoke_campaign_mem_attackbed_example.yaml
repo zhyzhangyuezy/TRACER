@@ -1,0 +1,26 @@
+experiment_name: smoke_campaign_mem_attackbed_example
+seed: 7
+device: cpu
+data:
+  dataset_dir: data/examples/cam_lds_attackbed_example
+model:
+  type: campaign_mem
+  encoder: transformer
+  hidden_dim: 32
+  embedding_dim: 32
+  top_k: 3
+  use_auxiliary: true
+  use_contrastive: false
+  use_hard_negatives: false
+  use_utility: false
+training:
+  epochs: 4
+  batch_size: 4
+  lr: 0.001
+  weight_decay: 0.0001
+  auxiliary_weight: 0.25
+metrics:
+  target_precision: 0.8
+  analog_fidelity_distance_threshold: 0.45
+output:
+  dir: outputs/results

@@ -1,0 +1,1364 @@
+{
+  "audit": "Cross-dataset transfer and few-shot adaptation audit",
+  "common_channels": [
+    "recon",
+    "auth_abuse",
+    "execution",
+    "persistence",
+    "priv_esc",
+    "cred_access",
+    "lateral_move",
+    "c2",
+    "collection_exfil",
+    "impact",
+    "defense_evasion",
+    "other",
+    "event_count",
+    "severity_mean",
+    "severity_max"
+  ],
+  "rows": [
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "setting": "AIT-ADS -> ATLASv2",
+      "shot": 5,
+      "method": "DLinear + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.0741427199852174,
+      "AUPRC_std": 0.01832028352237821,
+      "AUROC": 0.4620216184633363,
+      "AUROC_std": 0.023973401389341058,
+      "Brier": 0.14166021245009333,
+      "Brier_std": 0.00936756526392996,
+      "AF@5": NaN,
+      "AF@5_std": NaN,
+      "regimes": []
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "setting": "AIT-ADS -> ATLASv2",
+      "shot": 5,
+      "method": "Prefix-Only + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.06972853373206694,
+      "AUPRC_std": 0.012097489836931666,
+      "AUROC": 0.5400233713117149,
+      "AUROC_std": 0.13369291720802576,
+      "Brier": 0.11405158864864454,
+      "Brier_std": 0.050183534652563894,
+      "AF@5": 65.41176470588235,
+      "AF@5_std": 7.268138428568879,
+      "regimes": []
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "setting": "AIT-ADS -> ATLASv2",
+      "shot": 5,
+      "method": "TRACER adaptive + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.07113081477702987,
+      "AUPRC_std": 0.011819073778263127,
+      "AUROC": 0.6373064563248613,
+      "AUROC_std": 0.06461048949633795,
+      "Brier": 0.18421576661516234,
+      "Brier_std": 0.05360784008888787,
+      "AF@5": 57.96078431372549,
+      "AF@5_std": 6.555474100068039,
+      "regimes": [
+        "sparse_diverse"
+      ]
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "setting": "AIT-ADS -> ATLASv2",
+      "shot": 20,
+      "method": "DLinear + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.06853458279276546,
+      "AUPRC_std": 0.010415113465280977,
+      "AUROC": 0.5268770084721005,
+      "AUROC_std": 0.03031239758377494,
+      "Brier": 0.1295675229880074,
+      "Brier_std": 0.03951070672327274,
+      "AF@5": NaN,
+      "AF@5_std": NaN,
+      "regimes": []
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "setting": "AIT-ADS -> ATLASv2",
+      "shot": 20,
+      "method": "Prefix-Only + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.06470533743898242,
+      "AUPRC_std": 0.01807667439571629,
+      "AUROC": 0.5216184633362547,
+      "AUROC_std": 0.1372330905866013,
+      "Brier": 0.12191282547671718,
+      "Brier_std": 0.017178557896145,
+      "AF@5": 59.05882352941176,
+      "AF@5_std": 17.118624054054017,
+      "regimes": []
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "setting": "AIT-ADS -> ATLASv2",
+      "shot": 20,
+      "method": "TRACER adaptive + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.10045202341381376,
+      "AUPRC_std": 0.008723003709950721,
+      "AUROC": 0.7800175284837861,
+      "AUROC_std": 0.0174442909370448,
+      "Brier": 0.12050050464901303,
+      "Brier_std": 0.03557275474576432,
+      "AF@5": 63.01960784313726,
+      "AF@5_std": 9.1242017341606,
+      "regimes": [
+        "sparse_diverse"
+      ]
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "setting": "ATLASv2 -> AIT-ADS",
+      "shot": 5,
+      "method": "DLinear + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.33203086535796317,
+      "AUPRC_std": 0.08344732013835861,
+      "AUROC": 0.7710090015784061,
+      "AUROC_std": 0.07083450747045895,
+      "Brier": 0.09050557734015516,
+      "Brier_std": 0.05453453433096403,
+      "AF@5": NaN,
+      "AF@5_std": NaN,
+      "regimes": []
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "setting": "ATLASv2 -> AIT-ADS",
+      "shot": 5,
+      "method": "Prefix-Only + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.3336334922871829,
+      "AUPRC_std": 0.05213751780360358,
+      "AUROC": 0.8094783527627015,
+      "AUROC_std": 0.004208835414815486,
+      "Brier": 0.053940201463974165,
+      "Brier_std": 0.0025130731535003823,
+      "AF@5": 70.05314115163426,
+      "AF@5_std": 3.1933324231812583,
+      "regimes": []
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "setting": "ATLASv2 -> AIT-ADS",
+      "shot": 5,
+      "method": "TRACER adaptive + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.31659717990229874,
+      "AUPRC_std": 0.04333059751260318,
+      "AUROC": 0.7868855753817754,
+      "AUROC_std": 0.032332890127562824,
+      "Brier": 0.05243501374725388,
+      "Brier_std": 0.007793914325014191,
+      "AF@5": 75.64970517580257,
+      "AF@5_std": 7.886826699491155,
+      "regimes": [
+        "sparse_diverse"
+      ]
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "setting": "ATLASv2 -> AIT-ADS",
+      "shot": 20,
+      "method": "DLinear + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.41893166959510597,
+      "AUPRC_std": 0.061087849070655224,
+      "AUROC": 0.801591692380202,
+      "AUROC_std": 0.056031096686354594,
+      "Brier": 0.0520237035822819,
+      "Brier_std": 0.01095618534260474,
+      "AF@5": NaN,
+      "AF@5_std": NaN,
+      "regimes": []
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "setting": "ATLASv2 -> AIT-ADS",
+      "shot": 20,
+      "method": "Prefix-Only + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.2938785329361482,
+      "AUPRC_std": 0.06407142178061462,
+      "AUROC": 0.774357130934058,
+      "AUROC_std": 0.040915413733169995,
+      "Brier": 0.06795825375420729,
+      "Brier_std": 0.013736727125463326,
+      "AF@5": 78.12331659023076,
+      "AF@5_std": 1.8842454067745982,
+      "regimes": []
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "setting": "ATLASv2 -> AIT-ADS",
+      "shot": 20,
+      "method": "TRACER adaptive + replay10",
+      "seeds": [
+        7,
+        13,
+        21
+      ],
+      "AUPRC": 0.2700909742515417,
+      "AUPRC_std": 0.06053950546551754,
+      "AUROC": 0.7994196964452724,
+      "AUROC_std": 0.031054199127982553,
+      "Brier": 0.059504197329048894,
+      "Brier_std": 0.0146800143551636,
+      "AF@5": 83.6660115017835,
+      "AF@5_std": 4.60082904474264,
+      "regimes": [
+        "sparse_diverse"
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 7,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_atlasv2_to_aitads_shot5_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed7_rep10",
+      "test": {
+        "AUPRC": 0.41257931856922536,
+        "AUROC": 0.814738274259708,
+        "Brier": 0.057641747731237904,
+        "LogLoss": 0.2251135804747904,
+        "ECE@10": 0.0768667011543164,
+        "BestF1": 0.5846867749419954,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 7,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_atlasv2_to_aitads_shot5_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed7_rep10",
+      "test": {
+        "AUPRC": 0.3746490670568552,
+        "AUROC": 0.8105954186949061,
+        "Brier": 0.057442558306256754,
+        "LogLoss": 0.29705940933716785,
+        "ECE@10": 0.06649144245592169,
+        "BestF1": 0.5701357466063349,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 70.74033631797334,
+        "TTE-Err@1": 84.7011947631836
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 7,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_atlasv2_to_aitads_shot5_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed7_rep10",
+      "test": {
+        "AUPRC": 0.3738081373019686,
+        "AUROC": 0.8117005177073591,
+        "Brier": 0.06271715563049435,
+        "LogLoss": 0.2943958463025936,
+        "ECE@10": 0.04245622543220792,
+        "BestF1": 0.5548098434004475,
+        "LeadTime@P80": 23.461538314819336,
+        "Precision@P80": 0.8666666666666667,
+        "Recall@P80": 0.05179282868525897,
+        "LeadTimeDetail": {
+          "threshold": 0.9986050128936768,
+          "precision": 0.8666666666666667,
+          "recall": 0.05179282868525897,
+          "lead_time": 23.461538314819336
+        },
+        "Analog-Fidelity@5": 86.66957851059183,
+        "TTE-Err@1": 503.3665466308594
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 13,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_atlasv2_to_aitads_shot5_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed13_rep10",
+      "test": {
+        "AUPRC": 0.21706297857045725,
+        "AUROC": 0.671092432488162,
+        "Brier": 0.16736099485357367,
+        "LogLoss": 0.5036761857227452,
+        "ECE@10": 0.3032350935095599,
+        "BestF1": 0.4236453201970443,
+        "LeadTime@P80": 25.0,
+        "Precision@P80": 1.0,
+        "Recall@P80": 0.00398406374501992,
+        "LeadTimeDetail": {
+          "threshold": 0.6643720269203186,
+          "precision": 1.0,
+          "recall": 0.00398406374501992,
+          "lead_time": 25.0
+        }
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 13,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_atlasv2_to_aitads_shot5_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed13_rep10",
+      "test": {
+        "AUPRC": 0.2600618460734161,
+        "AUROC": 0.8038566620762789,
+        "Brier": 0.05166612016059393,
+        "LogLoss": 0.3059069601061948,
+        "ECE@10": 0.0373549621926905,
+        "BestF1": 0.5214007782101167,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 73.57501637912208,
+        "TTE-Err@1": 216.99203491210938
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 13,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_atlasv2_to_aitads_shot5_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed13_rep10",
+      "test": {
+        "AUPRC": 0.26897879016131365,
+        "AUROC": 0.8077390070034096,
+        "Brier": 0.05073281172988422,
+        "LogLoss": 0.2792933144324145,
+        "ECE@10": 0.04450020164451197,
+        "BestF1": 0.523138832997988,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 71.63136055907403,
+        "TTE-Err@1": 222.5099639892578
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 21,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_atlasv2_to_aitads_shot5_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed21_rep10",
+      "test": {
+        "AUPRC": 0.36645029893420694,
+        "AUROC": 0.8271962979873483,
+        "Brier": 0.046513989435653914,
+        "LogLoss": 0.18156596562973634,
+        "ECE@10": 0.047377901842691965,
+        "BestF1": 0.4880952380952381,
+        "LeadTime@P80": 15.588234901428223,
+        "Precision@P80": 0.8095238095238095,
+        "Recall@P80": 0.13545816733067728,
+        "LeadTimeDetail": {
+          "threshold": 0.6503159999847412,
+          "precision": 0.8095238095238095,
+          "recall": 0.13545816733067728,
+          "lead_time": 15.588234901428223
+        }
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 21,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_atlasv2_to_aitads_shot5_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed21_rep10",
+      "test": {
+        "AUPRC": 0.36618956373127753,
+        "AUROC": 0.8139829775169194,
+        "Brier": 0.05271192592507182,
+        "LogLoss": 0.2821461198519034,
+        "ECE@10": 0.07279346464780993,
+        "BestF1": 0.5601750547045952,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 65.84407075780739,
+        "TTE-Err@1": 120.47808837890625
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 5,
+      "seed": 21,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_atlasv2_to_aitads_shot5_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot5_seed21_rep10",
+      "test": {
+        "AUPRC": 0.307004612243614,
+        "AUROC": 0.7412172014345575,
+        "Brier": 0.04385507388138308,
+        "LogLoss": 0.2577845717325431,
+        "ECE@10": 0.047759755651062205,
+        "BestF1": 0.5333333333333333,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 68.64817645774185,
+        "TTE-Err@1": 292.5498046875
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 7,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_atlasv2_to_aitads_shot20_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed7_rep10",
+      "test": {
+        "AUPRC": 0.45075818852784505,
+        "AUROC": 0.8301894087237005,
+        "Brier": 0.05227031324578808,
+        "LogLoss": 0.21802777452153174,
+        "ECE@10": 0.0461076701823387,
+        "BestF1": 0.5317073170731708,
+        "LeadTime@P80": 14.642857551574707,
+        "Precision@P80": 0.84,
+        "Recall@P80": 0.16733067729083664,
+        "LeadTimeDetail": {
+          "threshold": 0.995701014995575,
+          "precision": 0.84,
+          "recall": 0.16733067729083664,
+          "lead_time": 14.642857551574707
+        }
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 7,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_atlasv2_to_aitads_shot20_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed7_rep10",
+      "test": {
+        "AUPRC": 0.3769354440635846,
+        "AUROC": 0.7261310580229913,
+        "Brier": 0.07256145940048025,
+        "LogLoss": 0.3666794466152675,
+        "ECE@10": 0.1376663446488998,
+        "BestF1": 0.5653104925053533,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 80.76872679624371,
+        "TTE-Err@1": 216.97210693359375
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 7,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_atlasv2_to_aitads_shot20_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed7_rep10",
+      "test": {
+        "AUPRC": 0.35565189832937294,
+        "AUROC": 0.8432278280592969,
+        "Brier": 0.04610979243298816,
+        "LogLoss": 0.2667924364940465,
+        "ECE@10": 0.02768867692109821,
+        "BestF1": 0.5708245243128963,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 90.17252675256606,
+        "TTE-Err@1": 191.61354064941406
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 13,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_atlasv2_to_aitads_shot20_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed13_rep10",
+      "test": {
+        "AUPRC": 0.4725733702364579,
+        "AUROC": 0.8512916909073502,
+        "Brier": 0.038483566648737436,
+        "LogLoss": 0.16920893015746843,
+        "ECE@10": 0.012504880880248653,
+        "BestF1": 0.5428571428571429,
+        "LeadTime@P80": 16.153846740722656,
+        "Precision@P80": 0.8125,
+        "Recall@P80": 0.1553784860557769,
+        "LeadTimeDetail": {
+          "threshold": 0.8730049729347229,
+          "precision": 0.8125,
+          "recall": 0.1553784860557769,
+          "lead_time": 16.153846740722656
+        }
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 13,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_atlasv2_to_aitads_shot20_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed13_rep10",
+      "test": {
+        "AUPRC": 0.2837169830049749,
+        "AUROC": 0.8261611594288281,
+        "Brier": 0.0493117929777954,
+        "LogLoss": 0.25656804406156863,
+        "ECE@10": 0.026364146863390354,
+        "BestF1": 0.5405405405405405,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 77.0779646210963,
+        "TTE-Err@1": 208.3665313720703
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 13,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_atlasv2_to_aitads_shot20_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed13_rep10",
+      "test": {
+        "AUPRC": 0.2246564989826583,
+        "AUROC": 0.7801953001303472,
+        "Brier": 0.052464709116224945,
+        "LogLoss": 0.3155656435073383,
+        "ECE@10": 0.05297565098312232,
+        "BestF1": 0.472885032537961,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 80.4324088228871,
+        "TTE-Err@1": 450.3984069824219
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 21,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_atlasv2_to_aitads_shot20_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed21_rep10",
+      "test": {
+        "AUPRC": 0.3334634500210149,
+        "AUROC": 0.7232939775095552,
+        "Brier": 0.06531723085232018,
+        "LogLoss": 0.276238773564028,
+        "ECE@10": 0.09422230531025223,
+        "BestF1": 0.43103448275862066,
+        "LeadTime@P80": 12.5,
+        "Precision@P80": 0.8135593220338984,
+        "Recall@P80": 0.19123505976095617,
+        "LeadTimeDetail": {
+          "threshold": 0.9232720136642456,
+          "precision": 0.8135593220338984,
+          "recall": 0.19123505976095617,
+          "lead_time": 12.5
+        }
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 21,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_atlasv2_to_aitads_shot20_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed21_rep10",
+      "test": {
+        "AUPRC": 0.22098317173988513,
+        "AUROC": 0.7707791753503546,
+        "Brier": 0.08200150888434622,
+        "LogLoss": 0.30316829086759484,
+        "ECE@10": 0.11495506717553139,
+        "BestF1": 0.46353322528363045,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 76.52325835335226,
+        "TTE-Err@1": 228.20716857910156
+      }
+    },
+    {
+      "source": "atlasv2",
+      "target": "aitads",
+      "shot": 20,
+      "seed": 21,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_atlasv2_to_aitads_shot20_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/atlasv2_to_aitads_shot20_seed21_rep10",
+      "test": {
+        "AUPRC": 0.22996452544259394,
+        "AUROC": 0.7748359611461731,
+        "Brier": 0.07993809043793358,
+        "LogLoss": 0.32461473978068955,
+        "ECE@10": 0.10361170557714841,
+        "BestF1": 0.36713286713286714,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 80.39309892989735,
+        "TTE-Err@1": 253.64541625976562
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 7,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_aitads_to_atlasv2_shot5_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed7_rep10",
+      "test": {
+        "AUPRC": 0.09529811924769907,
+        "AUROC": 0.43251533742331294,
+        "Brier": 0.151936674835109,
+        "LogLoss": 0.4804803660052566,
+        "ECE@10": 0.2985641767873483,
+        "BestF1": 0.2,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 7,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_aitads_to_atlasv2_shot5_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed7_rep10",
+      "test": {
+        "AUPRC": 0.053984596219305146,
+        "AUROC": 0.49123575810692377,
+        "Brier": 0.07800749808769225,
+        "LogLoss": 0.2731685138163653,
+        "ECE@10": 0.09611165306585678,
+        "BestF1": 0.1081081081081081,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 68.35294117647058,
+        "TTE-Err@1": 1594.2857666015625
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 7,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_aitads_to_atlasv2_shot5_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed7_rep10",
+      "test": {
+        "AUPRC": 0.08425864402608588,
+        "AUROC": 0.6643295354951797,
+        "Brier": 0.1149073608665088,
+        "LogLoss": 0.35056760855669866,
+        "ECE@10": 0.13485398709924673,
+        "BestF1": 0.15384615384615383,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 62.117647058823536,
+        "TTE-Err@1": 25.0
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 13,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_aitads_to_atlasv2_shot5_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed13_rep10",
+      "test": {
+        "AUPRC": 0.0765182436611008,
+        "AUROC": 0.4912357581069237,
+        "Brier": 0.14376233063437657,
+        "LogLoss": 0.45804633864446886,
+        "ECE@10": 0.2792104372206856,
+        "BestF1": 0.17142857142857143,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 13,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_aitads_to_atlasv2_shot5_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed13_rep10",
+      "test": {
+        "AUPRC": 0.07180220840935127,
+        "AUROC": 0.40622261174408414,
+        "Brier": 0.07912839451080257,
+        "LogLoss": 0.28859716384576356,
+        "ECE@10": 0.1189890292199219,
+        "BestF1": 0.2,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 72.47058823529412,
+        "TTE-Err@1": 1590.0
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 13,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_aitads_to_atlasv2_shot5_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed13_rep10",
+      "test": {
+        "AUPRC": 0.05560694301701496,
+        "AUROC": 0.5482033304119194,
+        "Brier": 0.1922624621291845,
+        "LogLoss": 0.6332400454118688,
+        "ECE@10": 0.18457469265952514,
+        "BestF1": 0.12195121951219512,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 63.05882352941177,
+        "TTE-Err@1": 1600.0
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 21,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_aitads_to_atlasv2_shot5_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed21_rep10",
+      "test": {
+        "AUPRC": 0.050611797046852335,
+        "AUROC": 0.4623137598597722,
+        "Brier": 0.1292816318807944,
+        "LogLoss": 0.41266230402653803,
+        "ECE@10": 0.20269614526015872,
+        "BestF1": 0.10526315789473685,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 21,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_aitads_to_atlasv2_shot5_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed21_rep10",
+      "test": {
+        "AUPRC": 0.08339879656754441,
+        "AUROC": 0.7226117440841366,
+        "Brier": 0.18501887334743877,
+        "LogLoss": 0.5720007851543025,
+        "ECE@10": 0.22165905491120239,
+        "BestF1": 0.16666666666666663,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 55.41176470588235,
+        "TTE-Err@1": 1585.0
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 5,
+      "seed": 21,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_aitads_to_atlasv2_shot5_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot5_seed21_rep10",
+      "test": {
+        "AUPRC": 0.07352685728798877,
+        "AUROC": 0.6993865030674847,
+        "Brier": 0.24547747684979376,
+        "LogLoss": 0.7965214158718701,
+        "ECE@10": 0.2465857567587484,
+        "BestF1": 0.15555555555555556,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 48.705882352941174,
+        "TTE-Err@1": 1598.5714111328125
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 7,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_aitads_to_atlasv2_shot20_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed7_rep10",
+      "test": {
+        "AUPRC": 0.08148251186225869,
+        "AUROC": 0.4851007887817703,
+        "Brier": 0.08593128355204296,
+        "LogLoss": 0.31029636379713527,
+        "ECE@10": 0.15676824991755628,
+        "BestF1": 0.18181818181818182,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 7,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_aitads_to_atlasv2_shot20_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed7_rep10",
+      "test": {
+        "AUPRC": 0.05722179552824713,
+        "AUROC": 0.42988606485539,
+        "Brier": 0.09991498252466788,
+        "LogLoss": 0.3316266448047287,
+        "ECE@10": 0.16001515191267518,
+        "BestF1": 0.13953488372093023,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 74.94117647058823,
+        "TTE-Err@1": 1595.0
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 7,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_aitads_to_atlasv2_shot20_seed7_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed7_rep10",
+      "test": {
+        "AUPRC": 0.10757575757575757,
+        "AUROC": 0.7944785276073619,
+        "Brier": 0.12037132975919149,
+        "LogLoss": 0.3404313739217193,
+        "ECE@10": 0.12856846617377254,
+        "BestF1": 0.20689655172413793,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 69.6470588235294,
+        "TTE-Err@1": 1588.5714111328125
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 13,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_aitads_to_atlasv2_shot20_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed13_rep10",
+      "test": {
+        "AUPRC": 0.05597989195678271,
+        "AUROC": 0.5394390885188431,
+        "Brier": 0.12116060549221447,
+        "LogLoss": 0.3889126351826301,
+        "ECE@10": 0.19910557289772174,
+        "BestF1": 0.1037037037037037,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 13,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_aitads_to_atlasv2_shot20_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed13_rep10",
+      "test": {
+        "AUPRC": 0.0896165837342308,
+        "AUROC": 0.7156003505696757,
+        "Brier": 0.12398283569886885,
+        "LogLoss": 0.38036230355540396,
+        "ECE@10": 0.1447161943596952,
+        "BestF1": 0.17910447761194032,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 66.94117647058823,
+        "TTE-Err@1": 1854.2857666015625
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 13,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_aitads_to_atlasv2_shot20_seed13_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed13_rep10",
+      "test": {
+        "AUPRC": 0.08816802934006153,
+        "AUROC": 0.7554776511831727,
+        "Brier": 0.07699768678112917,
+        "LogLoss": 0.26471403943269145,
+        "ECE@10": 0.07207863166592741,
+        "BestF1": 0.17948717948717946,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 69.29411764705883,
+        "TTE-Err@1": 29.285715103149414
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 21,
+      "method": "DLinear + replay10",
+      "base_method": "DLinear",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_dlinear_aitads_to_atlasv2_shot20_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed21_rep10",
+      "test": {
+        "AUPRC": 0.068141344559255,
+        "AUROC": 0.556091148115688,
+        "Brier": 0.18161067991976473,
+        "LogLoss": 0.5725052584900441,
+        "ECE@10": 0.2660195643630098,
+        "BestF1": 0.17647058823529413,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        }
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 21,
+      "method": "Prefix-Only + replay10",
+      "base_method": "Prefix-Only",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_prefixonlyonly_aitads_to_atlasv2_shot20_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed21_rep10",
+      "test": {
+        "AUPRC": 0.047277633054469324,
+        "AUROC": 0.4193689745836985,
+        "Brier": 0.14184065820661482,
+        "LogLoss": 0.49517886118051824,
+        "ECE@10": 0.19114364495720054,
+        "BestF1": 0.09917355371900825,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 35.294117647058826,
+        "TTE-Err@1": 2313.571533203125
+      }
+    },
+    {
+      "source": "aitads",
+      "target": "atlasv2",
+      "shot": 20,
+      "seed": 21,
+      "method": "TRACER adaptive + replay10",
+      "base_method": "TRACER adaptive",
+      "support_repeat": 10,
+      "config": "configs/experiments/cross_dataset_transfer/r330_transfer_tracer_adaptive_aitads_to_atlasv2_shot20_seed21_rep10.yaml",
+      "dataset_dir": "data/cross_dataset_transfer/aitads_to_atlasv2_shot20_seed21_rep10",
+      "test": {
+        "AUPRC": 0.10561228332562217,
+        "AUROC": 0.7900964066608238,
+        "Brier": 0.16413249740671845,
+        "LogLoss": 0.6469740105589472,
+        "ECE@10": 0.15936127602471972,
+        "BestF1": 0.20689655172413793,
+        "LeadTime@P80": 0.0,
+        "Precision@P80": 0.0,
+        "Recall@P80": 0.0,
+        "LeadTimeDetail": {
+          "threshold": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "lead_time": 0.0
+        },
+        "Analog-Fidelity@5": 50.117647058823536,
+        "TTE-Err@1": 18.571428298950195
+      },
+      "regime": "sparse_diverse",
+      "resolved_model_type": "campaign_mem_decomp_modular"
+    }
+  ]
+}

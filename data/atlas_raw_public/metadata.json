@@ -1,0 +1,376 @@
+{
+  "dataset_name": "atlas_raw_public_campaign_mem",
+  "description": "ATLAS raw security-event benchmark projected into Campaign-MEM rolling windows using public REAPr process labels.",
+  "count_feature_transform": "log1p on alert-count, event-count, malicious-count, artifact-count, and corresponding future-signature rate channels.",
+  "raw_logs_dir": "external_sources\\ATLAS\\raw_logs",
+  "labels_csv": "external_sources\\reapr-ground-truth\\atlasv2\\atlasv2_labels.csv",
+  "bin_minutes": 5,
+  "lookback_bins": 4,
+  "main_horizon_minutes": 30,
+  "aux_horizon_minutes": 10,
+  "feature_channels": [
+    "recon",
+    "auth_abuse",
+    "execution",
+    "persistence",
+    "priv_esc",
+    "cred_access",
+    "lateral_move",
+    "c2",
+    "collection_exfil",
+    "impact",
+    "defense_evasion",
+    "other",
+    "event_count",
+    "severity_mean",
+    "severity_max",
+    "malicious_count",
+    "artifact_count",
+    "host_h1",
+    "host_h2"
+  ],
+  "analog_fidelity_distance_threshold": 0.35,
+  "event_disjoint_attack_families": [
+    "atlasraw/m6",
+    "atlasraw/s4"
+  ],
+  "family_group_sizes": {
+    "atlasraw/s2": {
+      "windows": 4208,
+      "incidents": 1
+    },
+    "atlasraw/m1": {
+      "windows": 15824,
+      "incidents": 2
+    },
+    "atlasraw/m2": {
+      "windows": 16225,
+      "incidents": 2
+    },
+    "atlasraw/s1": {
+      "windows": 852,
+      "incidents": 1
+    },
+    "atlasraw/m3": {
+      "windows": 8646,
+      "incidents": 2
+    },
+    "atlasraw/m4": {
+      "windows": 7733,
+      "incidents": 2
+    },
+    "atlasraw/m6": {
+      "windows": 7643,
+      "incidents": 2
+    },
+    "atlasraw/s3": {
+      "windows": 5,
+      "incidents": 1
+    },
+    "atlasraw/s4": {
+      "windows": 3,
+      "incidents": 1
+    },
+    "atlasraw/m5": {
+      "windows": 75,
+      "incidents": 2
+    }
+  },
+  "raw_label_totals": {
+    "benign": 1606111,
+    "attack": 876689,
+    "contaminated": 614458
+  },
+  "process_label_summary": {
+    "atlasv2/h1-m1": {
+      "benign": 647,
+      "contaminated": 33,
+      "attack": 26
+    },
+    "atlasv2/h1-m2": {
+      "attack": 11,
+      "contaminated": 38,
+      "benign": 313
+    },
+    "atlasv2/h1-m3": {
+      "benign": 303,
+      "attack": 11,
+      "contaminated": 22
+    },
+    "atlasv2/h1-m4": {
+      "benign": 344,
+      "attack": 17,
+      "contaminated": 46
+    },
+    "atlasv2/h1-m5": {
+      "attack": 58,
+      "benign": 346,
+      "contaminated": 49
+    },
+    "atlasv2/h1-m6": {
+      "benign": 301,
+      "attack": 24,
+      "contaminated": 37
+    },
+    "atlasv2/h1-s1": {
+      "benign": 274,
+      "attack": 33,
+      "contaminated": 15
+    },
+    "atlasv2/h1-s2": {
+      "benign": 317,
+      "attack": 11,
+      "contaminated": 18
+    },
+    "atlasv2/h1-s3": {
+      "benign": 325,
+      "contaminated": 35,
+      "attack": 23
+    },
+    "atlasv2/h1-s4": {
+      "attack": 37,
+      "benign": 313,
+      "contaminated": 23
+    },
+    "atlasv2/h2-m1": {
+      "benign": 506,
+      "contaminated": 40,
+      "attack": 8
+    },
+    "atlasv2/h2-m2": {
+      "benign": 561,
+      "contaminated": 48,
+      "attack": 8
+    },
+    "atlasv2/h2-m3": {
+      "benign": 317,
+      "attack": 8,
+      "contaminated": 33
+    },
+    "atlasv2/h2-m4": {
+      "benign": 349,
+      "contaminated": 17,
+      "attack": 7
+    },
+    "atlasv2/h2-m5": {
+      "benign": 311,
+      "attack": 7,
+      "contaminated": 40
+    },
+    "atlasv2/h2-m6": {
+      "benign": 307,
+      "attack": 9,
+      "contaminated": 36
+    }
+  },
+  "incidents": [
+    {
+      "incident_id": "atlasraw/h1-m1",
+      "family_id": "atlasraw/m1",
+      "host": "h1",
+      "events": 123011,
+      "windows": 14056,
+      "positive_windows": 12,
+      "raw_attack_events": 63171,
+      "raw_contaminated_events": 8538,
+      "raw_benign_events": 51302,
+      "time_min": "2018-11-02 21:16:40+00:00",
+      "time_max": "2018-12-21 16:51:10+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-m2",
+      "family_id": "atlasraw/m2",
+      "host": "h1",
+      "events": 151058,
+      "windows": 14256,
+      "positive_windows": 12,
+      "raw_attack_events": 24588,
+      "raw_contaminated_events": 39531,
+      "raw_benign_events": 86939,
+      "time_min": "2018-11-02 21:16:40+00:00",
+      "time_max": "2018-12-22 09:31:32+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-m3",
+      "family_id": "atlasraw/m3",
+      "host": "h1",
+      "events": 147947,
+      "windows": 6851,
+      "positive_windows": 6,
+      "raw_attack_events": 53875,
+      "raw_contaminated_events": 18630,
+      "raw_benign_events": 75442,
+      "time_min": "2018-11-27 23:49:30+00:00",
+      "time_max": "2018-12-21 18:59:20+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-m4",
+      "family_id": "atlasraw/m4",
+      "host": "h1",
+      "events": 149481,
+      "windows": 5876,
+      "positive_windows": 6,
+      "raw_attack_events": 73105,
+      "raw_contaminated_events": 9777,
+      "raw_benign_events": 66599,
+      "time_min": "2018-12-01 14:19:48+00:00",
+      "time_max": "2018-12-22 00:11:58+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-m5",
+      "family_id": "atlasraw/m5",
+      "host": "h1",
+      "events": 623802,
+      "windows": 52,
+      "positive_windows": 6,
+      "raw_attack_events": 141388,
+      "raw_contaminated_events": 10030,
+      "raw_benign_events": 472384,
+      "time_min": "2018-12-15 10:51:10+00:00",
+      "time_max": "2018-12-15 15:26:36+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-m6",
+      "family_id": "atlasraw/m6",
+      "host": "h1",
+      "events": 164054,
+      "windows": 5831,
+      "positive_windows": 6,
+      "raw_attack_events": 92960,
+      "raw_contaminated_events": 10578,
+      "raw_benign_events": 60516,
+      "time_min": "2018-12-01 14:19:48+00:00",
+      "time_max": "2018-12-21 20:25:55+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-s1",
+      "family_id": "atlasraw/s1",
+      "host": "h1",
+      "events": 98111,
+      "windows": 852,
+      "positive_windows": 12,
+      "raw_attack_events": 31985,
+      "raw_contaminated_events": 7471,
+      "raw_benign_events": 58655,
+      "time_min": "2018-11-02 21:16:40+00:00",
+      "time_max": "2018-11-05 20:31:56+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-s2",
+      "family_id": "atlasraw/s2",
+      "host": "h1",
+      "events": 411162,
+      "windows": 4208,
+      "positive_windows": 35,
+      "raw_attack_events": 31423,
+      "raw_contaminated_events": 303646,
+      "raw_benign_events": 76093,
+      "time_min": "2018-08-31 18:10:05+00:00",
+      "time_max": "2018-09-15 09:07:43+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-s3",
+      "family_id": "atlasraw/s3",
+      "host": "h1",
+      "events": 134046,
+      "windows": 5,
+      "positive_windows": 0,
+      "raw_attack_events": 41297,
+      "raw_contaminated_events": 30776,
+      "raw_benign_events": 61973,
+      "time_min": "2018-12-01 14:19:48+00:00",
+      "time_max": "2018-12-01 14:55:58+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h1-s4",
+      "family_id": "atlasraw/s4",
+      "host": "h1",
+      "events": 130215,
+      "windows": 3,
+      "positive_windows": 0,
+      "raw_attack_events": 56160,
+      "raw_contaminated_events": 31666,
+      "raw_benign_events": 42389,
+      "time_min": "2018-12-04 19:00:57+00:00",
+      "time_max": "2018-12-04 19:31:06+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h2-m1",
+      "family_id": "atlasraw/m1",
+      "host": "h2",
+      "events": 140264,
+      "windows": 1768,
+      "positive_windows": 6,
+      "raw_attack_events": 19963,
+      "raw_contaminated_events": 6604,
+      "raw_benign_events": 113697,
+      "time_min": "2018-12-15 13:13:51+00:00",
+      "time_max": "2018-12-21 16:48:00+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h2-m2",
+      "family_id": "atlasraw/m2",
+      "host": "h2",
+      "events": 149695,
+      "windows": 1969,
+      "positive_windows": 6,
+      "raw_attack_events": 41056,
+      "raw_contaminated_events": 8398,
+      "raw_benign_events": 100241,
+      "time_min": "2018-12-15 13:13:51+00:00",
+      "time_max": "2018-12-22 09:32:48+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h2-m3",
+      "family_id": "atlasraw/m3",
+      "host": "h2",
+      "events": 205877,
+      "windows": 1795,
+      "positive_windows": 6,
+      "raw_attack_events": 91557,
+      "raw_contaminated_events": 4990,
+      "raw_benign_events": 109330,
+      "time_min": "2018-12-15 13:13:51+00:00",
+      "time_max": "2018-12-21 19:01:04+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h2-m4",
+      "family_id": "atlasraw/m4",
+      "host": "h2",
+      "events": 125432,
+      "windows": 1857,
+      "positive_windows": 6,
+      "raw_attack_events": 24765,
+      "raw_contaminated_events": 11026,
+      "raw_benign_events": 89641,
+      "time_min": "2018-12-15 13:13:51+00:00",
+      "time_max": "2018-12-22 00:13:36+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h2-m5",
+      "family_id": "atlasraw/m5",
+      "host": "h2",
+      "events": 134774,
+      "windows": 23,
+      "positive_windows": 6,
+      "raw_attack_events": 44229,
+      "raw_contaminated_events": 14516,
+      "raw_benign_events": 76029,
+      "time_min": "2018-12-15 13:13:51+00:00",
+      "time_max": "2018-12-15 15:22:57+00:00"
+    },
+    {
+      "incident_id": "atlasraw/h2-m6",
+      "family_id": "atlasraw/m6",
+      "host": "h2",
+      "events": 208329,
+      "windows": 1812,
+      "positive_windows": 6,
+      "raw_attack_events": 45167,
+      "raw_contaminated_events": 98281,
+      "raw_benign_events": 64881,
+      "time_min": "2018-12-15 13:13:51+00:00",
+      "time_max": "2018-12-21 20:27:43+00:00"
+    }
+  ]
+}

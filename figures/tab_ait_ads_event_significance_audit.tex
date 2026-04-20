@@ -1,0 +1,19 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Expanded scenario-held-out audit on the supplementary AIT-ADS public benchmark. We rerun the strongest contenders over 20 seeds and then evaluate the frozen TRACER route's AUPRC margin with paired incident-block bootstrap on the 6306-window, 603-positive held-out-scenario set. The leave-one-incident-out column reports how often the mean delta remains positive after removing one incident at a time.}
+\label{tab:aitads-event-significance}
+\maxtablewidth{
+\begin{tabular}{lccccccc}
+\toprule
+Baseline & TRACER AUPRC & Baseline AUPRC & Seed W/T/L & Mean $\Delta$AUPRC & 95\% bootstrap CI & $\Pr(\Delta > 0)$ & Leave-one-incident-out $+$ / 4 \\
+\midrule
+TCN-Forecaster & $0.450 \pm 0.013$ & $0.435 \pm 0.016$ & 14 / 0 / 6 & $0.015$ & $[-0.001, 0.037]$ & $94.8\%$ & 4 / 4 \\
+DLinear-Forecaster & $0.450 \pm 0.013$ & $0.450 \pm 0.013$ & 0 / 20 / 0 & $0.000$ & $[0.000, 0.000]$ & $0.0\%$ & 0 / 4 \\
+Small-Transformer-Forecaster & $0.450 \pm 0.013$ & $0.427 \pm 0.014$ & 18 / 0 / 2 & $0.023$ & $[-0.001, 0.032]$ & $95.6\%$ & 4 / 4 \\
+Prefix-Only-Retrieval + Fusion & $0.450 \pm 0.013$ & $0.416 \pm 0.019$ & 19 / 0 / 1 & $0.034$ & $[0.018, 0.060]$ & $99.5\%$ & 4 / 4 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

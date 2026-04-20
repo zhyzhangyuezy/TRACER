@@ -1,0 +1,52 @@
+{
+  "dataset_name": "cam_lds_attackbed_suricata_example",
+  "description": "Canonical alert-event table projected into Campaign-MEM rolling windows.",
+  "input_path": "data\\examples\\attackbed_suricata_example\\sample_canonical_events.csv",
+  "bin_minutes": 5,
+  "lookback_bins": 4,
+  "main_horizon_minutes": 15,
+  "aux_horizon_minutes": 5,
+  "feature_channels": [
+    "recon",
+    "auth_abuse",
+    "execution",
+    "persistence",
+    "priv_esc",
+    "cred_access",
+    "lateral_move",
+    "c2",
+    "collection_exfil",
+    "impact",
+    "defense_evasion",
+    "other",
+    "event_count",
+    "severity_mean",
+    "severity_max",
+    "high_risk_count",
+    "host_count"
+  ],
+  "analog_fidelity_distance_threshold": 0.45,
+  "incidents": [
+    {
+      "incident_id": "suricata/sample_incident_a",
+      "family_id": "suricata_family_a",
+      "events": 3,
+      "windows": 5,
+      "high_risk_events": 1
+    },
+    {
+      "incident_id": "suricata/sample_incident_b",
+      "family_id": "suricata_family_b",
+      "events": 3,
+      "windows": 5,
+      "high_risk_events": 1
+    },
+    {
+      "incident_id": "suricata/sample_incident_c",
+      "family_id": "suricata_family_c",
+      "events": 3,
+      "windows": 5,
+      "high_risk_events": 1
+    }
+  ]
+}

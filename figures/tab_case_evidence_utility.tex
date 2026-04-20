@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Rubric-based case-evidence utility audit. This deterministic proxy is not a human user study. A retrieved case is reviewable if it shares current-prefix tactic evidence or a high-risk channel/stage with the query; it is supportive if the reviewable case is also a positive train-memory analog. Unanchored positive evidence is a positive retrieved label without current-prefix semantic support. Values are percentages except $\kappa$.}
+\label{tab:case-evidence-utility}
+\maxtablewidth{
+\begin{tabular}{llrrrrrrr}
+\toprule
+Setting & Method & Top10 Rev. & Top10 Sup. & Top10 Clean & Top10 Unanch. & Pos. Sup. & RelPosPrec & $\kappa$ \\
+\midrule
+ATLASv2 held-out-family & TRACER route & $85.2$ & $44.4$ & $44.4$ & $7.4$ & $50.0$ & $86.7$ & 0.92 \\
+ATLASv2 held-out-family & Prefix-Only & $74.1$ & $33.3$ & $33.3$ & $0.0$ & $44.4$ & $100.0$ & 0.93 \\
+ATLASv2 held-out-family & Pure-kNN & $44.4$ & $44.4$ & $44.4$ & $55.6$ & $33.3$ & $35.0$ & 0.93 \\
+ATLASv2 held-out-family & Shared-Encoder & $96.3$ & $81.5$ & $81.5$ & $3.7$ & $61.1$ & $65.7$ & 0.93 \\
+AIT-ADS chronology & TRACER route & $100.0$ & $53.9$ & $53.9$ & $0.0$ & $62.8$ & $100.0$ & 0.00 \\
+AIT-ADS chronology & Prefix-Only & $100.0$ & $60.8$ & $60.8$ & $0.0$ & $65.1$ & $100.0$ & 0.00 \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
