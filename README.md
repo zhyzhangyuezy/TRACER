@@ -72,12 +72,12 @@ Representative commands:
 python figures/gen_tables_public_results.py
 python scripts/build_public_event_significance_audit.py
 python scripts/build_cross_benchmark_rank_ensemble_audit.py
-cd paper
-latexmk -pdf -interaction=nonstopmode -halt-on-error main_kbs.tex
 ```
 
 The stored summaries under `outputs/results/` are the authoritative inputs for
-the released result tables and figures in this archival snapshot.
+the released result tables and figures in this archival snapshot. The public
+GitHub package intentionally excludes manuscript sources, so PDF rebuilds are
+performed only in the private paper workspace rather than in this repository.
 
 ## Recovering omitted upstream inputs
 
@@ -103,7 +103,7 @@ python scripts/build_github_release.py
 
 This creates:
 
-- a clean GitHub-ready repository tree under `dist/github_repo/`
+- a clean GitHub-ready repository tree under `dist/gh_repo/`
 - a zip archive for direct upload
 - a separate release asset for the oversized AIT-ADS canonical events table
 - a manifest and checksum summary

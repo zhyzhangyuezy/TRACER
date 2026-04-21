@@ -73,8 +73,8 @@ reproducibility rather than local workspace state.
 
 ## Recommended public release structure
 
-1. Push the clean repository tree generated under `dist/github_repo/` to GitHub.
-2. Attach the large-file archive generated under `dist/release_assets/` to the
+1. Push the clean repository tree generated under `dist/gh_repo/` to GitHub.
+2. Attach the large-file archive generated under `dist/gh_assets/` to the
    corresponding GitHub Release.
 3. Cite both the repository URL and the release asset in the final paper's data
    availability statement.
