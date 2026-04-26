@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Policy-v2 tabular-admission audit. The dev-best tabular column applies a train/dev-only maintenance rule to the stronger classical controls, while the ex-post column reports the best tabular row on the held-out target split only as an oracle diagnostic. This table tests whether the FlatPrefix-Logistic chronology result should be silently folded into the released route table.}
+\label{tab:policy-v2-tabular-gate}
+\maxtablewidth{
+\begin{tabular}{@{}p{3.1cm}p{1.8cm}p{4.1cm}p{3.0cm}p{3.0cm}@{}}
+\toprule
+Setting & Released policy & Dev-best tabular (dev $\rightarrow$ target) & Ex-post best tabular & Maintenance read \\
+\midrule
+ATLASv2 chronology & $0.677$ & PrefixStats-RandomForest (0.300 $\rightarrow$ 0.546) & FlatPrefix-Logistic (0.866) & keep policy; oracle gain is not dev-supported \\
+ATLASv2 held-out-family & $0.763$ & PrefixStats-RandomForest (0.300 $\rightarrow$ 0.238) & FlatPrefix-Logistic (0.663) & keep policy \\
+AIT-ADS chronology & $0.532$ & PrefixStats-Logistic (0.278 $\rightarrow$ 0.426) & FlatPrefix-HistGB (0.544) & keep policy; oracle gain is not dev-supported \\
+AIT-ADS held-out-scenario & $0.450$ & PrefixStats-Logistic (0.278 $\rightarrow$ 0.360) & FlatPrefix-HistGB (0.409) & keep policy \\
+ATLAS-Raw chronology & $0.461$ & PrefixStats-Logistic (0.003 $\rightarrow$ 0.087) & FlatPrefix-HistGB (0.169) & keep policy \\
+ATLAS-Raw held-out-family & $0.403$ & PrefixStats-Logistic (0.003 $\rightarrow$ 0.002) & PrefixStats-Logistic (0.002) & keep policy \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}

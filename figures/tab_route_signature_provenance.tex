@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\caption{Route-signature provenance for the released \texttt{tracer\_adaptive} rule table. All quantities are computed before held-out evaluation from train/dev data and the declared deployment profile. The table complements the rule predicates by showing the actual regime signatures that activate each route.}
+\label{tab:route-signature-provenance}
+\maxtablewidth{
+\begin{tabular}{@{}llrrrrrll@{}}
+\toprule
+Dataset & Profile & $r_{+}^{\mathrm{train}}$ & $n_{+}^{\mathrm{dev}}$ & $F^{\mathrm{train}}$ & $F_{+}^{\mathrm{train}}$ & $\bar{\delta}_{2}^{\mathrm{train}}$ / $\rho_{\mathrm{peak}}^{\mathrm{train}}$ & Regime & Mode \\
+\midrule
+ATLASv2 & chronology & 0.0274 & 4 & 23 & 2 & 0.302 / 4.54 & sparse\_diverse\_chrono\_spiky & tcn \\
+ATLASv2 & event-disjoint & 0.0274 & 4 & 23 & 2 & 0.302 / 4.54 & sparse\_diverse & decomp TRACER \\
+AIT-ADS & balanced & 0.0892 & 230 & 4 & 4 & 0.235 / 2.58 & dense\_low\_diversity & retrieval TRACER \\
+AIT-ADS & event-disjoint & 0.0892 & 230 & 4 & 4 & 0.235 / 2.58 & dense\_low\_diversity\_event & dlinear \\
+ATLAS-Raw & balanced & 0.0019 & 18 & 8 & 7 & 0.004 / 4.48 & extreme\_sparse & retrieval TRACER \\
+Synthetic-CAM-LDS & balanced & 0.6703 & 116 & 18 & 18 & 0.233 / 2.82 & simple\_dense & tail\_risk\_linear \\
+Workbook probe & balanced & 0.0063 & 0 & 6 & 4 & 0.117 / 4.50 & cold\_start\_sparse & lstm \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
