@@ -410,7 +410,7 @@ Each evidence set contains top-5 train-memory analogs. Each analog is represente
 
 - `pairwise_items_blinded.csv`: master blinded A/B packet.
 - `rater_01_sheet.csv`, `rater_02_sheet.csv`, `rater_03_sheet.csv`: randomized response sheets for three raters.
-- `pairwise_key_private.csv`: private key that maps A/B sets to methods and contains true query outcomes. Do not share it with raters before all ratings are complete.
+- `pairwise_key_private.csv`: post-study analysis key that maps A/B sets to methods and contains true query outcomes. The word "private" means hidden from raters during annotation; release it only after all ratings are complete.
 - `study_summary.json`: sample counts and strata.
 - `RATER_INSTRUCTIONS.md`: concise instructions to send to raters.
 
@@ -459,7 +459,7 @@ For each row:
 4. Choose `A`, `B`, `Tie`, or `Neither` in `preferred_set`.
 5. Add a short rationale when one set is clearly better, both are poor, or either set appears misleading.
 
-Do not use the private key file. It is only for post-study analysis.
+Do not use the key file during annotation. It is only for post-study analysis.
 """
     (OUT_DIR / "RATER_INSTRUCTIONS.md").write_text(instructions, encoding="utf-8")
 

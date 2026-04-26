@@ -14,7 +14,7 @@ Also send:
 
 - `RATER_INSTRUCTIONS.md` or `RATER_INSTRUCTIONS_CN.md`
 
-Do not send `pairwise_key_private.csv` to raters. The key maps the anonymized A/B evidence sets back to TRACER route and Prefix-Only retrieval and is used only after all ratings are complete.
+Do not send `pairwise_key_private.csv` to raters before annotation is complete. The word `private` means hidden from raters during the blinded study; the released post-study key maps the anonymized A/B evidence sets back to TRACER route and Prefix-Only retrieval so the reported tables can be reproduced.
 
 ## After Rating
 
