@@ -1,6 +1,6 @@
 # Blinded Expert Evidence-Rating Study Package
 
-This directory contains the ready-to-use paired A/B evidence-rating packet for the TRACER KBS submission.
+This directory contains the paired A/B evidence-rating packet, completed de-identified rater sheets, and analysis inputs for the TRACER KBS submission.
 
 ## Use
 
@@ -14,11 +14,11 @@ Also send:
 
 - `RATER_INSTRUCTIONS.md` or `RATER_INSTRUCTIONS_CN.md`
 
-Do not send the private key until all ratings are complete. In the public repository, `pairwise_key_private.csv` is intentionally omitted from the latest tree. The private workspace keeps this key for post-study analysis because it maps the anonymized A/B evidence sets back to TRACER route and Prefix-Only retrieval.
+Do not send `pairwise_key_private.csv` to raters. The key maps the anonymized A/B evidence sets back to TRACER route and Prefix-Only retrieval and is used only after all ratings are complete.
 
 ## After Rating
 
-After each evaluator completes a sheet, save the completed files in this directory using names such as:
+The completed de-identified sheets in this snapshot are:
 
 - `rater_01_completed.csv`
 - `rater_02_completed.csv`

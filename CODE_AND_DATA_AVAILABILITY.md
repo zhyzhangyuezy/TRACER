@@ -11,7 +11,7 @@ limits.
 - `configs/`: released configuration files
 - `scripts/`: benchmark builders, audits, aggregation scripts
 - `figures/`: plotting scripts, generated tables, generated figures
-- `docs/`: benchmark bridge notes and release-facing documentation
+- `docs/`: organized bridge notes, contracts, runbooks, release notes, and status memos
 
 ## Data and result artifacts included in the Git-tracked package
 
@@ -28,10 +28,14 @@ limits.
 - `data/synthetic_cam_lds_controlled/`
 - `outputs/results/`
 - `outputs/expert_evidence_annotation_packet/`
+- `outputs/blinded_expert_evidence_rating_study/`
 
 These artifacts are the processed bundles and stored summaries used to generate
 the reported tables, figures, and audit results in the released experiment
 snapshot.
+The blinded evidence-rating directory contains rater-facing sheets, completed
+de-identified rating files, the private A/B-to-method key used after annotation,
+the study protocol, and analysis scripts for the expert-rating tables.
 
 ## Large file handled as a release asset
 
@@ -64,7 +68,7 @@ from git.
 ## Materials intentionally excluded from the Git-tracked package
 
 - `external_sources/`: raw upstream mirrors and third-party repository clones
-- `.codex/`, `_qa_*`, `refine-logs/`, and other local tooling directories
+- `.codex/`, `_qa_*`, `notes/`, and other local tooling directories
 - local review notes and temporary files not required for reproduction
 - manuscript sources and paper build intermediates
 
@@ -79,7 +83,7 @@ reproducibility rather than local workspace state.
 3. Cite both the repository URL and the release asset in the final paper's data
    availability statement.
 
-For a scriptable recovery path, see `docs/EXTERNAL_DATA_SETUP.md`.
+For a scriptable recovery path, see `docs/runbooks/EXTERNAL_DATA_SETUP.md`.
 
 ## Provenance boundary
 

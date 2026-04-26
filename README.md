@@ -5,6 +5,13 @@ It contains the model code, processed benchmark bundles, stored result summaries
 and figure-generation scripts used to support the experimental claims in the
 manuscript.
 
+## Local workspace note
+
+Inside the broader private research workspace, this study now lives under
+`studies/TRACER/`. Run the commands below from that directory when working in
+the private workspace. Private planning, refinement, and review notes are kept
+under `notes/` and are intentionally excluded from the public GitHub package.
+
 ## What is included
 
 - `campaign_mem/`: TRACER model, data pipeline, and training utilities
@@ -14,7 +21,9 @@ manuscript.
 - `data/`: processed benchmark bundles and reproducibility examples
 - `outputs/results/`: stored result summaries and audit exports
 - `outputs/expert_evidence_annotation_packet/`: blinded annotation scaffold
-- `docs/`: benchmark bridge notes and runbook-style documentation
+- `outputs/blinded_expert_evidence_rating_study/`: paired A/B rater sheets, completed de-identified ratings, and analysis key for the expert evidence-rating study
+- `docs/`: organized bridge notes, contracts, runbooks, release notes, and status memos
+- `notes/`: private planning, refinement, and review materials excluded from the public release
 
 ## Data availability
 
@@ -43,7 +52,7 @@ stored results, and release-facing documentation.
 
 See [CODE_AND_DATA_AVAILABILITY.md](CODE_AND_DATA_AVAILABILITY.md) and
 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for details. For upstream
-fetch instructions, see [docs/EXTERNAL_DATA_SETUP.md](docs/EXTERNAL_DATA_SETUP.md).
+fetch instructions, see [docs/runbooks/EXTERNAL_DATA_SETUP.md](docs/runbooks/EXTERNAL_DATA_SETUP.md).
 
 ## Environment
 
