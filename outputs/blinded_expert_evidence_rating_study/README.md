@@ -14,7 +14,7 @@ Also send:
 
 - `RATER_INSTRUCTIONS.md` or `RATER_INSTRUCTIONS_CN.md`
 
-Do not send `pairwise_key_private.csv` until all ratings are complete. The key maps the anonymized A/B evidence sets back to TRACER route and Prefix-Only retrieval.
+Do not send the private key until all ratings are complete. In the public repository, `pairwise_key_private.csv` is intentionally omitted from the latest tree. The private workspace keeps this key for post-study analysis because it maps the anonymized A/B evidence sets back to TRACER route and Prefix-Only retrieval.
 
 ## After Rating
 

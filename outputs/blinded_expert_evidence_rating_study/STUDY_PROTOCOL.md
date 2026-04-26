@@ -12,7 +12,7 @@ Each evidence set contains top-5 train-memory analogs. Each analog is represente
 
 - `pairwise_items_blinded.csv`: master blinded A/B packet.
 - `rater_01_sheet.csv`, `rater_02_sheet.csv`, `rater_03_sheet.csv`: randomized response sheets for three raters.
-- `pairwise_key_private.csv`: private key that maps A/B sets to methods and contains true query outcomes. Do not share it with raters before all ratings are complete.
+- `pairwise_key_private.csv`: private key that maps A/B sets to methods and contains true query outcomes. This file is kept in the private workspace and intentionally omitted from the latest public repository tree until ratings are complete.
 - `study_summary.json`: sample counts and strata.
 - `RATER_INSTRUCTIONS.md`: concise instructions to send to raters.
 
