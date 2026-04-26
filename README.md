@@ -21,7 +21,7 @@ under `notes/` and are intentionally excluded from the public GitHub package.
 - `data/`: processed benchmark bundles and reproducibility examples
 - `outputs/results/`: stored result summaries and audit exports
 - `outputs/expert_evidence_annotation_packet/`: blinded annotation scaffold
-- `outputs/blinded_expert_evidence_rating_study/`: paired A/B rater sheets, completed de-identified ratings, and analysis key for the expert evidence-rating study
+- `outputs/blinded_expert_evidence_rating_study/`: paired A/B rater sheets, completed de-identified ratings, and analysis key for the blinded security-rater evidence-rating study
 - `docs/`: organized bridge notes, contracts, runbooks, release notes, and status memos
 - `notes/`: private planning, refinement, and review materials excluded from the public release
 

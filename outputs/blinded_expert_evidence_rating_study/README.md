@@ -1,4 +1,4 @@
-# Blinded Expert Evidence-Rating Study Package
+# Blinded Security-Rater Evidence-Rating Study Package
 
 This directory contains the paired A/B evidence-rating packet, completed de-identified rater sheets, and analysis inputs for the TRACER KBS submission.
 

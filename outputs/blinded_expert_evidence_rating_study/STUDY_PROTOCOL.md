@@ -1,6 +1,6 @@
-# Blinded Expert Evidence-Rating Study
+# Blinded Security-Rater Evidence-Rating Study
 
-This package supports a blinded expert evidence-rating study for TRACER. It is designed to measure human-rated evidence quality, not live SOC performance.
+This package supports a blinded security-rater evidence-rating study for TRACER. It is designed to measure human-rated evidence quality, not live SOC performance.
 
 ## Study Design
 

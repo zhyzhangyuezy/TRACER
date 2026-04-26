@@ -35,7 +35,7 @@ the reported tables, figures, and audit results in the released experiment
 snapshot.
 The blinded evidence-rating directory contains rater-facing sheets, completed
 de-identified rating files, the private A/B-to-method key used after annotation,
-the study protocol, and analysis scripts for the expert-rating tables.
+the study protocol, and analysis scripts for the security-rater rating tables.
 
 ## Large file handled as a release asset
 
